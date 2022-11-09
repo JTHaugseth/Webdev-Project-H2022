@@ -1,6 +1,23 @@
+using electricgamesApi.Models;
+using electricgamesApi.Service;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.Configure<ElectricGamesDBsettings>(
+    builder.Configuration.GetSection("ElectricGamesDBsettings")
+);
+builder.Services.AddSingleton<GamesService>();
+builder.Services.AddCors(
+    options =>{
+        options.AddPolicy("AllowAnyOrigin",
+            policies =>policies
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+        );
+    }
+);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

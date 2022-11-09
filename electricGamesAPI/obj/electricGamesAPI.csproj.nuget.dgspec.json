@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricGamesAPI\\electricGamesAPI.csproj": {}
+    "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricgamesApi\\electricgamesApi.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricGamesAPI\\electricGamesAPI.csproj": {
+    "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricgamesApi\\electricgamesApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricGamesAPI\\electricGamesAPI.csproj",
-        "projectName": "electricGamesAPI",
-        "projectPath": "c:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricGamesAPI\\electricGamesAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricgamesApi\\electricgamesApi.csproj",
+        "projectName": "electricgamesApi",
+        "projectPath": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricgamesApi\\electricgamesApi.csproj",
         "packagesPath": "C:\\Users\\Julian\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricGamesAPI\\obj\\",
+        "outputPath": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricgamesApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Julian\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -38,6 +38,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.18.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
