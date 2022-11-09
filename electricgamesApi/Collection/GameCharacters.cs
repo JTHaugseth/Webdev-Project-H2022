@@ -3,17 +3,15 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace electricgamesApi.Collection;
 
-public class Games {
+public class GameCharacters {
 
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
     public string? Id {get; set;}
 
-    public string? Title {get; set;}
+    public string? Name {get; set;}
 
-    public string? Platform {get; set;}
+    // Her skal vi skrive ka "Game" karakteren kjem i fra.
 
-    public string? ReleaseYear {get; set;}
-
-    // IMAGE?
+    // IMAGE? 
 }

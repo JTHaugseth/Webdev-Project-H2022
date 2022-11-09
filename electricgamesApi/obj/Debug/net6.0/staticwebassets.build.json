@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "BonsAEpZDLWN8mNqxMbJg6esdcEKA/eKRmti+WT/R2U=",
+  "Source": "electricGamesAPI",
+  "BasePath": "_content/electricGamesAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "electricGamesAPI\\wwwroot",
+      "Source": "electricGamesAPI",
+      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricGamesAPI\\wwwroot\\",
+      "BasePath": "_content/electricGamesAPI",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricGamesAPI\\wwwroot\\index.html",
+      "SourceId": "electricGamesAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricGamesAPI\\wwwroot\\",
+      "BasePath": "_content/electricGamesAPI",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    }
+  ]
+}

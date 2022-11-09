@@ -8,10 +8,11 @@ builder.Services.Configure<ElectricGamesDBsettings>(
     builder.Configuration.GetSection("ElectricGamesDBsettings")
 );
 builder.Services.AddSingleton<GamesService>();
-builder.Services.AddCors(
-    options =>{
+builder.Services.AddSingleton<GameCharactersService>();
+
+builder.Services.AddCors(options => {
         options.AddPolicy("AllowAnyOrigin",
-            policies =>policies
+            policies => policies
             .AllowAnyOrigin()
             .AllowAnyMethod()
             .AllowAnyHeader()
