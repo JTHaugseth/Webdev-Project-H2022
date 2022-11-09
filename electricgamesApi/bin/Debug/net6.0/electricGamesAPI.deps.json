@@ -6,13 +6,13 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "electricGamesAPI/1.0.0": {
+      "electricgamesApi/1.0.0": {
         "dependencies": {
           "MongoDB.Driver": "2.18.0",
           "Swashbuckle.AspNetCore": "6.2.3"
         },
         "runtime": {
-          "electricGamesAPI.dll": {}
+          "electricgamesApi.dll": {}
         }
       },
       "DnsClient/1.6.1": {
@@ -185,7 +185,7 @@
     }
   },
   "libraries": {
-    "electricGamesAPI/1.0.0": {
+    "electricgamesApi/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

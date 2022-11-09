@@ -1,27 +1,27 @@
 {
   "Version": 1,
-  "Hash": "BonsAEpZDLWN8mNqxMbJg6esdcEKA/eKRmti+WT/R2U=",
-  "Source": "electricGamesAPI",
-  "BasePath": "_content/electricGamesAPI",
+  "Hash": "UuleksDj6YErRpIdRxpuvJ9ayuOc1KamKFrzOAA5c4I=",
+  "Source": "electricgamesApi",
+  "BasePath": "_content/electricgamesApi",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {
-      "Name": "electricGamesAPI\\wwwroot",
-      "Source": "electricGamesAPI",
-      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricGamesAPI\\wwwroot\\",
-      "BasePath": "_content/electricGamesAPI",
+      "Name": "electricgamesApi\\wwwroot",
+      "Source": "electricgamesApi",
+      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricgamesApi\\wwwroot\\",
+      "BasePath": "_content/electricgamesApi",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricGamesAPI\\wwwroot\\index.html",
-      "SourceId": "electricGamesAPI",
+      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricgamesApi\\wwwroot\\index.html",
+      "SourceId": "electricgamesApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricGamesAPI\\wwwroot\\",
-      "BasePath": "_content/electricGamesAPI",
+      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricgamesApi\\wwwroot\\",
+      "BasePath": "_content/electricgamesApi",
       "RelativePath": "index.html",
       "AssetKind": "All",
       "AssetMode": "All",
