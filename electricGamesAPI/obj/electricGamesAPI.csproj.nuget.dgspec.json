@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricGamesAPI\\electricGamesAPI.csproj": {}
+    "c:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricGamesAPI\\electricGamesAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricGamesAPI\\electricGamesAPI.csproj": {
+    "c:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricGamesAPI\\electricGamesAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricGamesAPI\\electricGamesAPI.csproj",
+        "projectUniqueName": "c:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricGamesAPI\\electricGamesAPI.csproj",
         "projectName": "electricGamesAPI",
-        "projectPath": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricGamesAPI\\electricGamesAPI.csproj",
+        "projectPath": "c:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricGamesAPI\\electricGamesAPI.csproj",
         "packagesPath": "C:\\Users\\Julian\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricGamesAPI\\obj\\",
+        "outputPath": "c:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricGamesAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Julian\\AppData\\Roaming\\NuGet\\NuGet.Config"

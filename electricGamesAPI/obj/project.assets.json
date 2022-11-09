@@ -229,11 +229,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricGamesAPI\\electricGamesAPI.csproj",
-      "projectName": "electricGamesAPI",
-      "projectPath": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricGamesAPI\\electricGamesAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricgamesApi\\electricgamesApi.csproj",
+      "projectName": "electricgamesApi",
+      "projectPath": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricgamesApi\\electricgamesApi.csproj",
       "packagesPath": "C:\\Users\\Julian\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricGamesAPI\\obj\\",
+      "outputPath": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricgamesApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Julian\\AppData\\Roaming\\NuGet\\NuGet.Config"
