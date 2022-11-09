@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/electricGamesAPI.csproj",
+                "${workspaceFolder}/electricgamesApi/electricgamesApi.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/electricGamesAPI.csproj",
+                "${workspaceFolder}/electricgamesApi/electricgamesApi.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -33,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/electricGamesAPI.csproj"
+                "${workspaceFolder}/electricgamesApi/electricgamesApi.csproj"
             ],
             "problemMatcher": "$msCompile"
         }
