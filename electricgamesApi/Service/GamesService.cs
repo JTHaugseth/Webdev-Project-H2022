@@ -13,7 +13,7 @@ public class GamesService {
 
     public GamesService(IOptions<ElectricGamesDBsettings> ElectricGamesDBsettings){
         
-        var GameClient = new MongoClient(ElectricGamesDBsettings.Value.ConnectionString);
+        var GameClient = new MongoClient(ElectricGamesDBsettings.Value.ConnectionStr);
         var database = GameClient.GetDatabase(ElectricGamesDBsettings.Value.DatabaseName);
         _GamesCollection = database.GetCollection<Games>(ElectricGamesDBsettings.Value.DataCollectionGames);
     }

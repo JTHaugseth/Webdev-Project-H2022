@@ -1,6 +1,6 @@
 namespace electricgamesApi.Models;
 public class ElectricGamesDBsettings {
-    public string ConnectionString { get; set; } = null!;
+    public string ConnectionStr { get; set; } = null!;
 
     public string DatabaseName { get; set; } = null!;
 

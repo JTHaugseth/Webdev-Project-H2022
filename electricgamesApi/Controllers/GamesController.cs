@@ -28,7 +28,7 @@ public class GamesController : ControllerBase {
         return _gamesService.Get();
     }
 
-    [HttpGet("{id}")]
+    [HttpGet("{Id:length(24)}")]
 
     public ActionResult<Games> GetGamesById(string Id) {
         var games = _gamesService.Get(Id);
@@ -57,7 +57,7 @@ public class GamesController : ControllerBase {
         return CreatedAtAction(nameof(Update), new {id = updateGame.Id}, updateGame);
     }
 
-    [HttpPut("{Id}")]
+    [HttpDelete("{Id}")]
 
     public IActionResult DeleteById(string Id) {
         var game = _gamesService.Get(Id);
