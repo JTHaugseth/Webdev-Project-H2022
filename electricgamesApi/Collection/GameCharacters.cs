@@ -9,7 +9,9 @@ public class GameCharacters {
     [BsonRepresentation(BsonType.ObjectId)]
     public string? Id {get; set;}
 
-    public string? Name {get; set;}
+    public string? Name {get; set;} 
+
+    public string? Game {get; set;}
 
     // Her skal vi skrive ka "Game" karakteren kjem i fra.
 
