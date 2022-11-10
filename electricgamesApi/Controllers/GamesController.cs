@@ -31,7 +31,17 @@ public class GamesController : ControllerBase {
     [HttpGet("{Id:length(24)}")]
 
     public ActionResult<Games> GetGamesById(string Id) {
-        var games = _gamesService.Get(Id);
+        var games = _gamesService.GetById(Id);
+        if(games == null) {
+            return NotFound();
+        }
+        return games;
+    }
+
+    [HttpGet("Title")]
+
+    public ActionResult<Games> GetGamesByTitle(string Title) {
+        var games = _gamesService.GetByTitle(Title);
         if(games == null) {
             return NotFound();
         }
@@ -49,7 +59,7 @@ public class GamesController : ControllerBase {
     [HttpPut("{Id}")]
 
     public IActionResult Update([FromRoute] string Id, [FromBody] Games updateGame) {
-        var game = _gamesService.Get(Id);
+        var game = _gamesService.GetById(Id);
         if(game == null) {
             return NotFound();
         } 
@@ -60,7 +70,7 @@ public class GamesController : ControllerBase {
     [HttpDelete("{Id}")]
 
     public IActionResult DeleteById(string Id) {
-        var game = _gamesService.Get(Id);
+        var game = _gamesService.GetById(Id);
         if(game == null) {
             return NotFound();
         }

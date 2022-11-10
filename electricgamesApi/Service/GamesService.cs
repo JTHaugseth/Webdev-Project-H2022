@@ -21,8 +21,11 @@ public class GamesService {
     public List<Games> Get() {
         return _GamesCollection.Find(_=>true).ToList();
     }
-    public Games? Get(string id) {
+    public Games? GetById(string id) {
         return _GamesCollection.Find(Game=>Game.Id==id).FirstOrDefault();
+    }
+    public Games? GetByTitle(string title) {
+        return _GamesCollection.Find(Game=>Game.Title==title).FirstOrDefault();
     }
     public void Create(Games newGame) {
         _GamesCollection.InsertOne(newGame);
