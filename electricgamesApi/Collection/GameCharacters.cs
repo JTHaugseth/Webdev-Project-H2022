@@ -13,7 +13,5 @@ public class GameCharacters {
 
     public string? Game {get; set;}
 
-    // Her skal vi skrive ka "Game" karakteren kjem i fra.
-
     // IMAGE? 
 }

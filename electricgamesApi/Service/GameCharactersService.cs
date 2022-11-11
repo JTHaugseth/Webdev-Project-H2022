@@ -21,8 +21,11 @@ public class GameCharactersService {
     public List<GameCharacters> Get() {
         return _GameCharactersCollection.Find(_=>true).ToList();
     }
-    public GameCharacters? Get(string id) {
+    public GameCharacters? GetById(string id) {
         return _GameCharactersCollection.Find(Game=>Game.Id==id).FirstOrDefault();
+    }
+    public GameCharacters? GetByName(string name) {
+        return _GameCharactersCollection.Find(Game=>Game.Name==name).FirstOrDefault();
     }
     public void Create(GameCharacters newGameCharacter) {
         _GameCharactersCollection.InsertOne(newGameCharacter);

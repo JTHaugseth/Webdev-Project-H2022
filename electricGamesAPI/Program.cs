@@ -27,6 +27,10 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+DefaultFilesOptions options = new DefaultFilesOptions();
+options.DefaultFileNames.Add("index.html");
+app.UseDefaultFiles(options);
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -34,11 +38,16 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseCors("AllowAnyOrigin");
 
 app.Run();
 

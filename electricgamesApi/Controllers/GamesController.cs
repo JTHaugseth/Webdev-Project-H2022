@@ -6,7 +6,7 @@ using electricgamesApi.Collection;
 namespace electricgamesApi.Controllers;
 
 [ApiController]
-[Route("Game/[controller]")]
+[Route("games/[controller]")]
 
 public class GamesController : ControllerBase {
 
@@ -38,7 +38,7 @@ public class GamesController : ControllerBase {
         return games;
     }
 
-    [HttpGet("Title")]
+    [HttpGet("title/{title}")]
 
     public ActionResult<Games> GetGamesByTitle(string Title) {
         var games = _gamesService.GetByTitle(Title);
