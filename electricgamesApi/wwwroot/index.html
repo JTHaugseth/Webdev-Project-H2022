@@ -22,17 +22,23 @@
         <h4>Get by Name</h4>
         <input type="text" id="getGameByName" placeholder="Name:"></input>
         <input type="button" id="getGameByNameBtn" value="Search"></input>
+        
+        
         <h4>Add a new game</h4>
         <input type="text" id="newGameId" placeholder="Id"></input>
         <input type="text" id="newGameName" placeholder=" Name"></input>
         <input type="text" id="newGamePlatform" placeholder="Platform"></input>
         <input type="text" id="newGameYear" placeholder="Release Year"></input>
-        <input type="button" id="newGameBtn" value="Add"></input>
+        <input type="file" id="newGameImage" directory="electricgamesApi\wwwroot\images" name="fileName"></input>
+        <input type="button" id="newGameBtn" value="Submit"></input>
+        
+        
         <h4>Update a game</h4>
         <input type="text" id="updateGameId" placeholder="Id"></input>
         <input type="text" id="updateGameName" placeholder=" Name"></input>
         <input type="text" id="updateGamePlatform" placeholder="Platform"></input>
         <input type="text" id="updateGameYear" placeholder="Release Year"></input>
+        <input type="file" id="imageUpdateBtn" name="fileName"></input>
         <input type="button" id="updateGameBtn" value="Update"></input>
         <h4>Remove a Game</h4>
         <input type="text" id="removeGame" placeholder="Id:"></input>
@@ -52,17 +58,20 @@
         <input type="text" id="newCharacterId" placeholder="Id"></input>
         <input type="text" id="newCharacterName" placeholder=" Name"></input>
         <input type="text" id="newCharacterGame" placeholder="Game"></input>
+        <input type="file" id="imageCreateCharacterBtn" name="fileName"></input>
         <input type="button" id="newCharacterBtn" value="Add"></input>
+        
         <h4>Update a Character</h4>
         <input type="text" id="updateCharacterId" placeholder="Id"></input>
         <input type="text" id="updateCharacterName" placeholder=" Name"></input>
         <input type="text" id="updateCaracterGame" placeholder="Game"></input>
+        <input type="file" id="imageUpdateCharacterbtnBtn" name="fileName"></input>
         <input type="button" id="updateCharacterBtn" value="Update"></input>
         <h4>Remove a character</h4>
         <input type="text" id="removeCharacter" placeholder="Id:"></input>
         <input type="button" id="removeCharacterBtn" value="Delete"></input>
     </div>
 
-    <script src="index.js"></script>
+    <script src="index.js"></script>8
 </body>
 </html>

@@ -15,5 +15,5 @@ public class Games {
 
     public string? ReleaseYear {get; set;}
 
-    // IMAGE?
+    public string? Image {get; set;}
 }

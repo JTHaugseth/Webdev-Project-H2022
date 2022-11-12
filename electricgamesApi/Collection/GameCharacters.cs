@@ -13,5 +13,5 @@ public class GameCharacters {
 
     public string? Game {get; set;}
 
-    // IMAGE? 
+    public string? Image {get; set;} 
 }
