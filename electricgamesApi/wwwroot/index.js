@@ -83,7 +83,6 @@ const updateGameBtn = document.getElementById("updateGameBtn").onclick = async()
         console.error(error);
     }
 }
-//Detete button It remov! - Yoda
 const deleteBtn = document.getElementById("removeGameBtn").onclick = async() => {
         const input = document.getElementById("removeGame").value;
         try {
