@@ -56,6 +56,18 @@ public class GameCharactersController : ControllerBase {
         return CreatedAtAction(nameof(Post), new {id = newGameCharacter.Id}, newGameCharacter);
     } 
 
+    [HttpPost("image")]
+    
+    public IActionResult SaveImage(IFormFile file){
+        string rootPath = _hosting.WebRootPath;
+        string imagePath = Path.Combine($"{rootPath}/images/{file.FileName}");
+        using(var fileStream = new FileStream(imagePath, FileMode.Create))
+        {
+            file.CopyTo(fileStream);
+        }
+        return Ok();
+    }
+
     [HttpPut("{Id}")]
 
     public IActionResult Update([FromRoute] string Id, [FromBody] GameCharacters updateGameCharacters) {

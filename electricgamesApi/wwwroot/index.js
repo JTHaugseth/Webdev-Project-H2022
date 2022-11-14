@@ -45,10 +45,7 @@ const newGameBtn = document.getElementById("newGameBtn").onclick = async() => {
         fd.append("file", newGameImage.files[0]);
         axios.post(`https://localhost:7088/games/Games/image`, fd);
 
-        console.log(newGameImage.files[0].name);
-        console.log(fd);
-
-        const newGame = {id: `${newGameId}`, title: `${newGameName}`, platform: `${newGamePlatform}`, releaseYear: `${newGameYear}`};
+        const newGame = {id: `${newGameId}`, title: `${newGameName}`, platform: `${newGamePlatform}`, releaseYear: `${newGameYear}`, image: `${newGameImage.files[0].name}`};
         
         const addGame = await axios.post(`https://localhost:7088/games/Games`, newGame);
         const response = await axios.get(`https://localhost:7088/games/Games/${newGameId}`)
@@ -141,9 +138,14 @@ const newCharacterBtn = document.getElementById("newCharacterBtn").onclick = asy
     const newCharacterId = document.getElementById("newCharacterId").value;
     const newCharacterName = document.getElementById("newCharacterName").value;
     const newCharacterGame = document.getElementById("newCharacterGame").value;
+    const newCharacterImage = document.getElementById("newCharacterImage");
 
     try {
-        const newGameCharacter = {id: `${newCharacterId}`, name: `${newCharacterName}`, game: `${newCharacterGame}`}
+        let fd = new FormData();       
+        fd.append("file", newCharacterImage.files[0]);
+        axios.post(`https://localhost:7088/gamecharacters/GameCharacters/image`, fd);
+
+        const newGameCharacter = {id: `${newCharacterId}`, name: `${newCharacterName}`, game: `${newCharacterGame}`, image: `${newCharacterImage.files[0].name}`}
         
         const addCharacter = await axios.post(`https://localhost:7088/gamecharacters/GameCharacters`, newGameCharacter);
         const response = await axios.get(`https://localhost:7088/gamecharacters/GameCharacters/${newCharacterId}`)
