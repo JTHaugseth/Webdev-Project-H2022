@@ -56,8 +56,7 @@ public class GamesController : ControllerBase {
         return CreatedAtAction(nameof(Post), new {id = newGame.Id}, newGame);
     } 
 
-    [HttpPost]
-    [Route("[action]")]
+    [HttpPost("image")]
     
     public IActionResult SaveImage(IFormFile file){
         string rootPath = _hosting.WebRootPath;
