@@ -178,12 +178,16 @@ const updateCharacterBtn = document.getElementById("updateCharacterBtn").onclick
         if (updateCharacterName != "") {}else{updateCharacterName = oldCharacterName;}
         if (updateCharacterGame != "") {}else{updateCharacterGame = oldCharacterGame;}
         if (updateCharacterImage.files.length == 0) {
-            console.log("The file exists");
+            currentImageName = oldCharacterImage;
+            console.log("No new image-input. Old image name used")
         } else {
-            console.log("The file does not exist");
+            let fd = new FormData();       
+            fd.append("file", updateCharacterImage.files[0]);
+            axios.post(`https://localhost:7088/gamecharacters/GameCharacters/image`, fd);
+            currentImageName = updateCharacterImage.files[0].name;
         }
 
-        const updatedCharacter = {id: `${updateCharacterId}`, name: `${updateCharacterName}`, game: `${updateCharacterGame}`};
+        const updatedCharacter = {id: `${updateCharacterId}`, name: `${updateCharacterName}`, game: `${updateCharacterGame}`, image: `${currentImageName}`};
 
         const updateCharacter = await axios.put(`https://localhost:7088/gamecharacters/GameCharacters/${updateCharacterId}`, updatedCharacter);
         const response = await axios.get(`https://localhost:7088/gamecharacters/GameCharacters/${updateCharacterId}`);

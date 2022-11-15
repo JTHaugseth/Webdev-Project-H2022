@@ -28,7 +28,7 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 DefaultFilesOptions options = new DefaultFilesOptions();
-options.DefaultFileNames.Add("index.html");
+options.DefaultFileNames.Add("root.html");
 app.UseDefaultFiles(options);
 
 // Configure the HTTP request pipeline.

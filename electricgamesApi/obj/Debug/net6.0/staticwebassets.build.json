@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8Jlg3yhWDtFcpFn4AH6tiQ+7P+hQS9i0hWcQCVqrtFs=",
+  "Hash": "KCdnxy3YWpqvuXsRSMyuLnsSciqpP+4KFzL3Ick9Mr8=",
   "Source": "electricgamesApi",
   "BasePath": "_content/electricgamesApi",
   "Mode": "Default",
@@ -16,6 +16,23 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricgamesApi\\wwwroot\\images\\Blitzcrank.webp",
+      "SourceId": "electricgamesApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricgamesApi\\wwwroot\\",
+      "BasePath": "_content/electricgamesApi",
+      "RelativePath": "images/Blitzcrank.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Blitzcrank.webp"
+    },
     {
       "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricgamesApi\\wwwroot\\images\\Counter Strike.jpg",
       "SourceId": "electricgamesApi",
@@ -272,12 +289,12 @@
       "OriginalItemSpec": "wwwroot\\images\\World of warcraft.webp"
     },
     {
-      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricgamesApi\\wwwroot\\index.html",
+      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricgamesApi\\wwwroot\\root.html",
       "SourceId": "electricgamesApi",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricgamesApi\\wwwroot\\",
       "BasePath": "_content/electricgamesApi",
-      "RelativePath": "index.html",
+      "RelativePath": "root.html",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -286,15 +303,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\index.html"
+      "OriginalItemSpec": "wwwroot\\root.html"
     },
     {
-      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricgamesApi\\wwwroot\\index.js",
+      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricgamesApi\\wwwroot\\root.js",
       "SourceId": "electricgamesApi",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricgamesApi\\wwwroot\\",
       "BasePath": "_content/electricgamesApi",
-      "RelativePath": "index.js",
+      "RelativePath": "root.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -303,7 +320,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\index.js"
+      "OriginalItemSpec": "wwwroot\\root.js"
     }
   ]
 }
