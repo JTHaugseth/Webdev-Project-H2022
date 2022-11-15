@@ -1,4 +1,4 @@
-import axios from "axios";
+/*import axios from "axios";
 import {useEffect, useState} from "react";
 
 function axiosAdd({onAddGame, setNewGame, newGame}){
@@ -19,4 +19,4 @@ function axiosAdd({onAddGame, setNewGame, newGame}){
         //html element
     )
 }
-export default axiosAdd;
+export default axiosAdd;*/
