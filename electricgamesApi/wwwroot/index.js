@@ -159,10 +159,13 @@ const newCharacterBtn = document.getElementById("newCharacterBtn").onclick = asy
 const updateCharacterBtn = document.getElementById("updateCharacterBtn").onclick = async() => {
     const updateCharacterId = document.getElementById("updateCharacterId").value;
     let updateCharacterName = document.getElementById("updateCharacterName").value;
-    let updateCharacterGame = document.getElementById("updateCaracterGame").value;
+    let updateCharacterGame = document.getElementById("updateCharacterGame").value;
+    const updateCharacterImage = document.getElementById("updateCharacterImage");
    
     let oldCharacterName;
     let oldCharacterGame;
+    let oldCharacterImage; 
+    let currentImageName;
 
     try {
         const oldCharacter = await axios.get(`https://localhost:7088/gamecharacters/GameCharacters/${updateCharacterId}`);
@@ -170,16 +173,23 @@ const updateCharacterBtn = document.getElementById("updateCharacterBtn").onclick
 
         oldCharacterName = oldCharacterData.name;
         oldCharacterGame = oldCharacterData.game;
+        oldCharacterImage = oldCharacterData.image;
 
         if (updateCharacterName != "") {}else{updateCharacterName = oldCharacterName;}
         if (updateCharacterGame != "") {}else{updateCharacterGame = oldCharacterGame;}
+        if (updateCharacterImage.files.length == 0) {
+            console.log("The file exists");
+        } else {
+            console.log("The file does not exist");
+        }
 
-        const updatedCharacter = {id: `${updateCharacterId}`, name: `${updateCharacterName}`, game: `${updateCharacterGame}`}
+        const updatedCharacter = {id: `${updateCharacterId}`, name: `${updateCharacterName}`, game: `${updateCharacterGame}`};
 
         const updateCharacter = await axios.put(`https://localhost:7088/gamecharacters/GameCharacters/${updateCharacterId}`, updatedCharacter);
         const response = await axios.get(`https://localhost:7088/gamecharacters/GameCharacters/${updateCharacterId}`);
         const updatedCharacterData = response.data;
         console.log(updatedCharacterData);
+        
 
     } catch (error) {
         console.error(error);
