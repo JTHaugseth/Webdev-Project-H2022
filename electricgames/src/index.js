@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import ReactAxios from './reportWebVitals';
-import ReactAxios from './ReactAxios';
+import './index.css';
+import GamesCollection from './Games';
 
-const root = ReactDom.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <ReactAxiosController />
+        <GamesCollection/>
     </React.StrictMode>
 );
 
