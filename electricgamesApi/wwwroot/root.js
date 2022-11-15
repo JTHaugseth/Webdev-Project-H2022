@@ -1,8 +1,11 @@
+//Localhost-url
+const localhostURL = "https://localhost:7088";
+
 // GAMES
 
 const gamesGetAllBtn = document.getElementById("getAllGamesBtn").onclick = async() => {
     try {
-        const response = await axios.get(`https://localhost:7088/games/Games`);
+        const response = await axios.get(`${localhostURL}/games/Games`);
         const allGames = response.data;
 
         console.log(allGames);
@@ -13,7 +16,7 @@ const gamesGetAllBtn = document.getElementById("getAllGamesBtn").onclick = async
 const getGameByIdBtn = document.getElementById("getGameByIdBtn").onclick = async() => {
     const input = document.getElementById("getGameById").value;
     try {
-        const response = await axios.get(`https://localhost:7088/games/Games/${input}`);
+        const response = await axios.get(`${localhostURL}/games/Games/${input}`);
         const game = response.data;
        
         console.log(game);
@@ -24,7 +27,7 @@ const getGameByIdBtn = document.getElementById("getGameByIdBtn").onclick = async
 const getGameByNameBtn = document.getElementById("getGameByNameBtn").onclick = async() => {
     const input = document.getElementById("getGameByName").value;
     try {
-        const response = await axios.get(`https://localhost:7088/games/Games/title/${input}`);
+        const response = await axios.get(`${localhostURL}/games/Games/title/${input}`);
         const game = response.data;
         
         console.log(game);
@@ -43,12 +46,12 @@ const newGameBtn = document.getElementById("newGameBtn").onclick = async() => {
     try {
         let fd = new FormData();       
         fd.append("file", newGameImage.files[0]);
-        axios.post(`https://localhost:7088/games/Games/image`, fd);
+        axios.post(`${localhostURL}/games/Games/image`, fd);
 
         const newGame = {id: `${newGameId}`, title: `${newGameName}`, platform: `${newGamePlatform}`, releaseYear: `${newGameYear}`, image: `${newGameImage.files[0].name}`};
         
-        const addGame = await axios.post(`https://localhost:7088/games/Games`, newGame);
-        const response = await axios.get(`https://localhost:7088/games/Games/${newGameId}`)
+        const addGame = await axios.post(`${localhostURL}/games/Games`, newGame);
+        const response = await axios.get(`${localhostURL}/games/Games/${newGameId}`)
         const game = response.data;
 
         console.log(game);
@@ -61,27 +64,40 @@ const updateGameBtn = document.getElementById("updateGameBtn").onclick = async()
     let updateGameName = document.getElementById("updateGameName").value;
     let updateGamePlatform = document.getElementById("updateGamePlatform").value;
     let updateGameYear = document.getElementById("updateGameYear").value;
+    const updateGameImage = document.getElementById("updateGameImage");
 
     let oldGameName;
     let oldGamePlatform;
     let oldGameYear;
+    let oldGameImage;
+    let currentImage;
 
     try {
-        const oldGame = await axios.get(`https://localhost:7088/games/Games/${updateGameId}`);
+        const oldGame = await axios.get(`${localhostURL}/games/Games/${updateGameId}`);
         const oldGameData = oldGame.data;
 
         oldGameName = oldGameData.title;
         oldGamePlatform = oldGameData.platform;
         oldGameYear = oldGameData.releaseYear;
+        oldGameImage = oldGameData.image;
 
         if (updateGameName != "") {}else{updateGameName = oldGameName;}
         if (updateGamePlatform != "") {}else{updateGamePlatform = oldGamePlatform;}
         if (updateGameYear != "") {}else{updateGameYear = oldGameYear;}
+        if (updateGameImage.files.length == 0) {
+            currentImage = oldGameImage;
+            console.log("No new image-input. Old image name used");
+        } else {
+            let fd = new FormData();       
+            fd.append("file", updateGameImage.files[0]);
+            axios.post(`${localhostURL}/games/Games/image`, fd);
+            currentImage = updateGameImage.files[0].name;
+        }
 
-        const updatedGame = {id: `${updateGameId}`, title: `${updateGameName}`, platform: `${updateGamePlatform}`, releaseYear: `${updateGameYear}`}
+        const updatedGame = {id: `${updateGameId}`, title: `${updateGameName}`, platform: `${updateGamePlatform}`, releaseYear: `${updateGameYear}`, image: `${currentImage}`};
 
-        const updateGame = await axios.put(`https://localhost:7088/games/Games/${updateGameId}`, updatedGame);
-        const response = await axios.get(`https://localhost:7088/games/Games/${updateGameId}`);
+        const updateGame = await axios.put(`${localhostURL}/games/Games/${updateGameId}`, updatedGame);
+        const response = await axios.get(`${localhostURL}/games/Games/${updateGameId}`);
         const updatedGameData = response.data;
         console.log(updatedGameData);
 
@@ -92,7 +108,7 @@ const updateGameBtn = document.getElementById("updateGameBtn").onclick = async()
 const deleteBtn = document.getElementById("removeGameBtn").onclick = async() => {
         const input = document.getElementById("removeGame").value;
         try {
-            const response = await axios.delete(`https://localhost:7088/games/Games/${input}`);
+            const response = await axios.delete(`${localhostURL}/games/Games/${input}`);
         
             console.log("Game removed successfully");
         } catch(error) {
@@ -104,7 +120,7 @@ const deleteBtn = document.getElementById("removeGameBtn").onclick = async() => 
 
 const getAllGameCharacters = document.getElementById("getAllGameCharacters").onclick = async() => {
     try {
-        const response = await axios.get(`https://localhost:7088/gamecharacters/GameCharacters`);
+        const response = await axios.get(`${localhostURL}/gamecharacters/GameCharacters`);
         const allGameCharacters = response.data;
 
         console.log(allGameCharacters);
@@ -115,7 +131,7 @@ const getAllGameCharacters = document.getElementById("getAllGameCharacters").onc
 const getCharacterByIdBtn = document.getElementById("getCharacterByIdBtn").onclick = async() => {
     const input = document.getElementById("getCharacterById").value;
     try {
-        const response = await axios.get(`https://localhost:7088/gamecharacters/GameCharacters/${input}`);
+        const response = await axios.get(`${localhostURL}/gamecharacters/GameCharacters/${input}`);
         const gamecharacter = response.data;
        
         console.log(gamecharacter);
@@ -126,7 +142,7 @@ const getCharacterByIdBtn = document.getElementById("getCharacterByIdBtn").oncli
 const getCharacterByNameBtn = document.getElementById("getCharacterByNameBtn").onclick = async() => {
     const input = document.getElementById("getCharacterByName").value;
     try {
-        const response = await axios.get(`https://localhost:7088/gamecharacters/GameCharacters/name/${input}`);
+        const response = await axios.get(`${localhostURL}/gamecharacters/GameCharacters/name/${input}`);
         const gamecharacter = response.data;
         
         console.log(gamecharacter);
@@ -143,12 +159,12 @@ const newCharacterBtn = document.getElementById("newCharacterBtn").onclick = asy
     try {
         let fd = new FormData();       
         fd.append("file", newCharacterImage.files[0]);
-        axios.post(`https://localhost:7088/gamecharacters/GameCharacters/image`, fd);
+        axios.post(`${localhostURL}/gamecharacters/GameCharacters/image`, fd);
 
         const newGameCharacter = {id: `${newCharacterId}`, name: `${newCharacterName}`, game: `${newCharacterGame}`, image: `${newCharacterImage.files[0].name}`}
         
-        const addCharacter = await axios.post(`https://localhost:7088/gamecharacters/GameCharacters`, newGameCharacter);
-        const response = await axios.get(`https://localhost:7088/gamecharacters/GameCharacters/${newCharacterId}`)
+        const addCharacter = await axios.post(`${localhostURL}/gamecharacters/GameCharacters`, newGameCharacter);
+        const response = await axios.get(`${localhostURL}/gamecharacters/GameCharacters/${newCharacterId}`)
         const gamecharacter = response.data;
         
         console.log(gamecharacter);
@@ -168,7 +184,7 @@ const updateCharacterBtn = document.getElementById("updateCharacterBtn").onclick
     let currentImageName;
 
     try {
-        const oldCharacter = await axios.get(`https://localhost:7088/gamecharacters/GameCharacters/${updateCharacterId}`);
+        const oldCharacter = await axios.get(`${localhostURL}/gamecharacters/GameCharacters/${updateCharacterId}`);
         const oldCharacterData = oldCharacter.data;
 
         oldCharacterName = oldCharacterData.name;
@@ -183,14 +199,14 @@ const updateCharacterBtn = document.getElementById("updateCharacterBtn").onclick
         } else {
             let fd = new FormData();       
             fd.append("file", updateCharacterImage.files[0]);
-            axios.post(`https://localhost:7088/gamecharacters/GameCharacters/image`, fd);
+            axios.post(`${localhostURL}/gamecharacters/GameCharacters/image`, fd);
             currentImageName = updateCharacterImage.files[0].name;
         }
 
         const updatedCharacter = {id: `${updateCharacterId}`, name: `${updateCharacterName}`, game: `${updateCharacterGame}`, image: `${currentImageName}`};
 
-        const updateCharacter = await axios.put(`https://localhost:7088/gamecharacters/GameCharacters/${updateCharacterId}`, updatedCharacter);
-        const response = await axios.get(`https://localhost:7088/gamecharacters/GameCharacters/${updateCharacterId}`);
+        const updateCharacter = await axios.put(`${localhostURL}/gamecharacters/GameCharacters/${updateCharacterId}`, updatedCharacter);
+        const response = await axios.get(`${localhostURL}/gamecharacters/GameCharacters/${updateCharacterId}`);
         const updatedCharacterData = response.data;
         console.log(updatedCharacterData);
         
@@ -202,7 +218,7 @@ const updateCharacterBtn = document.getElementById("updateCharacterBtn").onclick
 const removeCharacterBtn = document.getElementById("removeCharacterBtn").onclick = async() => {
     const input = document.getElementById("removeCharacter").value;
     try {
-        const response = await axios.delete(`https://localhost:7088/gamecharacters/GameCharacters/${input}`);
+        const response = await axios.delete(`${localhostURL}/gamecharacters/GameCharacters/${input}`);
     
         console.log("Character removed successfully");
     } catch(error) {
