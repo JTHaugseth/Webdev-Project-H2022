@@ -64,10 +64,10 @@ const GetGameById = () => {
         .catch(error=>console.log(error))
     });
 
-    const handleSubmit = (e) => { 
-        e.preventDefault()
-        
-    }
+    function handleSubmit (event) { 
+        event.preventDefault();
+    };
+
     return (
         <>
             <nav>
@@ -83,7 +83,7 @@ const GetGameById = () => {
             </nav>
             <form onSubmit={handleSubmit}>
                 <input type="text" id="game-by-id-input" placeholder="Enter Id:" onChange={(e) => setSearchId(e.target.value)}></input>
-                <input type="submit" value="Submit" />
+                <input type="submit" value="Submit"></input>
             </form>
             <article>
                     <p>Id:{searchId.id}</p>
