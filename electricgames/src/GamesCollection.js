@@ -57,6 +57,7 @@ const ShowAllGames = () => {
 
 const GetGameById = () => {
     const [searchId, setSearchId] = useState("");
+    const [result, setResult] = useState("");
 
     useEffect(() => {
         axios.get(`https://localhost:7088/games/Games/${searchId}`)
@@ -64,8 +65,16 @@ const GetGameById = () => {
         .catch(error=>console.log(error))
     });
 
-    function handleSubmit (event) { 
+    const handleSubmit = (event) => { 
         event.preventDefault();
+        setResult( 
+            <article>
+                <p>Id:{searchId.id}</p>
+                <p>Title:{searchId.title}</p>
+                <p>platform:{searchId.platform}</p>
+                <img src={`https://localhost:7088/images/${encodeURIComponent(searchId.image)}`} className="fluid-image" alt={searchId.image} ></img>
+            </article>
+        ); 
     };
 
     return (
@@ -82,15 +91,10 @@ const GetGameById = () => {
                 </ul>
             </nav>
             <form onSubmit={handleSubmit}>
-                <input type="text" id="game-by-id-input" placeholder="Enter Id:" onChange={(e) => setSearchId(e.target.value)}></input>
-                <input type="submit" value="Submit"></input>
+                <input type="text" id="search-game-by-id-input" placeholder="Enter Id:" onChange={(e) => setSearchId(e.target.value)}></input>
+                <input type="submit" id="search-game-by-id-btn" value="Submit"></input>
             </form>
-            <article>
-                    <p>Id:{searchId.id}</p>
-                    <p>Title:{searchId.title}</p>
-                    <p>platform:{searchId.platform}</p>
-                    <img src={`https://localhost:7088/images/${encodeURIComponent(searchId.image)}`} className="fluid-image" alt={searchId.image} ></img>
-            </article>
+            {result}
         </>
     )
 }
