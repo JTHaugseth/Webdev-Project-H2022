@@ -5,16 +5,12 @@ import QuizMenu from "./Quiz";
 
 const Menu = () => {
     return (
-    <> 
-    <nav>
-        <ul>
-            <Link to ="/"><h1>Electric Games</h1></Link>
-            <Link to="/GamesCollection"><input type="button" value="Games Collection"></input></Link>    
-            <Link to="/CharactersCollection"><input type="button" value="Characters Collection"></input></Link> 
-            <Link to="/Quiz"><input type="button" value="Quiz"></input></Link> 
-        </ul>
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <Link to ="/"><h1 className="navbar-brand">Electric Games</h1></Link>
+            <Link to="/GamesCollection"><a className="dropdown-item">Games Collection</a></Link>    
+            <Link to="/CharactersCollection"><a className="dropdown-item">Character Collection</a></Link> 
+            <Link to="/Quiz"><a className="dropdown-item">Quiz</a></Link> 
     </nav>
-    </>
     )
 };
 
