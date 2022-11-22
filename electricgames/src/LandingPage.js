@@ -1,7 +1,7 @@
 import {BrowserRouter, Routes, Route, Link} from "react-router-dom";
 import GamesCollection from "./GamesCollection";
 import CharactersMenu from "./CharactersCollection";
-import MainPageContent from "./Components/MainPageComponent";
+import MainPageContent from "./Components/MainpageComponents/MainPageComponent";
 import QuizMenu from "./Quiz";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -11,9 +11,9 @@ const Menu = () => {
         <>
     <nav className="navbar navbar-expand-lg">
             <Link to ="/"><h1 className="navbar-brand">Electric Games</h1></Link>
-            <Link to="/GamesCollection"><a className="dropdown-item">Games Collection</a></Link>    
-            <Link to="/CharactersCollection"><a className="dropdown-item">Character Collection</a></Link> 
-            <Link to="/Quiz"><a className="dropdown-item">Quiz</a></Link> 
+            <Link to="/GamesCollection"><a className="nav-link">Games Collection</a></Link>    
+            <Link to="/CharactersCollection"><a className="nav-link">Character Collection</a></Link> 
+            <Link to="/Quiz"><a className="nav-link">Quiz</a></Link> 
     </nav>
 
         <MainPageContent />

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "yN0jhdJNl1Z9+tNuRKmrJ1TI527kAar8j9OiJOlQ1bA=",
+  "Hash": "hDt/NgngAEjQFJWc1NnTn3OBYnkfzzPPrFua19K7K2w=",
   "Source": "electricgamesApi",
   "BasePath": "_content/electricgamesApi",
   "Mode": "Default",
@@ -304,40 +304,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\Octane.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricgamesApi\\wwwroot\\images\\profilepicture1.JPG",
-      "SourceId": "electricgamesApi",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricgamesApi\\wwwroot\\",
-      "BasePath": "_content/electricgamesApi",
-      "RelativePath": "images/profilepicture1.JPG",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\profilepicture1.JPG"
-    },
-    {
-      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricgamesApi\\wwwroot\\images\\profilepicture2.JPG",
-      "SourceId": "electricgamesApi",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricgamesApi\\wwwroot\\",
-      "BasePath": "_content/electricgamesApi",
-      "RelativePath": "images/profilepicture2.JPG",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\profilepicture2.JPG"
     },
     {
       "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricgamesApi\\wwwroot\\images\\Rocket League.jpg",

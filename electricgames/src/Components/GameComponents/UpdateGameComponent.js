@@ -16,10 +16,10 @@ const [updatedGame, setUpdatedGame] = useState([]);
 useEffect(() => {
     setUpdatedGame({
         id: updatedGame.id,
-        title: title ? title: updatedGame.title,
-        platform: platform ? platform: updatedGame.platform,
-        releaseYear: releaseYear ? releaseYear: updatedGame.releaseYear,
-        image: image ? image: updatedGame.image})
+        title: title ? title : updatedGame.title,
+        platform: platform ? platform : updatedGame.platform,
+        releaseYear: releaseYear ? releaseYear : updatedGame.releaseYear,
+        image: image ? image : updatedGame.image})
 }, [id, title, platform, releaseYear, image]);
 
 
@@ -76,7 +76,7 @@ return(
                 <p>Fill in the fields you want to update</p>
                 <p>Game ID has to be 24 digits</p>
                 <input type="text" id="update-game-id" value={updatedGame.id} onChange={(e)=>setUpdatedId(e.target.value)}></input>
-                <input type="text" id="update-game-title" value={updatedGame.title} onChange={(e)=>setUpdatedTitle(e.target.value)}></input>
+                <input type="text" id="update-game-title" value={updatedGame.title}  onChange={(e)=>setUpdatedTitle(e.target.value)}></input>
                 <input type="text" id="update-game-platform" value={updatedGame.platform} onChange={(e)=>setUpdatedPlatform(e.target.value)}></input>
                 <input type="text" id="update-game-release-year" value={updatedGame.releaseYear} onChange={(e)=>setUpdatedReleaseYear(e.target.value)}></input>           
                 <input type="file" id="update-game-image" onChange={handleFiles}></input>
