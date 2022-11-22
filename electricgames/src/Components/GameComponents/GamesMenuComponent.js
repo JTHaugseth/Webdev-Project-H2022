@@ -5,15 +5,29 @@ const GamesMenuComponent = () => {
         <>
         <div className="container">
         <div className="row">
-            <div className="col"><h4>Show All Games</h4>
-            
+            <div id="pageblocks" className="col-sm-6 col-md-6"><h4 className="border-bottom border-info">Show All Games</h4>
+            <p>Show all * is a an application developed to show you all the current</p>
             </div>
             
-            <div className="col"><h4>Show all Games</h4></div>
-            <div className="col"><h4>Search Game By Title</h4></div>
-            <div className="col"><h4>Add New Game</h4></div>
-            <div className="col"><h4>Update Game</h4></div>
-            <div className="col"><h4>Delete Game</h4></div>
+            <div id="pageblocks" className="col-sm-6 col-md-6"><h4>Search by id</h4>
+            <p></p>
+            </div>
+            
+            <div id="pageblocks" className="col-sm-6 col-md-6"><h4>Search by title</h4>
+            <p></p>
+            </div>
+       
+            <div id="pageblocks" className="col-sm-6 col-md-6"><h4>Add new *</h4>
+            <p></p>
+            </div>
+            
+            <div id="pageblocks" className="col-sm-6 col-md-6"><h4>Update *</h4>
+            <p></p>
+            </div>
+           
+            <div id="pageblocks" className="col-sm-6 col-md-6"><h4>Delete *</h4>
+            <p></p>
+            </div>
             
             
 

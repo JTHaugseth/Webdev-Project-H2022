@@ -16,11 +16,11 @@ const GetGameByTitleComponent = () => {
 
     const handleSubmit = (event) => { 
         event.preventDefault();
-        if(searchTitle){
+        if(searchTitle.length == 0){
             setResult(
                 <div></div>
             );
-           alert("The title cannot be empty")
+           alert("The title does not exist")
             
         }else{
           setResult( 
