@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 
 
-const GetGameByTitleComponent = () => {
+const GetGmByTitle = () => {
 
     const [searchTitle, setSearchTitle] = useState("");
     const [result, setResult] = useState("")
@@ -20,7 +20,7 @@ const GetGameByTitleComponent = () => {
             setResult(
                 <div></div>
             );
-           alert("The title does not exist")
+            alert("The title does not exist")
             
         }else{
           setResult( 
@@ -35,9 +35,7 @@ const GetGameByTitleComponent = () => {
                 </article></div>
         );   
         }
-         
     };
-
     return (
         <>
             <div className="container">
@@ -53,4 +51,4 @@ const GetGameByTitleComponent = () => {
     )
 };
 
-export default GetGameByTitleComponent;
+export default GetGmByTitle;

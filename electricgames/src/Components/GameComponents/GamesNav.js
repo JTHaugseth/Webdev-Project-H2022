@@ -21,7 +21,7 @@ export default class GamesNav extends Component {
                     </ul>
                 </nav>
                 <div>
-                <Link className="pagesection" to="/GamesCollection">Game Collection</Link>  
+                    <h4 className="pagesection">Game Collection</h4>
                 </div>
             </>
         )

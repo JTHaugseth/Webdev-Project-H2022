@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 
 
-const DeleteGameComponent = () => {
+const DeleteGm = () => {
 
     const [deleteId, setDeleteId] = useState("");
 const [result, setResult] = useState("");
@@ -44,4 +44,4 @@ return(
 );
 }
 
-export default DeleteGameComponent;
+export default DeleteGm;

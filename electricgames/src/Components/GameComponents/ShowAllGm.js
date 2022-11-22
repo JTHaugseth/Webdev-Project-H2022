@@ -2,14 +2,14 @@ import {Routes, Route, Link} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
 
-const ShowAllGamesComponent = () => {
+const ShowAllGm = () => {
     const [games, setGames] = useState([]);
 
     useEffect(() => {
         axios.get(`https://localhost:7088/games/Games`)
         .then(response=>setGames(response.data))
         .catch(error=>console.log(error))
-    });
+    }, []);
 
 
     return (
@@ -20,7 +20,7 @@ const ShowAllGamesComponent = () => {
         {games.map(game=>{
                 return(
                     
-                    <article className="col-md-5 col-sm-6">
+                    <article key={game.id} className="col-md-5 col-sm-6">
                         <h4 className="title">Title: {game.title}</h4>
                         <img src={`https://localhost:7088/images/${encodeURIComponent(game.image)}`} className="img-fluid" alt={game.image}></img>
                         <p className="id">Id: {game.id}</p>
@@ -33,4 +33,4 @@ const ShowAllGamesComponent = () => {
     );
 };
 
-export default ShowAllGamesComponent;
+export default ShowAllGm;

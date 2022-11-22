@@ -1,20 +1,20 @@
 import {Routes, Route} from "react-router-dom";
 import React from "react";
 import GamesNav from "./Components/GameComponents/GamesNav";
-import ShowAllGamesComponent from "./Components/GameComponents/ShowAllGamesComponent";
-import GetGameByIdComponent from "./Components/GameComponents/GetGameByIdComponent";
-import GetGameByTitleComponent from "./Components/GameComponents/GetGameByTitleComponent";
-import AddNewGameComponent from  "./Components/GameComponents/AddNewGameComponent";
-import UpdateGameComponent from "./Components/GameComponents/UpdateGameComponent";
-import DeleteGameComponent from "./Components/GameComponents/DeleteGameComponent";
-import GamesMenuComponent from "./Components/GameComponents/GamesMenuComponent";
+import ShowAllGm from "./Components/GameComponents/ShowAllGm";
+import GetGmById from "./Components/GameComponents/GetGmById";
+import GetGmByTitle from "./Components/GameComponents/GetGmByTitle";
+import AddNewGm from  "./Components/GameComponents/AddNewGm";
+import UpdateGm from "./Components/GameComponents/UpdateGm";
+import DeleteGm from "./Components/GameComponents/DeleteGm";
+import SharedMenu from "./Components/MainpageComponents/SharedMenu";
 
 // Games Menu
 const GamesMenu = () => {
     return (
     <>
         <GamesNav />
-       <GamesMenuComponent /> 
+       <SharedMenu /> 
     </>
     )
 }
@@ -25,7 +25,7 @@ const ShowAllGames = () => {
    return(
     <>
         <GamesNav />
-        <ShowAllGamesComponent/>
+        <ShowAllGm/>
     </>
     );
 }
@@ -35,7 +35,7 @@ const GetGameById = () => {
     return (
     <>
         <GamesNav />
-        <GetGameByIdComponent />
+        <GetGmById />
     </>
     );
 }
@@ -46,7 +46,7 @@ const GetGameByTitle = () => {
   return (
     <>
         <GamesNav />
-        <GetGameByTitleComponent />
+        <GetGmByTitle />
     </>
   );
 }
@@ -55,7 +55,7 @@ const AddNewGame = () => {
     return (
     <>
         <GamesNav />
-        <AddNewGameComponent />
+        <AddNewGm />
     </>
     );
 }
@@ -65,7 +65,7 @@ const AddNewGame = () => {
    return (
     <>
         <GamesNav />
-        <UpdateGameComponent />
+        <UpdateGm />
     </>
    );
 }
@@ -75,7 +75,7 @@ const AddNewGame = () => {
     return (
     <>
         <GamesNav />
-        <DeleteGameComponent />
+        <DeleteGm />
     </>
     );
 }

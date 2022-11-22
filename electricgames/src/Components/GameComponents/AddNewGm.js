@@ -2,7 +2,7 @@ import {Routes, Route, Link} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
 
-const AddNewGameComponent = () => {
+const AddNewGm = () => {
 
 const [id, setId] = useState("");
 const [title, setGameTitle] = useState("");
@@ -11,6 +11,7 @@ const [releaseYear, setReleaseYear] = useState("");
 const [selectedImage, setSelectedImage] = useState("");
 const [image, setImage] = useState("");
 const [newGame, setNewGame] = useState([]);
+const [result, setResult] = useState("");
 
 useEffect(() =>{
     setNewGame({id, title, platform, releaseYear, image})
@@ -18,7 +19,11 @@ useEffect(() =>{
 
 async function handleSubmit (event) {
     event.preventDefault()
+    if(id.length == 24 || id.length == 0) {
     await postNewGame(newGame, selectedImage);
+    } else {
+        alert("ID has to be 24 characters or numbers long");
+    }
 }
 const handleFiles = (event) => {
     setSelectedImage(event.target.files[0]);
@@ -47,6 +52,11 @@ const postNewGame = async(newGame, selectedImage) => {
         } catch (error) {
             console.log(error);
         }}
+        setResult(
+            <div className="pagetitle">
+                <p>{`${newGame.title}`} has been added!</p>
+            </div>
+        )
 }
 
 return(
@@ -63,15 +73,14 @@ return(
                 <input type="text" id="add-game-release-year" placeholder="Enter a release year" onChange={(e)=>setReleaseYear(e.target.value)}></input>
                 <input type="submit" className="btn btn-success" id="add-game-btn" value="Submit"></input>           
                 <input type="file" id="add-game-image"  onChange={handleFiles}></input>
-                
             </article>
-           
-            </div>
-                       
+            </div>              
         </form>
+        {result}
         </div>
+        
     </>
 );
 }
 
-export default AddNewGameComponent;
+export default AddNewGm;
