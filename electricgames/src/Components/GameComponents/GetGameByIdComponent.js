@@ -17,7 +17,7 @@ const GetGameByIdComponent = () => {
 
     const handleSubmit = (event) => { 
         event.preventDefault();
-        if(searchId.length != 24){
+        if(searchId.id == undefined){
             setResult(
                 <div></div>
             );
@@ -34,7 +34,6 @@ const GetGameByIdComponent = () => {
                         <p className="release-year">Release year: {searchId.releaseYear}</p>
                     </article></div>
                     );
-            
         }
         
          

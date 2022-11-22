@@ -39,14 +39,12 @@ const postUpdatedGame = async () => {
     const fd = new FormData();
     fd.append("file", updatedImage);
     try{
-        const response = await axios({
-             method: "post",
-             url: `https://localhost:7088/games/Games/image`,
-             data: fd,
-             headers:{
-                "Content-type": "multipart/form-data"
-             }
-        })
+        await axios({
+            method: "post",
+            url: `https://localhost:7088/games/Games/image`,
+            data: fd,
+            headers: {"Content-Type": "multipart/form-data"}
+        });
     } catch(error) {
         console.log(error)
     }
@@ -75,10 +73,10 @@ return(
                 <br></br>
                 <p>Fill in the fields you want to update</p>
                 <p>Game ID has to be 24 digits</p>
-                <input type="text" id="update-game-id" value={updatedGame.id} onChange={(e)=>setUpdatedId(e.target.value)}></input>
-                <input type="text" id="update-game-title" value={updatedGame.title}  onChange={(e)=>setUpdatedTitle(e.target.value)}></input>
-                <input type="text" id="update-game-platform" value={updatedGame.platform} onChange={(e)=>setUpdatedPlatform(e.target.value)}></input>
-                <input type="text" id="update-game-release-year" value={updatedGame.releaseYear} onChange={(e)=>setUpdatedReleaseYear(e.target.value)}></input>           
+                <input type="text" id="update-game-id" placeholder={updatedGame.id} onChange={(e)=>setUpdatedId(e.target.value)}></input>
+                <input type="text" id="update-game-title" placeholder={updatedGame.title}  onChange={(e)=>setUpdatedTitle(e.target.value)}></input>
+                <input type="text" id="update-game-platform" placeholder={updatedGame.platform} onChange={(e)=>setUpdatedPlatform(e.target.value)}></input>
+                <input type="text" id="update-game-release-year" placeholder={updatedGame.releaseYear} onChange={(e)=>setUpdatedReleaseYear(e.target.value)}></input>           
                 <input type="file" id="update-game-image" onChange={handleFiles}></input>
                 <input type="button" className="btn btn-success" id="update-game-btn" value="Update" onClick={postUpdatedGame}></input>
             </article>

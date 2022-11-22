@@ -11,9 +11,9 @@ const Menu = () => {
         <>
     <nav className="navbar navbar-expand-lg">
             <Link to ="/"><h1 className="navbar-brand">Electric Games</h1></Link>
-            <Link to="/GamesCollection"><a className="nav-link">Games Collection</a></Link>    
-            <Link to="/CharactersCollection"><a className="nav-link">Character Collection</a></Link> 
-            <Link to="/Quiz"><a className="nav-link">Quiz</a></Link> 
+            <Link className="nav-link" to="/GamesCollection">Game Collection</Link>    
+            <Link className="nav-link" to="/CharactersCollection">Character Collection</Link> 
+            <Link className="nav-link" to="/Quiz">Quiz</Link> 
     </nav>
 
         <MainPageContent />

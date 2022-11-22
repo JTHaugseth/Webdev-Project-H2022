@@ -8,19 +8,18 @@ export default class CharacterNav extends Component {
         return (
             <>
                 <nav className="navbar navbar-expand-lg">
-                        <Link to="/"><h1 className="navbar-brand">Ha en fin dag!</h1></Link>
+                        <Link to="/"><h1 className="navbar-brand">Electric Games</h1></Link>
                     <ul className="navbar-nav">
-                        <Link to="/"><a className="nav-link">Show all characters</a></Link>
-                        <Link to="/"><a className="nav-link">Search characters by ID</a></Link>
-                        <Link to="/"><a className="nav-link">Search characters by name</a></Link>
-                        <Link to="/"><a className="nav-link">Add new character</a></Link>
-                        <Link to="/"><a className="nav-link">Update character</a></Link>
-                        <Link to="/"><a className="nav-link">Delete character</a></Link>
+                        <Link className="nav-link" to="/">Show all characters</Link>
+                        <Link className="nav-link" to="/">Search characters by ID</Link>
+                        <Link className="nav-link" to="/">Search characters by name</Link>
+                        <Link className="nav-link" to="/">Add new character</Link>
+                        <Link className="nav-link" to="/">Update character</Link>
+                        <Link className="nav-link" to="/">Delete character</Link>
                     </ul>
                 </nav>
                 <div>
                     <h4 className="pagesection">Character Collection</h4>
-                    <FontAwesomeIcon icon="fa-solid fa-gamepad" />
                 </div>
             </>
         )

@@ -16,7 +16,7 @@ const GetGameByTitleComponent = () => {
 
     const handleSubmit = (event) => { 
         event.preventDefault();
-        if(searchTitle.length == 0){
+        if(searchTitle.title == undefined){
             setResult(
                 <div></div>
             );

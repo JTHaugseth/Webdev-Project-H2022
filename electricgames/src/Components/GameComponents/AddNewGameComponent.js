@@ -34,18 +34,19 @@ const postNewGame = async(newGame, selectedImage) => {
     }).then((response)=>{console.log(response)})
     .catch(error => {console.log(error)});
 
-    const fd = new FormData();
-    fd.append("file", selectedImage);
-    try {
-        await axios({
-            method: "post",
-            url: `https://localhost:7088/games/Games/image`,
-            data: fd,
-            headers: {"Content-Type": "multipart/form-data"}
-        });
-    } catch (error) {
-        console.log(error);
-    }
+    if(selectedImage.length == 0) {} else { 
+        const fd = new FormData();
+        fd.append("file", selectedImage);
+        try {
+            await axios({
+                method: "post",
+                url: `https://localhost:7088/games/Games/image`,
+                data: fd,
+                headers: {"Content-Type": "multipart/form-data"}
+            });
+        } catch (error) {
+            console.log(error);
+        }}
 }
 
 return(
@@ -55,6 +56,7 @@ return(
         <h1 className="pagetitle">Add new game</h1>
         <div className="row">
             <article id="form" className="col-md-11 col-sm-6">
+                <p>Game ID can be auto-generated if you leave it empty</p>
                 <input type="text" id="add-game-id" placeholder="Enter a game id" onChange={(e)=>setId(e.target.value)}></input>
                 <input type="text" id="add-game-title" placeholder="Enter a game title" onChange={(e)=>setGameTitle(e.target.value)}></input>
                 <input type="text" id="add-game-platform" placeholder="Enter a platform" onChange={(e)=>setPlatform(e.target.value)}></input>

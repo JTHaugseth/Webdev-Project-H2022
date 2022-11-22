@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hDt/NgngAEjQFJWc1NnTn3OBYnkfzzPPrFua19K7K2w=",
+  "Hash": "Te2YvSrHNqfabGUmxZTrB2rRfQSh4lUBvzVTCt8TlUw=",
   "Source": "electricgamesApi",
   "BasePath": "_content/electricgamesApi",
   "Mode": "Default",
@@ -289,6 +289,23 @@
       "OriginalItemSpec": "wwwroot\\images\\minecraft2.jpg"
     },
     {
+      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricgamesApi\\wwwroot\\images\\Netflix-logo.jpg",
+      "SourceId": "electricgamesApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricgamesApi\\wwwroot\\",
+      "BasePath": "_content/electricgamesApi",
+      "RelativePath": "images/Netflix-logo.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Netflix-logo.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricgamesApi\\wwwroot\\images\\Octane.jpg",
       "SourceId": "electricgamesApi",
       "SourceType": "Discovered",
@@ -321,6 +338,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\Rocket League.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricgamesApi\\wwwroot\\images\\Skjermbilde.JPG",
+      "SourceId": "electricgamesApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricgamesApi\\wwwroot\\",
+      "BasePath": "_content/electricgamesApi",
+      "RelativePath": "images/Skjermbilde.JPG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Skjermbilde.JPG"
     },
     {
       "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricgamesApi\\wwwroot\\images\\Skyrim.jpg",
