@@ -9,7 +9,8 @@ import UpdateGm from "./Components/GameComponents/UpdateGm";
 import DeleteGm from "./Components/GameComponents/DeleteGm";
 import SharedMenu from "./Components/MainpageComponents/SharedMenu";
 
-// Games Menu
+//Declares routes, and builds the website with its components
+
 const GamesMenu = () => {
     return (
     <>
@@ -19,8 +20,6 @@ const GamesMenu = () => {
     )
 }
 
-
-// SHOW ALL GAMES
 const ShowAllGames = () => {
    return(
     <>
@@ -30,7 +29,6 @@ const ShowAllGames = () => {
     );
 }
 
-//Get by ID
 const GetGameById = () => {
     return (
     <>
@@ -40,8 +38,6 @@ const GetGameById = () => {
     );
 }
 
-
-// GET BY TITLE
 const GetGameByTitle = () => {
   return (
     <>
@@ -50,7 +46,7 @@ const GetGameByTitle = () => {
     </>
   );
 }
-// ADD NEW GAME
+
 const AddNewGame = () => {
     return (
     <>
@@ -60,7 +56,6 @@ const AddNewGame = () => {
     );
 }
 
-// UPDATE GAME
  const UpdateGame = () => {
    return (
     <>
@@ -70,7 +65,6 @@ const AddNewGame = () => {
    );
 }
 
-// DELETE GAME
  const DeleteGame = () => {
     return (
     <>
@@ -80,7 +74,7 @@ const AddNewGame = () => {
     );
 }
 
- //Export
+ 
 
 export default function GamesCollection () {
 

@@ -1,22 +1,24 @@
-import {Routes, Route, Link} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import LHUrl from "../LHUrl"
 
+//Add a new character component
 const AddnewChr = () => {
 
 const [id, setId] = useState("");
-const [name, setGameName] = useState("");
+const [name, setCharacterName] = useState("");
 const [game, setGame] = useState("");
 const [selectedImage, setSelectedImage] = useState("");
 const [image, setImage] = useState("");
 const [newCharacter, setNewCharacter] = useState([]);
 const [result, setResult] = useState("");
 
+//Adds the info to a character object
 useEffect(() =>{
     setNewCharacter({id, name, game, image})
 },[id, name, game, image])
 
+//Validates that the id is 24 or 0 and posts the character
 async function handleSubmit (event) {
     event.preventDefault()
     if(id.length == 24 || id.length == 0) {
@@ -25,11 +27,14 @@ async function handleSubmit (event) {
         alert("ID has to be 24 characters or numbers long");
     }
 }
+
+//Gets the image-file and the image name
 const handleFiles = (event) => {
     setSelectedImage(event.target.files[0]);
     setImage(event.target.files[0].name);
 }
 
+//Posts the character and checks if user has added a picture and posts it
 const postNewCharacter = async(newCharacter, selectedImage) => {
     await axios.post(`${LHUrl}/gamecharacters/GameCharacters`, JSON.stringify(newCharacter),
     {
@@ -67,11 +72,11 @@ return(
                 <div className="row">
                 <article id="form" className="col-md-11 col-sm-6">
                     <p>Character ID can be auto-generated if you leave it empty</p>
-                    <input type="text" id="add-game-id" placeholder="Enter a game id" onChange={(e)=>setId(e.target.value)}></input>
-                    <input type="text" id="add-game-title" placeholder="Enter a game title" onChange={(e)=>setGameName(e.target.value)}></input>
-                    <input type="text" id="add-game-platform" placeholder="Enter a platform" onChange={(e)=>setGame(e.target.value)}></input>
-                    <input type="submit" className="btn btn-success" id="add-game-btn" value="Submit"></input>           
-                    <input type="file" id="add-game-image"  onChange={handleFiles}></input>
+                    <input type="text" id="add-character-id" placeholder="Enter character id" onChange={(e)=>setId(e.target.value)}></input>
+                    <input type="text" id="add-character-name" placeholder="Enter character name" onChange={(e)=>setCharacterName(e.target.value)}></input>
+                    <input type="text" id="add-character-game" placeholder="Enter character game" onChange={(e)=>setGame(e.target.value)}></input>
+                    <input type="submit" className="btn btn-success" id="add-character-btn" value="Submit"></input>           
+                    <input type="file" id="add-character-image"  onChange={handleFiles}></input>
                 </article>
             </div>              
         </form>

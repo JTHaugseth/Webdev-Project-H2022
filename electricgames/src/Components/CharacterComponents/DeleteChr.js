@@ -1,15 +1,15 @@
-import {Routes, Route, Link} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import LHUrl from "../LHUrl"
 
-
+//Detete character component
 const DeleteChr = () => {
 
 const [deleteId, setDeleteId] = useState("");
 const [result, setResult] = useState("");
 const [resultName, setResultName] = useState("");
 
+//Gets the character by id and deletes by id
 useEffect(() => {
     axios.get(`${LHUrl}/gamecharacters/GameCharacters/${deleteId}`)
     .then(response=>setResultName(response.data.title))
@@ -19,6 +19,7 @@ useEffect(() => {
     .catch(error => {console.log(error)});
 });
 
+//Prints what game has been deleted
 const handleSubmit = (event) => {
     event.preventDefault();
     setResult(

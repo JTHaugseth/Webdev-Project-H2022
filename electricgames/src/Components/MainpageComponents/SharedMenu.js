@@ -18,8 +18,8 @@ const SharedMenu = () => {
 
             </div>
             
-            <div id="pageblocks" className="col-sm-6 col-md-6"><h4 className="borderbottom">Search by title</h4>
-                <p>Search by title is an application developed to show you the items based on the title 
+            <div id="pageblocks" className="col-sm-6 col-md-6"><h4 className="borderbottom">Search by title/name</h4>
+                <p>Search by title/name is an application developed to show you the items based on the title 
                 from the database. Enter the application with the link in the navbar.
                 </p>
             </div>

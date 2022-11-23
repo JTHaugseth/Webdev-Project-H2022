@@ -1,14 +1,15 @@
-import {Routes, Route, Link} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import LHUrl from "../LHUrl"
 
+//Get all characters component
 const ShowAllChr = () => {
-    const [character, setcharacter] = useState([]);
+    const [character, setCharacter] = useState([]);
 
+    //Gets all characters
     useEffect(() => {
         axios.get(`${LHUrl}/gamecharacters/GameCharacters`)
-        .then(response=>setGames(response.data))
+        .then(response=>setCharacter(response.data))
         .catch(error=>console.log(error))
     }, []);
 
@@ -18,7 +19,7 @@ const ShowAllChr = () => {
         <div className="container">
         <h1 className="pagetitle">Showing all characters</h1>
         <div className="row">
-        {games.map(game=>{
+        {character.map(character=>{
                 return(
                     
                     <article key={character.id} className="col-md-5 col-sm-6">
