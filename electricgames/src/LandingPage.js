@@ -2,7 +2,7 @@ import {BrowserRouter, Routes, Route, Link} from "react-router-dom";
 import GamesCollection from "./GamesCollection";
 import CharactersMenu from "./CharactersCollection";
 import MainPageContent from "./Components/MainpageComponents/MainPageComponent";
-import QuizMenu from "./Quiz";
+import QuizMenu from "./QuizCollection";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Menu = () => {
@@ -12,7 +12,7 @@ const Menu = () => {
             <Link to ="/"><h1 className="navbar-brand">Electric Games</h1></Link>
             <Link className="nav-link" to="/GamesCollection">Game Collection</Link>    
             <Link className="nav-link" to="/CharactersCollection">Character Collection</Link> 
-            <Link className="nav-link" to="/Quiz">Quiz</Link> 
+            <Link className="nav-link" to="/QuizCollection">Quiz</Link> 
     </nav>
 
         <MainPageContent />
@@ -28,7 +28,7 @@ export default function LandingPage(){
                 <Route exact path="/" element={<Menu/>}></Route>
                 <Route path="/GamesCollection/*" element={<GamesCollection/>}></Route>
                 <Route path="/CharactersCollection/*" element={<CharactersMenu/>}></Route>
-                <Route path="/Quiz" element={<QuizMenu/>}></Route>
+                <Route path="/QuizCollection/*" element={<QuizMenu/>}></Route>
             </Routes>
         </BrowserRouter>
     )

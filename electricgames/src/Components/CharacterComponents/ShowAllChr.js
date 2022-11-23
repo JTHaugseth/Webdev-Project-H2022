@@ -23,8 +23,8 @@ const ShowAllChr = () => {
                 return(
                     
                     <article key={character.id} className="col-md-5 col-sm-6">
-                        <h4 className="name">Name: {character.name}</h4>
-                        <img src={`${LHUrl}/images/${encodeURIComponent(character.image)}`} className="img-fluid" alt={character.image}></img>
+                        <h4 className="title">Name: {character.name}</h4>
+                        <img src={`${LHUrl}/images/${encodeURIComponent(character.image)}`} className="rounded mx-auto d-block" alt={character.image}></img>
                         <p className="id">Id: {character.id}</p>
                         <p className="game">Game: {character.game}</p>
                     </article>

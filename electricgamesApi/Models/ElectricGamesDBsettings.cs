@@ -7,4 +7,6 @@ public class ElectricGamesDBsettings {
     public string DataCollectionGames {get; set;} = null!;
 
     public string DataCollectionGameCharacters {get; set;} = null!;
+
+    public string DataCollectionQuiz {get; set;} = null!;
 }

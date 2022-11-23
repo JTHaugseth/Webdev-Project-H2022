@@ -22,7 +22,7 @@ const ShowAllGm = () => {
                 return(
                     <article key={game.id} className="col-md-5 col-sm-6">
                         <h4 className="title">Title: {game.title}</h4>
-                        <img src={`${LHUrl}/images/${encodeURIComponent(game.image)}`} className="img-fluid" alt={game.image}></img>
+                        <img src={`${LHUrl}/images/${encodeURIComponent(game.image)}`} className="rounded mx-auto d-block" alt={game.image}></img>
                         <p className="id">Id: {game.id}</p>
                         <p className="platform">Platform: {game.platform}</p>
                         <p className="release-year">Release year: {game.releaseYear}</p>

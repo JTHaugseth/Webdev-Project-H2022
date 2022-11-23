@@ -9,6 +9,7 @@ builder.Services.Configure<ElectricGamesDBsettings>(
 );
 builder.Services.AddSingleton<GamesService>();
 builder.Services.AddSingleton<GameCharactersService>();
+builder.Services.AddSingleton<QuizService>();
 
 builder.Services.AddCors(options => {
         options.AddPolicy("AllowAnyOrigin",
