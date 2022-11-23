@@ -2,8 +2,7 @@ import {Routes, Route, Link} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
 
-//add new game component
-const AddNewGm = () => {
+const AddnewChr = () => {
 
 const [id, setId] = useState("");
 const [title, setGameTitle] = useState("");
@@ -14,12 +13,10 @@ const [image, setImage] = useState("");
 const [newGame, setNewGame] = useState([]);
 const [result, setResult] = useState("");
 
-//sets new game object
 useEffect(() =>{
     setNewGame({id, title, platform, releaseYear, image})
 },[id, title, platform, releaseYear, image])
 
-//checks if id is valid and calls postNewGame
 async function handleSubmit (event) {
     event.preventDefault()
     if(id.length == 24 || id.length == 0) {
@@ -28,14 +25,11 @@ async function handleSubmit (event) {
         alert("ID has to be 24 characters or numbers long");
     }
 }
-
-//Gets the picture and its name
 const handleFiles = (event) => {
     setSelectedImage(event.target.files[0]);
     setImage(event.target.files[0].name);
 }
 
-//post newgame and image to the database and root images
 const postNewGame = async(newGame, selectedImage) => {
     await axios.post(`https://localhost:7088/games/Games`, JSON.stringify(newGame),
     {
@@ -69,10 +63,10 @@ return(
     <>
     <div className="container">
         <form onSubmit={handleSubmit}>
-        <h1 className="pagetitle">Add new game</h1>
+        <h1 className="pagetitle">Add new Character</h1>
         <div className="row">
             <article id="form" className="col-md-11 col-sm-6">
-                <p>Game ID can be auto-generated if you leave it empty</p>
+                <p>Character ID can be auto-generated if you leave it empty</p>
                 <input type="text" id="add-game-id" placeholder="Enter a game id" onChange={(e)=>setId(e.target.value)}></input>
                 <input type="text" id="add-game-title" placeholder="Enter a game title" onChange={(e)=>setGameTitle(e.target.value)}></input>
                 <input type="text" id="add-game-platform" placeholder="Enter a platform" onChange={(e)=>setPlatform(e.target.value)}></input>
@@ -89,4 +83,4 @@ return(
 );
 }
 
-export default AddNewGm;
+export default AddnewChr;

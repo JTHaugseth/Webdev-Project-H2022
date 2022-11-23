@@ -2,19 +2,16 @@ import {Routes, Route, Link} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
 
-//Get game by id component
-const GetGmById = () => {
+const GetChrById = () => {
     const [searchId, setSearchId] = useState("");
     const [result, setResult] = useState("");
     
-    //gets the game with id
     useEffect(() => {
         axios.get(`https://localhost:7088/games/Games/${searchId}`)
         .then(response=>setSearchId(response.data))
         .catch(error=>console.log(error))
     });
 
-    // when submitted validated that the id exists in the database and prints it
     const handleSubmit = (event) => { 
         event.preventDefault();
         
@@ -41,7 +38,7 @@ const GetGmById = () => {
     return (
         <>
            <div className="container">
-                <h1 className="pagetitle">Search game by ID</h1>
+                <h1 className="pagetitle">Search character by ID</h1>
                 <form onSubmit={handleSubmit}>
                     <div className="input-background">
                         <input type="text" id="search-game-by-id-input" placeholder="Enter Id:" onChange={(e) => setSearchId(e.target.value)}></input>
@@ -54,4 +51,4 @@ const GetGmById = () => {
     )
 }
 
-export default GetGmById;
+export default GetChrById;

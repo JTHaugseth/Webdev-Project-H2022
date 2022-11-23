@@ -2,14 +2,13 @@ import {Routes, Route, Link} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
 
-//Delete game component
-const DeleteGm = () => {
 
-const [deleteId, setDeleteId] = useState("");
+const DeleteChr = () => {
+
+    const [deleteId, setDeleteId] = useState("");
 const [result, setResult] = useState("");
 const [resultName, setResultName] = useState("");
 
-//Gets the game by id and deletes it by id
 useEffect(() => {
     axios.get(`https://localhost:7088/games/Games/${deleteId}`)
     .then(response=>setResultName(response.data.title))
@@ -19,7 +18,6 @@ useEffect(() => {
     .catch(error => {console.log(error)});
 });
 
-//Prints the game title of the  deleted game 
 const handleSubmit = (event) => {
     event.preventDefault();
     setResult(
@@ -33,7 +31,7 @@ const handleSubmit = (event) => {
 return(
     <>
     <div className="container">
-        <h1 className="pagetitle">Delete game</h1>
+        <h1 className="pagetitle">Delete Character</h1>
         <form onSubmit={handleSubmit}>
             <div className="input-background">
                 <input type="text" id="delete-game" placeholder="Id" onChange={(e)=>setDeleteId(e.target.value)}></input>
@@ -46,4 +44,4 @@ return(
 );
 }
 
-export default DeleteGm;
+export default DeleteChr;

@@ -2,8 +2,7 @@ import {Routes, Route, Link} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
 
-//update game component
-const UpdateGm = () => {
+const UpdateChr = () => {
 
 const [id, setUpdatedId] = useState("");
 const [title, setUpdatedTitle] = useState("");
@@ -14,7 +13,6 @@ const [updatedImage, setUpdatedImage] = useState("");
 const [updatedGame, setUpdatedGame] = useState([]);
 const [result, setResult] = useState("");
 
-//creates the updated game
 useEffect(() => {
     setUpdatedGame({
         id: updatedGame.id,
@@ -24,20 +22,18 @@ useEffect(() => {
         image: image ? image : updatedGame.image})
 }, [id, title, platform, releaseYear, image]);
 
-//sets the updated picture and its name
+
 const handleFiles = (event) => {
     setUpdatedImageName(event.target.files[0].name);
     setUpdatedImage(event.target.files[0]);
 }
 
-//gets the game using id
 const getGame = async () => {
     await axios.get(`https://localhost:7088/games/Games/${id}`)
     .then((response)=>setUpdatedGame(response.data))
     .catch(error=>console.log(error));
 }
 
-//posts the game and prints what game has been updated
 const postUpdatedGame = async () => {
     if (updatedImage.length == 0) {} else {
         const fd = new FormData();
@@ -75,14 +71,14 @@ return(
     <>
 
     <div className="container">
-        <h1 className="pagetitle">Update game</h1>
+        <h1 className="pagetitle">Update character</h1>
         <div className="row">
             <article id="form">
                 <div className="col-lg-12 col-md-12">
-                <p>What game would you like to update?  * Requires game ID</p>
+                <p>Which character would you like to update?  * Requires game ID</p>
                 <input type="text" id="update-game-id" placeholder="Game ID" onChange={(e)=>setUpdatedId(e.target.value)}></input>
                
-                <button className="btn btn-info" id="get-game-btn" onClick={getGame}>Get Game</button>
+                <button className="btn btn-info" id="get-game-btn" onClick={getGame}>Get character</button>
                 <p>Fill in the fields you want to update</p>
                 </div>
                 <div className="col-lg-4 col-md-4">
@@ -104,4 +100,4 @@ return(
 );
 }
 
-export default UpdateGm;
+export default UpdateChr;

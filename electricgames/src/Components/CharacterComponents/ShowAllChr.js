@@ -2,11 +2,9 @@ import {Routes, Route, Link} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
 
-//Shows all games 
-const ShowAllGm = () => {
+const ShowAllChr = () => {
     const [games, setGames] = useState([]);
 
-    //gets all the games in an array
     useEffect(() => {
         axios.get(`https://localhost:7088/games/Games`)
         .then(response=>setGames(response.data))
@@ -17,7 +15,7 @@ const ShowAllGm = () => {
     return (
     <>
         <div className="container">
-        <h1 className="pagetitle">Showing all games</h1>
+        <h1 className="pagetitle">Showing all characters</h1>
         <div className="row">
         {games.map(game=>{
                 return(
@@ -35,4 +33,4 @@ const ShowAllGm = () => {
     );
 };
 
-export default ShowAllGm;
+export default ShowAllChr;

@@ -28,7 +28,7 @@ export default function LandingPage(){
             <Routes>
                 <Route exact path="/" element={<Menu/>}></Route>
                 <Route path="/GamesCollection/*" element={<GamesCollection/>}></Route>
-                <Route path="/CharactersCollection" element={<CharactersMenu/>}></Route>
+                <Route path="/CharactersCollection/*" element={<CharactersMenu/>}></Route>
                 <Route path="/Quiz" element={<QuizMenu/>}></Route>
             </Routes>
         </BrowserRouter>
