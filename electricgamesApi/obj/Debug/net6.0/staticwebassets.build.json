@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Te2YvSrHNqfabGUmxZTrB2rRfQSh4lUBvzVTCt8TlUw=",
+  "Hash": "7WbBeoxuvls2rLP7lDJiVT29qVLHXgkzBW2hmxDoWZg=",
   "Source": "electricgamesApi",
   "BasePath": "_content/electricgamesApi",
   "Mode": "Default",
@@ -321,6 +321,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\Octane.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricgamesApi\\wwwroot\\images\\profilepicture1.JPG",
+      "SourceId": "electricgamesApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricgamesApi\\wwwroot\\",
+      "BasePath": "_content/electricgamesApi",
+      "RelativePath": "images/profilepicture1.JPG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\profilepicture1.JPG"
     },
     {
       "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Eksamen-Webutvikling\\electricgamesApi\\wwwroot\\images\\Rocket League.jpg",
