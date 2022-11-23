@@ -1,12 +1,13 @@
 import {Routes, Route, Link} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
+import LHUrl from "../LHUrl"
 
 const ShowAllChr = () => {
-    const [games, setGames] = useState([]);
+    const [character, setcharacter] = useState([]);
 
     useEffect(() => {
-        axios.get(`https://localhost:7088/games/Games`)
+        axios.get(`${LHUrl}/gamecharacters/GameCharacters`)
         .then(response=>setGames(response.data))
         .catch(error=>console.log(error))
     }, []);
@@ -20,12 +21,11 @@ const ShowAllChr = () => {
         {games.map(game=>{
                 return(
                     
-                    <article key={game.id} className="col-md-5 col-sm-6">
-                        <h4 className="title">Title: {game.title}</h4>
-                        <img src={`https://localhost:7088/images/${encodeURIComponent(game.image)}`} className="img-fluid" alt={game.image}></img>
-                        <p className="id">Id: {game.id}</p>
-                        <p className="platform">Platform: {game.platform}</p>
-                        <p className="release-year">Release year: {game.releaseYear}</p>
+                    <article key={character.id} className="col-md-5 col-sm-6">
+                        <h4 className="name">Name: {character.name}</h4>
+                        <img src={`${LHUrl}/images/${encodeURIComponent(character.image)}`} className="img-fluid" alt={character.image}></img>
+                        <p className="id">Id: {character.id}</p>
+                        <p className="game">Game: {character.game}</p>
                     </article>
                 );
             })}

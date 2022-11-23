@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
+import LHUrl from "../LHUrl"
 
 //Delete game component
 const DeleteGm = () => {
@@ -10,19 +11,18 @@ const [resultName, setResultName] = useState("");
 
 //Gets the game by id and deletes it by id
 useEffect(() => {
-    axios.get(`https://localhost:7088/games/Games/${deleteId}`)
+    axios.get(`${LHUrl}/games/Games/${deleteId}`)
     .then(response=>setResultName(response.data.title))
     .catch(error=>console.log(error));
 
-    axios.delete(`https://localhost:7088/games/Games/${deleteId}`)
+    axios.delete(`${LHUrl}/games/Games/${deleteId}`)
     .catch(error => {console.log(error)});
 });
 
-//Prints the game title of the  deleted game 
+//Prints the game title of the deleted game 
 const handleSubmit = (event) => {
     event.preventDefault();
     setResult(
-        
         <div className="delete-display">
             <h4>{`${resultName}`} has been deleted</h4>
         </div>

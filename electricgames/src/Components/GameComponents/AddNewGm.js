@@ -1,7 +1,8 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
+import LHUrl from "../LHUrl"
 
-//add new game component
+//Add new game component
 const AddNewGm = () => {
 
 const [id, setId] = useState("");
@@ -13,12 +14,12 @@ const [image, setImage] = useState("");
 const [newGame, setNewGame] = useState([]);
 const [result, setResult] = useState("");
 
-//sets new game object
+//Sets new game object
 useEffect(() =>{
     setNewGame({id, title, platform, releaseYear, image})
 },[id, title, platform, releaseYear, image])
 
-//checks if id is valid and calls postNewGame
+//Checks if id is valid and calls postNewGame
 async function handleSubmit (event) {
     event.preventDefault()
     if(id.length == 24 || id.length == 0) {
@@ -34,9 +35,9 @@ const handleFiles = (event) => {
     setImage(event.target.files[0].name);
 }
 
-//post newgame and image to the database and root images
+//Posts newgame and image to the database and root images
 const postNewGame = async(newGame, selectedImage) => {
-    await axios.post(`https://localhost:7088/games/Games`, JSON.stringify(newGame),
+    await axios.post(`${LHUrl}/games/Games`, JSON.stringify(newGame),
     {
         headers: {
             'Content-Type': 'application/json'
@@ -50,7 +51,7 @@ const postNewGame = async(newGame, selectedImage) => {
         try {
             await axios({
                 method: "post",
-                url: `https://localhost:7088/games/Games/image`,
+                url: `${LHUrl}/games/Games/image`,
                 data: fd,
                 headers: {"Content-Type": "multipart/form-data"}
             });
@@ -82,8 +83,7 @@ return(
             </div>              
         </form>
         {result}
-        </div>
-        
+        </div>  
     </>
 );
 }

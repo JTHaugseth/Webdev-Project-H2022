@@ -15,9 +15,9 @@ export default class MainPageComponent extends Component {
            
             <div className="buttons">
             <div className="row justify-content-center">
-            <Link to="/GamesCollection"><button id="gm-btn" className="btn btn-primary col-lg-9">Game Collection</button></Link>    
-            <Link to="/CharactersCollection"><button id="chr-btn" className="btn btn-secondary col-lg-9">Character Collection</button></Link>    
-            <Link to="/Quiz"><button id="quiz-btn" className="btn btn-info col-lg-9">Quiz Gamepage</button></Link>  
+            <Link to="/GamesCollection"><button id="gm-btn" className="btn btn-primary col-lg-9 col-md-9 col-sm-9">Game Collection</button></Link>    
+            <Link to="/CharactersCollection"><button id="chr-btn" className="btn btn-secondary col-lg-9 col-md-9 col-sm-9">Character Collection</button></Link>    
+            <Link to="/Quiz"><button id="quiz-btn" className="btn btn-info col-lg-9 col-md-9 col-sm-9">Quiz Gamepage</button></Link>  
                     </div>  
                 </div>
             </div>

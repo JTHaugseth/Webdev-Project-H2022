@@ -1,20 +1,21 @@
 import {Routes, Route, Link} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
+import LHUrl from "../LHUrl"
 
 
 const DeleteChr = () => {
 
-    const [deleteId, setDeleteId] = useState("");
+const [deleteId, setDeleteId] = useState("");
 const [result, setResult] = useState("");
 const [resultName, setResultName] = useState("");
 
 useEffect(() => {
-    axios.get(`https://localhost:7088/games/Games/${deleteId}`)
+    axios.get(`${LHUrl}/gamecharacters/GameCharacters/${deleteId}`)
     .then(response=>setResultName(response.data.title))
     .catch(error=>console.log(error));
 
-    axios.delete(`https://localhost:7088/games/Games/${deleteId}`)
+    axios.delete(`${LHUrl}/gamecharacters/GameCharacters/${deleteId}`)
     .catch(error => {console.log(error)});
 });
 
@@ -34,8 +35,8 @@ return(
         <h1 className="pagetitle">Delete Character</h1>
         <form onSubmit={handleSubmit}>
             <div className="input-background">
-                <input type="text" id="delete-game" placeholder="Id" onChange={(e)=>setDeleteId(e.target.value)}></input>
-                <input type="submit" className="btn btn-danger" id="delete-game-btn" value="Delete"></input>
+                <input type="text" id="delete-character" placeholder="Id" onChange={(e)=>setDeleteId(e.target.value)}></input>
+                <input type="submit" className="btn btn-danger" id="delete-character-btn" value="Delete"></input>
             </div>
         </form>
         {result}

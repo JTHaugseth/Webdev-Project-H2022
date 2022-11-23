@@ -5,7 +5,6 @@ import MainPageContent from "./Components/MainpageComponents/MainPageComponent";
 import QuizMenu from "./Quiz";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-
 const Menu = () => {
     return (
         <>

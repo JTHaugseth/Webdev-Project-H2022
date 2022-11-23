@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
+import LHUrl from "../LHUrl"
 
 //Get game by title
 const GetGmByTitle = () => {
@@ -7,14 +8,14 @@ const GetGmByTitle = () => {
     const [searchTitle, setSearchTitle] = useState("");
     const [result, setResult] = useState("")
 
-    //gets the game with title
+    //Gets the game with title
     useEffect(() => {
-        axios.get(`https://localhost:7088/games/Games/title/${searchTitle}`)
+        axios.get(`${LHUrl}/games/Games/title/${searchTitle}`)
         .then(response=>setSearchTitle(response.data))
         .catch(error=>console.log(error))
     });
 
-    //checks if the title is in the database and prints it
+    //Checks if the title is in the database and prints it
     const handleSubmit = (event) => { 
         event.preventDefault();
         if(searchTitle.title == undefined){
@@ -25,15 +26,15 @@ const GetGmByTitle = () => {
             
         }else{
           setResult( 
-         
             <div className="container">
                 <article className="col-md-5 col-sm-6">
                         <h4 className="title">Title: {setSearchTitle.title}</h4>
-                        <img src={`https://localhost:7088/images/${encodeURIComponent(searchTitle.image)}`} className="img-thumbnail" alt={searchTitle.image}></img>
+                        <img src={`${LHUrl}/images/${encodeURIComponent(searchTitle.image)}`} className="img-thumbnail" alt={searchTitle.image}></img>
                         <p className="id">Id: {searchTitle.id}</p>
                         <p className="platform">Platform: {searchTitle.platform}</p>
                         <p className="release-year">Release year: {searchTitle.releaseYear}</p>
-                </article></div>
+                </article>
+            </div>
         );   
         }
     };

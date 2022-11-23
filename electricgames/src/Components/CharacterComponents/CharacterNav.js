@@ -5,6 +5,7 @@ import {faGamepad} from '@fortawesome/free-solid-svg-icons';
  
 export default class CharacterNav extends Component {
     render() {
+
         return (
             <>
                 <nav className="navbar navbar-expand-lg">
@@ -20,6 +21,7 @@ export default class CharacterNav extends Component {
                 </nav>
                 <div>
                     <h4 className="pagesection">Character Collection</h4>
+                    <FontAwesomeIcon icon="faGamepad" />
                 </div>
             </>
         )

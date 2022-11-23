@@ -4,7 +4,7 @@ import SharedMenu from "./Components/MainpageComponents/SharedMenu"
 import AddnewChr from "./Components/CharacterComponents/AddnewChr";
 import DeleteChr from "./Components/CharacterComponents/DeleteChr";
 import GetChrById from "./Components/CharacterComponents/GetChrById";
-import GetChrByTitle from "./Components/CharacterComponents/GetChrByTitle";
+import GetChrByName from "./Components/CharacterComponents/GetChrByName";
 import ShowAllChr from "./Components/CharacterComponents/ShowAllChr";
 import UpdateChr from "./Components/CharacterComponents/UpdateChr";
 
@@ -34,11 +34,11 @@ const GetCharacterById = () => {
         </>
     )
 }
-const GetCharacterByTitle = () => {
+const GetCharacterByName = () => {
     return (
         <>
             <CharacterNav />
-            <GetChrByTitle />
+            <GetChrByName />
         </>
     )
 }

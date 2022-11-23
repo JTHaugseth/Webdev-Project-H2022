@@ -1,7 +1,8 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
+import LHUrl from "../LHUrl"
 
-//update game component
+//Updates game
 const UpdateGm = () => {
 
 const [id, setUpdatedId] = useState("");
@@ -13,7 +14,7 @@ const [updatedImage, setUpdatedImage] = useState("");
 const [updatedGame, setUpdatedGame] = useState([]);
 const [result, setResult] = useState("");
 
-//creates the updated game
+//Creates the updated game values
 useEffect(() => {
     setUpdatedGame({
         id: updatedGame.id,
@@ -23,20 +24,20 @@ useEffect(() => {
         image: image ? image : updatedGame.image})
 }, [id, title, platform, releaseYear, image]);
 
-//sets the updated picture and its name
+//Sets the updated picture and its name
 const handleFiles = (event) => {
     setUpdatedImageName(event.target.files[0].name);
     setUpdatedImage(event.target.files[0]);
 }
 
-//gets the game using id
+//Gets the game using id
 const getGame = async () => {
-    await axios.get(`https://localhost:7088/games/Games/${id}`)
+    await axios.get(`${LHUrl}/games/Games/${id}`)
     .then((response)=>setUpdatedGame(response.data))
     .catch(error=>console.log(error));
 }
 
-//posts the game and prints what game has been updated
+//Posts the game and prints what game has been updated
 const postUpdatedGame = async () => {
     if (updatedImage.length == 0) {} else {
         const fd = new FormData();
@@ -44,7 +45,7 @@ const postUpdatedGame = async () => {
         try{
             await axios({
                 method: "post",
-                url: `https://localhost:7088/games/Games/image`,
+                url: `${LHUrl}/games/Games/image`,
                 data: fd,
                 headers: {"Content-Type": "multipart/form-data"}
             });
@@ -52,8 +53,7 @@ const postUpdatedGame = async () => {
             console.log(error)
         }
     }
-        
-    await axios.put(`https://localhost:7088/games/Games/${id}`, 
+    await axios.put(`${LHUrl}/games/Games/${id}`, 
     JSON.stringify(updatedGame), 
     {
         headers: {'Content-Type': 'application/json'}
@@ -62,7 +62,6 @@ const postUpdatedGame = async () => {
         setUpdatedGame({...updatedGame})
     })
     .catch(error=>console.log(error));
-
     setResult(
         <div className="pagetitle">
             <p>{`${updatedGame.title}`} has been updated!</p>
@@ -72,7 +71,6 @@ const postUpdatedGame = async () => {
 
 return(
     <>
-
     <div className="container">
         <h1 className="pagetitle">Update game</h1>
         <div className="row">
@@ -80,7 +78,6 @@ return(
                 <div className="col-lg-12 col-md-12">
                 <p>What game would you like to update?  * Requires game ID</p>
                 <input type="text" id="update-game-id" placeholder="Game ID" onChange={(e)=>setUpdatedId(e.target.value)}></input>
-               
                 <button className="btn btn-info" id="get-game-btn" onClick={getGame}>Get Game</button>
                 <p>Fill in the fields you want to update</p>
                 </div>
@@ -88,10 +85,6 @@ return(
                 <p>Title:<input type="text" id="update-game-title" placeholder={updatedGame.title}  onChange={(e)=>setUpdatedTitle(e.target.value)}></input></p>      
                 <p>Platform:<input type="text" id="update-game-platform" placeholder={updatedGame.platform} onChange={(e)=>setUpdatedPlatform(e.target.value)}></input></p> 
                 <p>Release Year:<input type="text" id="update-game-release-year" placeholder={updatedGame.releaseYear} onChange={(e)=>setUpdatedReleaseYear(e.target.value)}></input></p>
-              
-            
-                          
-                
                 <input type="file" id="update-game-image" onChange={handleFiles}></input>
                 <input type="button" className="btn btn-success" id="update-game-btn" value="Update" onClick={postUpdatedGame}></input>
                 </div>

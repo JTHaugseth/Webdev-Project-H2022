@@ -1,34 +1,33 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
+import LHUrl from "../LHUrl"
 
 //Get game by id component
 const GetGmById = () => {
     const [searchId, setSearchId] = useState("");
     const [result, setResult] = useState("");
     
-    //gets the game with id
+    //Gets the game with id
     useEffect(() => {
-        axios.get(`https://localhost:7088/games/Games/${searchId}`)
+        axios.get(`${LHUrl}/games/Games/${searchId}`)
         .then(response=>setSearchId(response.data))
         .catch(error=>console.log(error))
     });
 
-    // when submitted validated that the id exists in the database and prints it
+    //When submitted validated that the id exists in the database and prints it
     const handleSubmit = (event) => { 
         event.preventDefault();
-        
         if(searchId.id == undefined) {
             setResult(
                 <div></div>
             );
-           alert("The id has to be 24 letters or numbers long")
-            
-        }else{
+           alert("The id doesnt exist")   
+        } else {
              setResult(  
                 <div className="container">
                     <article className="col-md-5 col-sm-6">
                         <h4 className="title">Title: {setSearchId.title}</h4>
-                        <img src={`https://localhost:7088/images/${encodeURIComponent(searchId.image)}`} className="img-thumbnail" alt={searchId.image}></img>
+                        <img src={`${LHUrl}/images/${encodeURIComponent(searchId.image)}`} className="img-thumbnail" alt={searchId.image}></img>
                         <p className="id">Id: {searchId.id}</p>
                         <p className="platform">Platform: {searchId.platform}</p>
                         <p className="release-year">Release year: {searchId.releaseYear}</p>
@@ -40,7 +39,7 @@ const GetGmById = () => {
     return (
         <>
            <div className="container">
-                <h1 className="pagetitle">Search game by ID</h1>
+            <h1 className="pagetitle">Search game by ID</h1>
                 <form onSubmit={handleSubmit}>
                     <div className="input-background">
                         <input type="text" id="search-game-by-id-input" placeholder="Enter Id:" onChange={(e) => setSearchId(e.target.value)}></input>
