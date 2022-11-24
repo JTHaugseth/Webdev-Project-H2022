@@ -214,9 +214,13 @@ a:hover {
 
 /* Buttons landingpage */
 
-.buttons {
+#mainbuttons {
     margin-top: 10%;
     
+}
+
+#mainbtn {
+    margin: 2%;
 }
 
 
