@@ -1,9 +1,8 @@
 import {BrowserRouter, Routes, Route, Link} from "react-router-dom";
 import GamesCollection from "./GamesCollection";
-import CharactersMenu from "./CharactersCollection";
+import QuizCollection from "./QuizCollection";
+import CharactersCollection from "./CharactersCollection";
 import MainPageContent from "./Components/MainpageComponents/MainPageComponent";
-import QuizMenu from "./QuizCollection";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Menu = () => {
     return (
@@ -27,8 +26,8 @@ export default function LandingPage(){
             <Routes>
                 <Route exact path="/" element={<Menu/>}></Route>
                 <Route path="/GamesCollection/*" element={<GamesCollection/>}></Route>
-                <Route path="/CharactersCollection/*" element={<CharactersMenu/>}></Route>
-                <Route path="/QuizCollection/*" element={<QuizMenu/>}></Route>
+                <Route path="/CharactersCollection/*" element={<CharactersCollection/>}></Route>
+                <Route path="/QuizCollection/*" element={<QuizCollection/>}></Route>
             </Routes>
         </BrowserRouter>
     )
