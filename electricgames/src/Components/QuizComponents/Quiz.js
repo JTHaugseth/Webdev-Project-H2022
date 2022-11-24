@@ -8,7 +8,7 @@ const QuizNav = () => {
             <Link to ="/"><h1 className="navbar-brand">Electric Games</h1></Link>
     </nav>
     <div className="container">
-    <Link to ="/QuizCollection/Question1"><input type="button" className="btn btn-info rounded mx-au d-block" id="start-quiz-btn" value="Start quiz"></input></Link>
+    <Link to ="/Quiz/Question1"><input type="button" className="btn btn-info rounded mx-au d-block" id="start-quiz-btn" value="Start quiz"></input></Link>
     </div> 
     </>
     );
@@ -18,12 +18,7 @@ const Question1 = () => {
 
     return (
         <> 
-        <nav className="navbar navbar-expand-lg">
-                <Link to ="/"><h1 className="navbar-brand">Electric Games</h1></Link>
-        </nav>
-        <div className="container">
-        <Link to ="/QuizCollection/Question1"><input type="button" className="btn btn-info rounded mx-au d-block" id="start-quiz-btn" value="Start quiz"></input></Link>
-        </div> 
+        <h1>Success!</h1>
         </>
         );
 };
@@ -33,7 +28,7 @@ export default function QuizStart(){
     return(
     <Routes>
         <Route exact path="/" element={<QuizNav/>}></Route>
-        <Route path="/QuizCollection/Question1" element={<Question1/>}></Route>
+        <Route path="/Question1" element={<Question1/>}></Route>
     </Routes> 
-    )
-}
+    );
+};
