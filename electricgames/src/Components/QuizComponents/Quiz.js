@@ -29,10 +29,10 @@ const Question1 = () => {
         <> 
         <h1>{question.question}</h1>
         <h3>Score:</h3>
-        <Link to ="/Quiz/Question2"><input type="button" id="question-1-answer-a" value={question.answerA}></input></Link>
-        <Link to ="/Quiz/Question2"><input type="button" id="question-1-answer-b" value={question.answerB}></input></Link>
-        <Link to ="/Quiz/Question2"><input type="button" id="question-1-answer-c" value={question.answerC}></input></Link>
-        <Link to ="/Quiz/Question2"><input type="button" id="question-1-answer-d" value={question.answerD}></input></Link>
+        <Link to ="/Quiz/Question2"><input type="button" id="question-1-answer-a" value={`${question.answerA}`}></input></Link>
+        <Link to ="/Quiz/Question2"><input type="button" id="question-1-answer-b" value={`${question.answerB}`}></input></Link>
+        <Link to ="/Quiz/Question2"><input type="button" id="question-1-answer-c" value={`${question.answerC}`}></input></Link>
+        <Link to ="/Quiz/Question2"><input type="button" id="question-1-answer-d" value={`${question.answerD}`}></input></Link>
         </>
         );
 };
@@ -50,10 +50,10 @@ const Question2 = () => {
         <> 
         <h1>{question.question}</h1>
         <h3>Score:</h3>
-        <Link to ="/Quiz/Question3"><input type="button" id="question-2-answer-a" value={question.answerA}></input></Link>
-        <Link to ="/Quiz/Question3"><input type="button" id="question-2-answer-b" value={question.answerB}></input></Link>
-        <Link to ="/Quiz/Question3"><input type="button" id="question-2-answer-c" value={question.answerC}></input></Link>
-        <Link to ="/Quiz/Question3"><input type="button" id="question-2-answer-d" value={question.answerD}></input></Link>
+        <Link to ="/Quiz/Question3"><input type="button" id="question-2-answer-a" value={`${question.answerA}`}></input></Link>
+        <Link to ="/Quiz/Question3"><input type="button" id="question-2-answer-b" value={`${question.answerB}`}></input></Link>
+        <Link to ="/Quiz/Question3"><input type="button" id="question-2-answer-c" value={`${question.answerC}`}></input></Link>
+        <Link to ="/Quiz/Question3"><input type="button" id="question-2-answer-d" value={`${question.answerD}`}></input></Link>
         </>
         );
 };
@@ -71,10 +71,10 @@ const Question3 = () => {
         <> 
         <h1>{question.question}</h1>
         <h3>Score:</h3>
-        <Link to ="/Quiz/Question4"><input type="button" id="question-3-answer-a" value={question.answerA}></input></Link>
-        <Link to ="/Quiz/Question4"><input type="button" id="question-3-answer-b" value={question.answerB}></input></Link>
-        <Link to ="/Quiz/Question4"><input type="button" id="question-3-answer-c" value={question.answerC}></input></Link>
-        <Link to ="/Quiz/Question4"><input type="button" id="question-3-answer-d" value={question.answerD}></input></Link>
+        <Link to ="/Quiz/Question4"><input type="button" id="question-3-answer-a" value={`${question.answerA}`}></input></Link>
+        <Link to ="/Quiz/Question4"><input type="button" id="question-3-answer-b" value={`${question.answerB}`}></input></Link>
+        <Link to ="/Quiz/Question4"><input type="button" id="question-3-answer-c" value={`${question.answerC}`}></input></Link>
+        <Link to ="/Quiz/Question4"><input type="button" id="question-3-answer-d" value={`${question.answerD}`}></input></Link>
         </>
         );
 };
@@ -92,10 +92,10 @@ const Question4 = () => {
         <> 
         <h1>{question.question}</h1>
         <h3>Score:</h3>
-        <Link to ="/Quiz/Question5"><input type="button" id="question-4-answer-a" value={question.answerA}></input></Link>
-        <Link to ="/Quiz/Question5"><input type="button" id="question-4-answer-b" value={question.answerB}></input></Link>
-        <Link to ="/Quiz/Question5"><input type="button" id="question-4-answer-c" value={question.answerC}></input></Link>
-        <Link to ="/Quiz/Question5"><input type="button" id="question-4-answer-d" value={question.answerD}></input></Link>
+        <Link to ="/Quiz/Question5"><input type="button" id="question-4-answer-a" value={`${question.answerA}`}></input></Link>
+        <Link to ="/Quiz/Question5"><input type="button" id="question-4-answer-b" value={`${question.answerB}`}></input></Link>
+        <Link to ="/Quiz/Question5"><input type="button" id="question-4-answer-c" value={`${question.answerC}`}></input></Link>
+        <Link to ="/Quiz/Question5"><input type="button" id="question-4-answer-d" value={`${question.answerD}`}></input></Link>
         </>
         );
 };
@@ -113,10 +113,10 @@ const Question5 = () => {
         <> 
         <h1>{question.question}</h1>
         <h3>Score:</h3>
-        <Link to ="/Quiz/Question6"><input type="button" id="question-5-answer-a" value={question.answerA}></input></Link>
-        <Link to ="/Quiz/Question6"><input type="button" id="question-5-answer-b" value={question.answerB}></input></Link>
-        <Link to ="/Quiz/Question6"><input type="button" id="question-5-answer-c" value={question.answerC}></input></Link>
-        <Link to ="/Quiz/Question6"><input type="button" id="question-5-answer-d" value={question.answerD}></input></Link>
+        <Link to ="/Quiz/Question6"><input type="button" id="question-5-answer-a" value={`${question.answerA}`}></input></Link>
+        <Link to ="/Quiz/Question6"><input type="button" id="question-5-answer-b" value={`${question.answerB}`}></input></Link>
+        <Link to ="/Quiz/Question6"><input type="button" id="question-5-answer-c" value={`${question.answerC}`}></input></Link>
+        <Link to ="/Quiz/Question6"><input type="button" id="question-5-answer-d" value={`${question.answerD}`}></input></Link>
         </>
         );
 };
@@ -134,10 +134,10 @@ const Question6 = () => {
         <> 
         <h1>{question.question}</h1>
         <h3>Score:</h3>
-        <Link to ="/Quiz/Question7"><input type="button" id="question-6-answer-a" value={question.answerA}></input></Link>
-        <Link to ="/Quiz/Question7"><input type="button" id="question-6-answer-b" value={question.answerB}></input></Link>
-        <Link to ="/Quiz/Question7"><input type="button" id="question-6-answer-c" value={question.answerC}></input></Link>
-        <Link to ="/Quiz/Question7"><input type="button" id="question-6-answer-d" value={question.answerD}></input></Link>
+        <Link to ="/Quiz/Question7"><input type="button" id="question-6-answer-a" value={`${question.answerA}`}></input></Link>
+        <Link to ="/Quiz/Question7"><input type="button" id="question-6-answer-b" value={`${question.answerB}`}></input></Link>
+        <Link to ="/Quiz/Question7"><input type="button" id="question-6-answer-c" value={`${question.answerC}`}></input></Link>
+        <Link to ="/Quiz/Question7"><input type="button" id="question-6-answer-d" value={`${question.answerD}`}></input></Link>
         </>
         );
 };
@@ -155,10 +155,10 @@ const Question7 = () => {
         <> 
         <h1>{question.question}</h1>
         <h3>Score:</h3>
-        <Link to ="/Quiz/Question8"><input type="button" id="question-7-answer-a" value={question.answerA}></input></Link>
-        <Link to ="/Quiz/Question8"><input type="button" id="question-7-answer-b" value={question.answerB}></input></Link>
-        <Link to ="/Quiz/Question8"><input type="button" id="question-7-answer-c" value={question.answerC}></input></Link>
-        <Link to ="/Quiz/Question8"><input type="button" id="question-7-answer-d" value={question.answerD}></input></Link>
+        <Link to ="/Quiz/Question8"><input type="button" id="question-7-answer-a" value={`${question.answerA}`}></input></Link>
+        <Link to ="/Quiz/Question8"><input type="button" id="question-7-answer-b" value={`${question.answerB}`}></input></Link>
+        <Link to ="/Quiz/Question8"><input type="button" id="question-7-answer-c" value={`${question.answerC}`}></input></Link>
+        <Link to ="/Quiz/Question8"><input type="button" id="question-7-answer-d" value={`${question.answerD}`}></input></Link>
         </>
         );
 };
@@ -176,10 +176,10 @@ const Question8 = () => {
         <> 
         <h1>{question.question}</h1>
         <h3>Score:</h3>
-        <Link to ="/Quiz/Question9"><input type="button" id="question-8-answer-a" value={question.answerA}></input></Link>
-        <Link to ="/Quiz/Question9"><input type="button" id="question-8-answer-b" value={question.answerB}></input></Link>
-        <Link to ="/Quiz/Question9"><input type="button" id="question-8-answer-c" value={question.answerC}></input></Link>
-        <Link to ="/Quiz/Question9"><input type="button" id="question-8-answer-d" value={question.answerD}></input></Link>
+        <Link to ="/Quiz/Question9"><input type="button" id="question-8-answer-a" value={`${question.answerA}`}></input></Link>
+        <Link to ="/Quiz/Question9"><input type="button" id="question-8-answer-b" value={`${question.answerB}`}></input></Link>
+        <Link to ="/Quiz/Question9"><input type="button" id="question-8-answer-c" value={`${question.answerC}`}></input></Link>
+        <Link to ="/Quiz/Question9"><input type="button" id="question-8-answer-d" value={`${question.answerD}`}></input></Link>
         </>
         );
 };
@@ -197,10 +197,10 @@ const Question9 = () => {
         <> 
         <h1>{question.question}</h1>
         <h3>Score:</h3>
-        <Link to ="/Quiz/Question10"><input type="button" id="question-9-answer-a" value={question.answerA}></input></Link>
-        <Link to ="/Quiz/Question10"><input type="button" id="question-9-answer-b" value={question.answerB}></input></Link>
-        <Link to ="/Quiz/Question10"><input type="button" id="question-9-answer-c" value={question.answerC}></input></Link>
-        <Link to ="/Quiz/Question10"><input type="button" id="question-9-answer-d" value={question.answerD}></input></Link>
+        <Link to ="/Quiz/Question10"><input type="button" id="question-9-answer-a" value={`${question.answerA}`}></input></Link>
+        <Link to ="/Quiz/Question10"><input type="button" id="question-9-answer-b" value={`${question.answerB}`}></input></Link>
+        <Link to ="/Quiz/Question10"><input type="button" id="question-9-answer-c" value={`${question.answerC}`}></input></Link>
+        <Link to ="/Quiz/Question10"><input type="button" id="question-9-answer-d" value={`${question.answerD}`}></input></Link>
         </>
         );
 };
@@ -218,10 +218,10 @@ const Question10 = () => {
         <> 
         <h1>{question.question}</h1>
         <h3>Score:</h3>
-        <Link to ="/Quiz/Result"><input type="button" id="question-10-answer-a" value={question.answerA}></input></Link>
-        <Link to ="/Quiz/Result"><input type="button" id="question-10-answer-b" value={question.answerB}></input></Link>
-        <Link to ="/Quiz/Result"><input type="button" id="question-10-answer-c" value={question.answerC}></input></Link>
-        <Link to ="/Quiz/Result"><input type="button" id="question-10-answer-d" value={question.answerD}></input></Link>
+        <Link to ="/Quiz/Result"><input type="button" id="question-10-answer-a" value={`${question.answerA}`}></input></Link>
+        <Link to ="/Quiz/Result"><input type="button" id="question-10-answer-b" value={`${question.answerB}`}></input></Link>
+        <Link to ="/Quiz/Result"><input type="button" id="question-10-answer-c" value={`${question.answerC}`}></input></Link>
+        <Link to ="/Quiz/Result"><input type="button" id="question-10-answer-d" value={`${question.answerD}`}></input></Link>
         </>
         );
 };
