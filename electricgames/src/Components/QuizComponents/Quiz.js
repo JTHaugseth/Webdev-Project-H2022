@@ -2,14 +2,52 @@ import {Routes, Route, Link} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import LHUrl from "../LHUrl"
-import QuizNav from "./QuizNav";
-import StartButton from "./StartButton";
 
  const QuizMenu = () => {
+    const [scoreboard, setScoreboard] = useState([]);
+    const [deleteName, setDeleteName] = useState("");
+
+    //Gets all the games in an array
+    useEffect(() => {
+        axios.get(`${LHUrl}/scoreboard/Scoreboard`)
+        .then(response=>setScoreboard(response.data))
+        .catch(error=>console.log(error))
+    }, []);
+
+    const deletePlayer = async() => {
+        await axios.delete(`${LHUrl}/scoreboard/Scoreboard/${deleteName}`)
+        .catch(error => {console.log(error)});
+
+        await axios.get(`${LHUrl}/scoreboard/Scoreboard`)
+        .then(response=>setScoreboard(response.data))
+        .catch(error=>console.log(error))
+    }
+
      return (
-        <>              
-        <QuizNav />
-        <StartButton/>
+        <>   
+        <nav className="navbar navbar-expand-lg">
+        <Link to ="/"><h1 className="navbar-brand">Electric Games</h1></Link>
+        <Link className="nav-link" to="/GamesCollection">Game Collection</Link>    
+        <Link className="nav-link" to="/CharactersCollection">Character Collection</Link> 
+        <Link className="nav-link" to="/Quiz">Quiz</Link> 
+        </nav>
+         <div>
+            <h4 className="pageidentifier">Quiz</h4>
+          </div>
+        <div className="container">
+            <Link to ="/Quiz/Question1"><input type="button" className="btn btn-info rounded mx-auto d-block" id="start-quiz-btn" value="Start quiz"></input></Link>
+        </div> 
+        <h1>Scoreboard</h1>
+        <input type="text" id="delete-game" placeholder="Player name" onChange={(e)=>setDeleteName(e.target.value)}></input>
+        <input type="button" id="delete-score-btn" value="Delete" onClick={deletePlayer}></input>
+        {scoreboard.map(score=>{
+                return(
+                    <article key={score.id} className="col-md-5 col-sm-6">
+                        <h4 className="Name">Name: {score.name}</h4>
+                        <p className="Score">Score: {score.score}</p>
+                    </article>
+                );
+            })}
         </>
      );
 };
@@ -58,7 +96,6 @@ const Question1 = ({Score}) => {
     
     return (
         <> 
-            <QuizNav />
             <h3 className="score">Score: {Score.score}</h3>
             <div className="container">
                 <div className="quizbox">
@@ -119,7 +156,6 @@ const Question2 = ({Score}) => {
     };
     return (
         <> 
-            <QuizNav />
             <h3 className="score">Score: {Score.score}</h3>
             <div className="container">
                 <div className="quizbox">
@@ -181,7 +217,6 @@ const Question3 = ({Score}) => {
     
     return (
         <> 
-        <QuizNav />
         <h3 className="score">Score: {Score.score}</h3>
         <div className="container">
             <div className="quizbox">
@@ -246,7 +281,6 @@ const Question4 = ({Score}) => {
     
     return (
         <> 
-        <QuizNav />
         <h3 className="score">Score: {Score.score}</h3>
         <div className="container">
             <div className="quizbox">
@@ -310,7 +344,6 @@ const Question5 = ({Score}) => {
     
     return (
         <> 
-        <QuizNav />
         <h3 className="score">Score: {Score.score}</h3>
         <div className="container">
             <div className="quizbox">
@@ -373,7 +406,6 @@ const Question6 = ({Score}) => {
     
     return (
         <> 
-        <QuizNav />
         <h3 className="score">Score: {Score.score}</h3>
         <div className="container">
             <div className="quizbox">
@@ -434,7 +466,6 @@ const Question7 = ({Score}) => {
     
     return (
         <> 
-        <QuizNav />
         <h3 className="score">Score: {Score.score}</h3>
         <div className="container">
             <div className="quizbox">
@@ -495,7 +526,6 @@ const Question8 = ({Score}) => {
     
     return (
         <> 
-        <QuizNav />
         <h3 className="score">Score: {Score.score}</h3>
         <div className="container">
             <div className="quizbox">
@@ -557,7 +587,6 @@ const Question9 = ({Score}) => {
     
     return (
         <> 
-        <QuizNav />
         <h3 className="score">Score: {Score.score}</h3>
         <div className="container">
             <div className="quizbox">
@@ -618,7 +647,6 @@ const Question10 = ({Score}) => {
     
     return (
         <> 
-        <QuizNav />
         <h3 className="score">Score: {Score.score}</h3>
         <div className="container">
             <div className="quizbox">
@@ -639,10 +667,48 @@ const Question10 = ({Score}) => {
 };
 
 const ResultPage = ({Score}) => {
+    const [name, setName] = useState("");
+    const [score, setScore] = useState("");
+    const [newScore, setNewScore] = useState([]);
+    const [result, setResult] = useState("");
+
+    useEffect(() =>{
+        setScore(`${Score.score}`);
+        setNewScore({name, score})
+    },[name, score])
+    
+    const SaveScore = async() => {
+        document.getElementById("save-score-btn").disabled = true;
+        await axios.post(`${LHUrl}/scoreboard/Scoreboard`, JSON.stringify(newScore),
+    {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then((response)=>{console.log(response)})
+    .catch(error => {console.log(error)});
+    setResult(
+        <>
+        <h3>Score has been saved!</h3>
+        <Link to ="/Quiz"><input type="button" className="btn btn-info rounded mx-auto d-block" id="start-quiz-btn" value="To Scoreboard"></input></Link>
+        </>
+    )
+    }
+
+    
     return (
         <>
-        <h1>Result Page!</h1>
-        <p>You got {Score.score} points</p>
+        <nav className="navbar navbar-expand-lg">
+        <Link to ="/"><h1 className="navbar-brand">Electric Games</h1></Link>
+        <Link className="nav-link" to="/GamesCollection">Game Collection</Link>    
+        <Link className="nav-link" to="/CharactersCollection">Character Collection</Link> 
+        <Link className="nav-link" to="/Quiz">Quiz</Link> 
+        </nav>
+        <h1>You got {Score.score}/10 points</h1>
+        <article><h3>Do you want to save this score?</h3>
+        <input type="text" id="input-name-score-save" placeholder="Type your name" onChange={(e)=>setName(e.target.value)}></input>
+        <input type="button" id="save-score-btn" value="Save" onClick={SaveScore}></input>
+        </article>
+        {result}
         </>
     );
 };

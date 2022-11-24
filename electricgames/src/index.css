@@ -118,19 +118,29 @@ form {
     color: #4BB4FF;
 }
 
-.navbrand {
+.navbrand-main {
+    margin-top: 10%;
+    margin-left: 4%;
     font-size: 130%;
-    padding-right: 2%;
+    padding-right: 20px;
+}
+.navbrand {
+    margin-top: 10%;
+    margin-left: 4%;
+    font-size: 130%;
+}
+
+#nav-item-main {
+    margin: 0.5%;
+}
+#nav-item {
+    margin: 1%;
 }
 
 a:link {
     text-decoration: none!important;
     font-size: 100%;
 } 
-
-.nav-link:hover {
-    font-size: 110%;
-}
 
 a:hover {
     color: #4BB4FF;
@@ -207,26 +217,6 @@ a:hover {
 .buttons {
     margin-top: 10%;
     
-}
-
-
-#gm-btn {
-    margin: 5%;
-    border: none;
-}
-
-#chr-btn {
-
-    margin: 5%;
-    border: none;
-  
-
-}
-
-#quiz-btn {
-    margin: 5%;
-    border: none
-
 }
 
 
