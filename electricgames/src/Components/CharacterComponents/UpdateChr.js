@@ -74,7 +74,7 @@ return(
     <div className="container">
         <h1 className="pagetitle">Update character</h1>
         <div className="row">
-            <article id="form">
+            <article id="inputField">
                 <div className="col-lg-12 col-md-12">
                 <p>Which character would you like to update?  * Requires game ID</p>
                 <input type="text" id="update-character-id" placeholder="Character ID" onChange={(e)=>setUpdatedId(e.target.value)}></input>

@@ -43,7 +43,7 @@ const GetGmByTitle = () => {
             <div className="container">
             <h1 className="pagetitle">Search game by Title</h1>
                 <form onSubmit={handleSubmit}>
-                    <div className="input-background">
+                    <div className="divBackground">
                     <input type="text" id="search-game-by-title-input" placeholder="Enter Title:" onChange={(e) => setSearchTitle(e.target.value)}></input>
                     <input className="btn btn-success" type="submit" id="search-game-by-title-btn" value="Submit"></input>
                     </div></form> 

@@ -70,7 +70,7 @@ return(
         <form onSubmit={handleSubmit}>
             <h1 className="pagetitle">Add new Character</h1>
                 <div className="row">
-                <article id="form" className="col-md-11 col-sm-6">
+                <article id="inputField" className="col-md-11 col-sm-6">
                     <p>Character ID can be auto-generated if you leave it empty</p>
                     <input type="text" id="add-character-id" placeholder="Enter character id" onChange={(e)=>setId(e.target.value)}></input>
                     <input type="text" id="add-character-name" placeholder="Enter character name" onChange={(e)=>setCharacterName(e.target.value)}></input>

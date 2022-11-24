@@ -42,7 +42,7 @@ const GetChrByName = () => {
             <div className="container">
             <h1 className="pagetitle">Search character by name</h1>
                 <form onSubmit={handleSubmit}>
-                    <div className="input-background">
+                    <div className="divBackground">
                     <input type="text" id="search-character-by-name-input" placeholder="Enter Name:" onChange={(e) => setSearchName(e.target.value)}></input>
                     <input className="btn btn-success" type="submit" id="search-character-by-name-btn" value="Submit"></input>
                     </div></form> 

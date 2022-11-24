@@ -71,7 +71,7 @@ return(
         <form onSubmit={handleSubmit}>
         <h1 className="pagetitle">Add new game</h1>
         <div className="row">
-            <article id="form" className="col-md-11 col-sm-6">
+            <article id="inputField" className="col-md-11 col-sm-6">
                 <p>Game ID can be auto-generated if you leave it empty</p>
                 <input type="text" id="add-game-id" placeholder="Enter a game id" onChange={(e)=>setId(e.target.value)}></input>
                 <input type="text" id="add-game-title" placeholder="Enter a game title" onChange={(e)=>setGameTitle(e.target.value)}></input>

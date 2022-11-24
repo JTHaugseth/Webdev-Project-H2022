@@ -41,7 +41,7 @@ const GetGmById = () => {
            <div className="container">
             <h1 className="pagetitle">Search game by ID</h1>
                 <form onSubmit={handleSubmit}>
-                    <div className="input-background">
+                    <div className="divBackground">
                         <input type="text" id="search-game-by-id-input" placeholder="Enter Id:" onChange={(e) => setSearchId(e.target.value)}></input>
                         <input className="btn btn-success" type="submit" id="search-game-by-id-btn" value="Submit"></input>
                     </div> 

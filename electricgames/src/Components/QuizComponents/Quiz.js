@@ -62,7 +62,7 @@ const Question1 = ({Score}) => {
             <h3 className="score">Score: {Score.score}</h3>
             <div className="container">
                 <div className="quizbox">
-                    <h1 className="question">{question.question}</h1>
+                    <h1 className="question">{question.question}Hei på deg</h1>
                     <div className="row" id="alternatives"> 
                         <input type="button" className="btn btn-secondary col-5" id="question-1-answer-a" value={`${question.answerA}`} onClick={handleWrong}></input>
                         <input type="button" className="btn btn-secondary col-5" id="question-1-answer-b" value={`${question.answerB}`} onClick={handleWrong}></input>
