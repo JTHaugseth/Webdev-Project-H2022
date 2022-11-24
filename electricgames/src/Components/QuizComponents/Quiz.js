@@ -31,15 +31,19 @@ import LHUrl from "../LHUrl"
         <Link className="nav-link" to="/CharactersCollection">Character Collection</Link> 
         <Link className="nav-link" to="/Quiz">Quiz</Link> 
         </nav>
-         <div>
+        
             <h4 className="pageidentifier">Quiz</h4>
-          </div>
-        <div className="container">
+            <div className="container">
             <Link to ="/Quiz/Question1"><input type="button" className="btn btn-info rounded mx-auto d-block" id="start-quiz-btn" value="Start quiz"></input></Link>
-        </div> 
-        <h1>Scoreboard</h1>
+            <div className="scoreboard mx-auto d-block">
+            <h1 className="scoreboardheader">Scoreboard</h1>
         <input type="text" id="delete-game" placeholder="Player name" onChange={(e)=>setDeleteName(e.target.value)}></input>
-        <input type="button" id="delete-score-btn" value="Delete" onClick={deletePlayer}></input>
+        <input type="button" className="btn btn-danger" id="delete-score-btn" value="Delete" onClick={deletePlayer}></input>
+          </div>
+            </div>
+           
+        
+        
         {scoreboard.map(score=>{
                 return(
                     <article key={score.id} className="col-md-5 col-sm-6">
@@ -48,7 +52,7 @@ import LHUrl from "../LHUrl"
                     </article>
                 );
             })}
-        </>
+         </>
      );
 };
 
@@ -703,11 +707,14 @@ const ResultPage = ({Score}) => {
         <Link className="nav-link" to="/CharactersCollection">Character Collection</Link> 
         <Link className="nav-link" to="/Quiz">Quiz</Link> 
         </nav>
+        <div className="scoreboard">
         <h1>You got {Score.score}/10 points</h1>
         <article><h3>Do you want to save this score?</h3>
         <input type="text" id="input-name-score-save" placeholder="Type your name" onChange={(e)=>setName(e.target.value)}></input>
         <input type="button" id="save-score-btn" value="Save" onClick={SaveScore}></input>
+        
         </article>
+        </div>
         {result}
         </>
     );
