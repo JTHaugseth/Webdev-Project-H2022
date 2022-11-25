@@ -4,6 +4,7 @@ import QuizStart from "./Components/QuizComponents/Quiz";
 import CharactersCollection from "./CharactersCollection";
 import MainPageContent from "./Components/MainpageComponents/MainPageComponent";
 
+//Landing page with navbar
 const Menu = () => {
     return (
         <>

@@ -8,6 +8,7 @@ namespace electricgamesApi.Controllers;
 [ApiController]
 [Route("scoreboard/[controller]")]
 
+//Makes the scoreboard controller and the constructor
 public class ScoreboardController : ControllerBase {
 
     private readonly ILogger<ScoreboardController> _logger;
@@ -22,12 +23,14 @@ public class ScoreboardController : ControllerBase {
         _hosting = hosting;
     }
     
+    //Gets all the scoreboards
     [HttpGet]
 
     public ActionResult<List<Scoreboard>> Get() {
         return _scoreboardService.Get();
     }
 
+    //Makes a new score for the scoreboard
     [HttpPost] 
 
     public IActionResult Post([FromBody] Scoreboard newScore) {
@@ -36,6 +39,7 @@ public class ScoreboardController : ControllerBase {
         return CreatedAtAction(nameof(Post), new {id = newScore.Id}, newScore);
     } 
 
+    //deletes the score by name
     [HttpDelete("{Name}")]
 
     public IActionResult DeleteById(string Name) {

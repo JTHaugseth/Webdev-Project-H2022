@@ -3,6 +3,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace electricgamesApi.Collection;
 
+//Makes getters and setters for the quiz object
 public class Quiz {
 
     [BsonId]

@@ -6,6 +6,8 @@ using electricgamesApi.Collection;
 using electricgamesApi.Models;
 
 namespace electricgamesApi.Service;
+
+//functions to get and post values to the database
 public class QuizService {
     private readonly IMongoCollection<Quiz> _QuizCollection;
 

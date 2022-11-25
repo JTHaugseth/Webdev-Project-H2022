@@ -8,6 +8,7 @@ namespace electricgamesApi.Controllers;
 [ApiController]
 [Route("gamecharacters/[controller]")]
 
+//Makes the character controller and the constructor
 public class GameCharactersController : ControllerBase {
 
     private readonly ILogger<GameCharactersController> _logger;
@@ -22,12 +23,14 @@ public class GameCharactersController : ControllerBase {
         _hosting = hosting;
     }
 
+    //Gets all characters
     [HttpGet]
 
     public ActionResult<List<GameCharacters>> Get() {
         return _gameCharactersService.Get();
     }
 
+    //Gets character by id
     [HttpGet("{Id:length(24)}")]
 
     public ActionResult<GameCharacters> GetGameCharactersById(string Id) {
@@ -38,6 +41,7 @@ public class GameCharactersController : ControllerBase {
         return characters;
     }
 
+    //Gets character by name
     [HttpGet("name/{name}")]
 
     public ActionResult<GameCharacters> GetGameCharactersByName(string Name) {
@@ -48,6 +52,7 @@ public class GameCharactersController : ControllerBase {
         return character;
     }
 
+    //Posts new character
     [HttpPost] 
 
     public IActionResult Post([FromBody] GameCharacters newGameCharacter) {
@@ -56,6 +61,7 @@ public class GameCharactersController : ControllerBase {
         return CreatedAtAction(nameof(Post), new {id = newGameCharacter.Id}, newGameCharacter);
     } 
 
+    //Posts the image
     [HttpPost("image")]
     
     public IActionResult SaveImage(IFormFile file){
@@ -68,6 +74,7 @@ public class GameCharactersController : ControllerBase {
         return Ok();
     }
 
+    //Updates the character by id
     [HttpPut("{Id}")]
 
     public IActionResult Update([FromRoute] string Id, [FromBody] GameCharacters updateGameCharacters) {
@@ -79,6 +86,7 @@ public class GameCharactersController : ControllerBase {
         return CreatedAtAction(nameof(Update), new {id = updateGameCharacters.Id}, updateGameCharacters);
     }
 
+    //Deletes character by id
     [HttpDelete("{Id}")]
 
     public IActionResult DeleteById(string Id) {

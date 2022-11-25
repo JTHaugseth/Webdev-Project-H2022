@@ -3,6 +3,7 @@ const localhostURL = "https://localhost:7088";
 
 // GAMES
 
+//Gets all games
 const gamesGetAllBtn = document.getElementById("getAllGamesBtn").onclick = async() => {
     try {
         const response = await axios.get(`${localhostURL}/games/Games`);
@@ -13,6 +14,8 @@ const gamesGetAllBtn = document.getElementById("getAllGamesBtn").onclick = async
         console.error(error);
     }
 }
+
+//Gets game by id
 const getGameByIdBtn = document.getElementById("getGameByIdBtn").onclick = async() => {
     const input = document.getElementById("getGameById").value;
     try {
@@ -24,6 +27,8 @@ const getGameByIdBtn = document.getElementById("getGameByIdBtn").onclick = async
         console.error(error);
     }
 }
+
+//Gets game by title
 const getGameByNameBtn = document.getElementById("getGameByNameBtn").onclick = async() => {
     const input = document.getElementById("getGameByName").value;
     try {
@@ -36,6 +41,7 @@ const getGameByNameBtn = document.getElementById("getGameByNameBtn").onclick = a
     }
 }
 
+//Adds new game
 const newGameBtn = document.getElementById("newGameBtn").onclick = async() => {
     const newGameId = document.getElementById("newGameId").value;
     const newGameName = document.getElementById("newGameName").value;
@@ -59,6 +65,8 @@ const newGameBtn = document.getElementById("newGameBtn").onclick = async() => {
         console.error(error);
     }
 }
+
+//Updates game
 const updateGameBtn = document.getElementById("updateGameBtn").onclick = async() => {
     const updateGameId = document.getElementById("updateGameId").value;
     let updateGameName = document.getElementById("updateGameName").value;
@@ -105,6 +113,8 @@ const updateGameBtn = document.getElementById("updateGameBtn").onclick = async()
         console.error(error);
     }
 }
+
+//Deletes game by id
 const deleteBtn = document.getElementById("removeGameBtn").onclick = async() => {
         const input = document.getElementById("removeGame").value;
         try {
@@ -118,6 +128,7 @@ const deleteBtn = document.getElementById("removeGameBtn").onclick = async() => 
 
 // GAMECHARACTERS
 
+//Gets all characters
 const getAllGameCharacters = document.getElementById("getAllGameCharacters").onclick = async() => {
     try {
         const response = await axios.get(`${localhostURL}/gamecharacters/GameCharacters`);
@@ -128,6 +139,8 @@ const getAllGameCharacters = document.getElementById("getAllGameCharacters").onc
         console.error(error);
     }
 }
+
+//Gets character by id
 const getCharacterByIdBtn = document.getElementById("getCharacterByIdBtn").onclick = async() => {
     const input = document.getElementById("getCharacterById").value;
     try {
@@ -139,6 +152,8 @@ const getCharacterByIdBtn = document.getElementById("getCharacterByIdBtn").oncli
         console.error(error);
     }
 }
+
+//Gets character by name
 const getCharacterByNameBtn = document.getElementById("getCharacterByNameBtn").onclick = async() => {
     const input = document.getElementById("getCharacterByName").value;
     try {
@@ -150,6 +165,8 @@ const getCharacterByNameBtn = document.getElementById("getCharacterByNameBtn").o
         console.error(error);
     }
 }
+
+//Adds a new character
 const newCharacterBtn = document.getElementById("newCharacterBtn").onclick = async() => {
     const newCharacterId = document.getElementById("newCharacterId").value;
     const newCharacterName = document.getElementById("newCharacterName").value;
@@ -172,6 +189,8 @@ const newCharacterBtn = document.getElementById("newCharacterBtn").onclick = asy
         console.error(error);
     }
 }
+
+//Updates a character by id
 const updateCharacterBtn = document.getElementById("updateCharacterBtn").onclick = async() => {
     const updateCharacterId = document.getElementById("updateCharacterId").value;
     let updateCharacterName = document.getElementById("updateCharacterName").value;
@@ -215,6 +234,8 @@ const updateCharacterBtn = document.getElementById("updateCharacterBtn").onclick
         console.error(error);
     }
 }
+
+//Deletes a character by id
 const removeCharacterBtn = document.getElementById("removeCharacterBtn").onclick = async() => {
     const input = document.getElementById("removeCharacter").value;
     try {
@@ -228,6 +249,7 @@ const removeCharacterBtn = document.getElementById("removeCharacterBtn").onclick
 
 // QUIZ
 
+//Gets all question objects
 const getQuestionByIdBtn = document.getElementById("getQuestionByIdBtn").onclick = async() => {
     const input = document.getElementById("getQuestionById").value;
     try {
@@ -239,4 +261,78 @@ const getQuestionByIdBtn = document.getElementById("getQuestionByIdBtn").onclick
         console.error(error);
     }
 }
+
+//Adds a new question object
+const addNewQuestionBtn = document.getElementById("addNewQuestionBtn").onclick = async() => {
+    const newQuestionId = document.getElementById("newQuestionId").value;
+    const newQuestion = document.getElementById("newQuestion").value;
+    const newAnswerA = document.getElementById("newAnswerA").value;
+    const newAnswerB = document.getElementById("newAnswerB").value;
+    const newAnswerC = document.getElementById("newAnswerC").value;
+    const newAnswerD = document.getElementById("newAnswerD").value;
+    
+    try {
+        const newQuestionData = {id: `${newQuestionId}`, question: `${newQuestion}`, 
+        answerA: `${newAnswerA}`, answerB: `${newAnswerB}`, answerC: `${newAnswerC}`, answerD: `${newAnswerD}`}
+        
+        const addQuestion = await axios.post(`${localhostURL}/quiz/Quiz`, newQuestionData);
+        console.log("Question has been added to database");
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+//Deletes a question by id
+const removeQuestionBtn = document.getElementById("removeQuestionBtn").onclick = async() => {
+    const input = document.getElementById("removeQuestion").value;
+    try {
+        const response = await axios.delete(`${localhostURL}/quiz/Quiz/${input}`);
+    
+        console.log("Character removed successfully");
+    } catch(error) {
+    console.error(error);
+}
+}
+
+// SCOREBOARD
+
+const getAllScoresBtn = document.getElementById("getAllScoresBtn").onclick = async() => {
+    try {
+        const response = await axios.get(`${localhostURL}/scoreboard/Scoreboard`);
+        const allScores = response.data;
+
+        console.log(allScores);
+    } catch(error) {
+        console.error(error);
+    }
+}
+
+const addNewScoreBtn = document.getElementById("addNewScoreBtn").onclick = async() => {
+    const newScoreId = document.getElementById("newScoreId").value;
+    const newScoreName = document.getElementById("newScoreName").value;
+    const newScore = document.getElementById("newScore").value;
+    
+    
+    try {
+        const newScoreData = {id: `${newScoreId}`, name: `${newScoreName}`, score: `${newScore}`}
+        
+        const addScore = await axios.post(`${localhostURL}/scoreboard/Scoreboard`, newScoreData);
+        console.log("Score has been added to database");
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+const removeScoreBtn = document.getElementById("removeScoreBtn").onclick = async() => {
+    const input = document.getElementById("removeScoreName").value;
+    try {
+        const response = await axios.delete(`${localhostURL}/scoreboard/Scoreboard/${input}`);
+    
+        console.log("Character removed successfully");
+    } catch(error) {
+    console.error(error);
+}
+}
+
+
 

@@ -14,6 +14,7 @@ import LHUrl from "../LHUrl"
         .catch(error=>console.log(error))
     }, []);
 
+    //Deletes player by name and updates the scoreboard
     const deletePlayer = async() => {
         await axios.delete(`${LHUrl}/scoreboard/Scoreboard/${deleteName}`)
         .catch(error => {console.log(error)});

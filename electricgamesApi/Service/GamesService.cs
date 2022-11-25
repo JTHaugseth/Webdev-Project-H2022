@@ -7,6 +7,7 @@ using electricgamesApi.Models;
 
 namespace electricgamesApi.Service;
 
+//functions to get and post values to the database
 public class GamesService {
     
     private readonly IMongoCollection<Games> _GamesCollection;

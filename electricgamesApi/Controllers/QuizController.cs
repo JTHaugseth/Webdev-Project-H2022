@@ -8,6 +8,7 @@ namespace electricgamesApi.Controllers;
 [ApiController]
 [Route("quiz/[controller]")]
 
+//Makes the quiz controller and the constructor
 public class QuizController : ControllerBase {
 
     private readonly ILogger<QuizController> _logger;
@@ -22,6 +23,7 @@ public class QuizController : ControllerBase {
         _hosting = hosting;
     }
 
+    //Gets quiz question by id
     [HttpGet("{Id:length(24)}")]
 
     public ActionResult<Quiz> GetQuizById(string Id) {
@@ -32,6 +34,7 @@ public class QuizController : ControllerBase {
         return quiz;
     }
 
+    //Posts a new question
     [HttpPost] 
 
     public IActionResult Post([FromBody] Quiz newQuestion) {
@@ -40,6 +43,7 @@ public class QuizController : ControllerBase {
         return CreatedAtAction(nameof(Post), new {id = newQuestion.Id}, newQuestion);
     } 
     
+    //Deletes question by id
     [HttpDelete("{Id}")]
 
     public IActionResult DeleteById(string Id) {

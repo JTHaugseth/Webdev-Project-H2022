@@ -8,6 +8,7 @@ namespace electricgamesApi.Controllers;
 [ApiController]
 [Route("games/[controller]")]
 
+//Makes the game controller and the constructor
 public class GamesController : ControllerBase {
 
     private readonly ILogger<GamesController> _logger;
@@ -22,12 +23,14 @@ public class GamesController : ControllerBase {
         _hosting = hosting;
     }
 
+    //Gets all games
     [HttpGet]
 
     public ActionResult<List<Games>> Get() {
         return _gamesService.Get();
     }
 
+    //Gets game by id
     [HttpGet("{Id:length(24)}")]
 
     public ActionResult<Games> GetGamesById(string Id) {
@@ -38,6 +41,7 @@ public class GamesController : ControllerBase {
         return games;
     }
 
+    //Gets game by title
     [HttpGet("title/{title}")]
 
     public ActionResult<Games> GetGamesByTitle(string Title) {
@@ -48,6 +52,7 @@ public class GamesController : ControllerBase {
         return games;
     }
 
+    //Posts new game
     [HttpPost] 
 
     public IActionResult Post([FromBody] Games newGame) {
@@ -56,6 +61,7 @@ public class GamesController : ControllerBase {
         return CreatedAtAction(nameof(Post), new {id = newGame.Id}, newGame);
     } 
 
+    //Posts the image
     [HttpPost("image")]
     
     public IActionResult SaveImage(IFormFile file){
@@ -68,6 +74,7 @@ public class GamesController : ControllerBase {
         return Ok();
     }
 
+    //Updates the game by id
     [HttpPut("{Id}")]
 
     public IActionResult Update([FromRoute] string Id, [FromBody] Games updateGame) {
@@ -79,6 +86,7 @@ public class GamesController : ControllerBase {
         return CreatedAtAction(nameof(Update), new {id = updateGame.Id}, updateGame);
     }
 
+    //Deletes the game by id
     [HttpDelete("{Id}")]
 
     public IActionResult DeleteById(string Id) {
