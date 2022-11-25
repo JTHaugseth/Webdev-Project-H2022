@@ -296,6 +296,7 @@ const removeQuestionBtn = document.getElementById("removeQuestionBtn").onclick =
 
 // SCOREBOARD
 
+// Gets all scores
 const getAllScoresBtn = document.getElementById("getAllScoresBtn").onclick = async() => {
     try {
         const response = await axios.get(`${localhostURL}/scoreboard/Scoreboard`);
@@ -307,6 +308,7 @@ const getAllScoresBtn = document.getElementById("getAllScoresBtn").onclick = asy
     }
 }
 
+//Adds new score
 const addNewScoreBtn = document.getElementById("addNewScoreBtn").onclick = async() => {
     const newScoreId = document.getElementById("newScoreId").value;
     const newScoreName = document.getElementById("newScoreName").value;
@@ -323,6 +325,7 @@ const addNewScoreBtn = document.getElementById("addNewScoreBtn").onclick = async
     }
 }
 
+//Removes score
 const removeScoreBtn = document.getElementById("removeScoreBtn").onclick = async() => {
     const input = document.getElementById("removeScoreName").value;
     try {
