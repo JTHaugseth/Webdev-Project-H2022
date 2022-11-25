@@ -15,7 +15,6 @@ a {
     margin-top: 5%;
     margin: 3%;
     background-color: #282a2e; 
-    max-width: 44%;
     padding-top: 8px;
     padding-bottom: 8px;
     padding-left: 8px;
@@ -65,9 +64,10 @@ img {
 
 .release-year {
     border-bottom: 2px solid #386a53;
+
 }
 
-article {
+#object-boxes {
 margin: 2%;
 margin-top: 3%;
 background-color: #282a2e;
@@ -85,11 +85,7 @@ input {
     border: 2px solid #1f2125;
     border-radius: 5px;
     margin-right: 2px;
-    height: 35px;
-}
-
-.btn {
-    margin-left: 3%;
+    height:35px;
 }
 
 form {
@@ -118,15 +114,9 @@ form {
     color: #4BB4FF;
 }
 
-.navbrand-main {
-    margin-top: 10%;
-    margin-left: 4%;
-    font-size: 130%;
-    padding-right: 20px;
-}
 .navbrand {
-    margin-top: 10%;
-    margin-left: 4%;
+    padding-top: 3%;
+    margin-left: 2%;
     font-size: 130%;
 }
 
@@ -134,7 +124,7 @@ form {
     margin: 0.5%;
 }
 #nav-item {
-    margin: 1%;
+    margin-top: 5%;
 }
 
 a:link {
@@ -181,18 +171,21 @@ a:hover {
 }
 
 
-.scoreboard {
+#scoreboard {
     background-color: #282a2e;
     padding: 2%;
     border-radius: 3px;
-    width: 50%;
     margin-top: 10%;
+    border: #386a53 1px solid;
    
 }
+
+
 
 .scoreboardheader {
     border-bottom: #386a53 2px solid;
     margin-bottom: 4%;
+    font-size: 4vh;
 }
 
 /* Landing page */
@@ -205,7 +198,7 @@ a:hover {
 
 .header-title {
     margin-bottom: 5%;
-    font-size: 300%;
+   
 }
 
 .pageheader {
@@ -238,6 +231,7 @@ a:hover {
 #mainbtn {
     width: 100%;
     font-size: 100%;
+    margin-top: 3%;
 }
 
 
@@ -263,10 +257,8 @@ a:hover {
 }
 
 #start-quiz-btn {
-    margin-top: 5%;
-    width: 50%;
-    font-size: 300%;
-    height: 400%;
+    margin-top: 4%;
+    font-size: 10vh;
 }
 
 .correctAnswer {
@@ -282,4 +274,9 @@ a:hover {
 #alternatives {
     padding-bottom: 1%;
     
+}
+
+#score-saved {
+    margin-top: 2%;
+    color:#519236;
 }

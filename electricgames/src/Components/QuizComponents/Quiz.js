@@ -1,7 +1,7 @@
 import {Routes, Route, Link} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
-import LHUrl from "../LHUrl"
+import LHUrl from "../LHUrl";
 
  const QuizMenu = () => {
     const [scoreboard, setScoreboard] = useState([]);
@@ -26,34 +26,50 @@ import LHUrl from "../LHUrl"
 
      return (
         <>   
-        <nav className="navbar navbar-expand-lg">
-        <Link to ="/"><h1 className="navbar-brand">Electric Games</h1></Link>
-        <Link className="nav-link" to="/GamesCollection">Game Collection</Link>    
-        <Link className="nav-link" to="/CharactersCollection">Character Collection</Link> 
-        <Link className="nav-link" to="/Quiz">Quiz</Link> 
-        </nav>
-        
-            <h4 className="pageidentifier">Quiz</h4>
-            <div className="container">
-            <Link to ="/Quiz/Question1"><input type="button" className="btn btn-info rounded mx-auto d-block" id="start-quiz-btn" value="Start quiz"></input></Link>
-            <div className="scoreboard mx-auto d-block">
-            <h1 className="scoreboardheader">Scoreboard</h1>
-        <input type="text" id="delete-game" placeholder="Player name" onChange={(e)=>setDeleteName(e.target.value)}></input>
-        <input type="button" className="btn btn-danger" id="delete-score-btn" value="Delete" onClick={deletePlayer}></input>
-          </div>
+        <nav className="navbarbackground">
+            <div className="container-fluid">
+                <div className="row">
+                    <div className="col-lg-auto">
+                        <Link to ="/"><h1 className="navbrand">Electric Games</h1></Link>
+                    </div>
+                    <div className="col-sm-auto"><Link id="nav-item-main" className="nav-link" to="/GamesCollection">Game Collection</Link>   </div>
+                    <div className="col-sm-auto"><Link id="nav-item-main" className="nav-link" to="/CharactersCollection">Character Collection</Link> </div>
+                    <div className="col-sm-auto"><Link id="nav-item-main" className="nav-link col-lg" to="/Quiz">Quiz</Link> </div>
+                </div>
             </div>
-           
+        </nav>
+
         
-        
-        {scoreboard.map(score=>{
-                return(
-                    <article key={score.id} className="col-md-5 col-sm-6">
-                        <h4 className="Name">Name: {score.name}</h4>
-                        <p className="Score">Score: {score.score}</p>
-                    </article>
-                );
-            })}
-         </>
+        <h4 className="pageidentifier">Quiz</h4>
+        <div className="row">
+        <div className="container">
+            
+            <div className="col mx-auto d-block">
+            <Link to ="/Quiz/Question1"><input type="button" className="btn btn-info rounded" id="start-quiz-btn" value="Start quiz"></input></Link>
+            </div>
+            
+            <div id="scoreboard" className=" col-6 mx-auto d-block">
+                <h1 className="scoreboardheader">Scoreboard</h1>
+                    <input type="text" id="delete-game" placeholder="Player name" onChange={(e)=>setDeleteName(e.target.value)}></input>
+                    <input type="button" className="btn btn-danger" id="delete-score-btn" value="Delete" onClick={deletePlayer}></input>
+           </div>
+        </div>
+        </div>
+        <div className="container"> 
+            <div className="row">
+                {scoreboard.map(score=>{
+                    return(
+                        <div id="scoreboard" className="col-lg-4 col-md-6 col-sm-12">
+                            <article key={score.id}>
+                                <h4 className="Name">Name: {score.name}</h4>
+                                <p className="Score">Score: {score.score}</p>
+                            </article>
+                        </div>
+                    );
+                })}
+            </div>
+        </div>
+        </>
      );
 };
 
@@ -101,20 +117,20 @@ const Question1 = ({Score}) => {
     
     return (
         <> 
-            <h3 className="score">Score: {Score.score}</h3>
-            <div className="container">
-                <div className="quizbox">
-                    <h1 className="question">{question.question}Hei på deg</h1>
-                    <div className="row" id="alternatives"> 
-                        <input type="button" className="btn btn-secondary col-5" id="question-1-answer-a" value={`${question.answerA}`} onClick={handleWrong}></input>
-                        <input type="button" className="btn btn-secondary col-5" id="question-1-answer-b" value={`${question.answerB}`} onClick={handleWrong}></input>
-                        <input type="button" className="btn btn-secondary col-5" id="question-1-answer-c" value={`${question.answerC}`} onClick={handleCorrect}></input>
-                        <input type="button" className="btn btn-secondary col-5" id="question-1-answer-d" value={`${question.answerD}`} onClick={handleWrong}></input>
-                    </div>
-                {result}
+        <h3 className="score">Question: 1/10</h3>
+        <h3 className="score">Score: {Score.score}</h3>
+        <div className="container">
+            <div className="quizbox">
+                <h1 className="question">{question.question}</h1>
+                <div className="row" id="alternatives"> 
+                    <input type="button" className="btn btn-secondary col-5" id="question-1-answer-a" value={`${question.answerA}`} onClick={handleWrong}></input>
+                    <input type="button" className="btn btn-secondary col-5" id="question-1-answer-b" value={`${question.answerB}`} onClick={handleWrong}></input>
+                    <input type="button" className="btn btn-secondary col-5" id="question-1-answer-c" value={`${question.answerC}`} onClick={handleCorrect}></input>
+                    <input type="button" className="btn btn-secondary col-5" id="question-1-answer-d" value={`${question.answerD}`} onClick={handleWrong}></input>
                 </div>
+            {result}
             </div>
-      
+        </div>
         </>
         );
 };
@@ -160,22 +176,21 @@ const Question2 = ({Score}) => {
         )
     };
     return (
-        <> 
-            <h3 className="score">Score: {Score.score}</h3>
-            <div className="container">
-                <div className="quizbox">
-                    <h1 className="question">{question.question}</h1>
-                    <div className="row" id="alternatives"> 
-                        <input type="button" className="btn btn-secondary col-5" id="question-2-answer-a" value={`${question.answerA}`} onClick={handleWrong}></input>
-                        <input type="button" className="btn btn-secondary col-5" id="question-2-answer-b" value={`${question.answerB}`} onClick={handleWrong}></input>
-                        <input type="button" className="btn btn-secondary col-5" id="question-2-answer-c" value={`${question.answerC}`} onClick={handleCorrect}></input>
-                        <input type="button" className="btn btn-secondary col-5" id="question-2-answer-d" value={`${question.answerD}`} onClick={handleWrong}></input>
-
-            </div>
-                        {result}
+        <>  
+        <h3 className="score">Question: 2/10</h3>
+        <h3 className="score">Score: {Score.score}</h3>
+        <div className="container">
+            <div className="quizbox">
+                <h1 className="question">{question.question}</h1>
+                <div className="row" id="alternatives"> 
+                    <input type="button" className="btn btn-secondary col-5" id="question-2-answer-a" value={`${question.answerA}`} onClick={handleWrong}></input>
+                    <input type="button" className="btn btn-secondary col-5" id="question-2-answer-b" value={`${question.answerB}`} onClick={handleWrong}></input>
+                    <input type="button" className="btn btn-secondary col-5" id="question-2-answer-c" value={`${question.answerC}`} onClick={handleCorrect}></input>
+                    <input type="button" className="btn btn-secondary col-5" id="question-2-answer-d" value={`${question.answerD}`} onClick={handleWrong}></input>
                 </div>
-                    </div>
-      
+                {result}
+            </div>
+        </div>
         </>
         );
 };
@@ -221,26 +236,23 @@ const Question3 = ({Score}) => {
     };
     
     return (
-        <> 
+        <>  
+        <h3 className="score">Question: 3/10</h3>
         <h3 className="score">Score: {Score.score}</h3>
         <div className="container">
             <div className="quizbox">
                 <h1 className="question">{question.question}</h1>
                 <div className="row" id="alternatives"> 
-                <input type="button" className="btn btn-secondary col-5" id="question-3-answer-a" value={`${question.answerA}`} onClick={handleWrong}></input>
-                <input type="button" className="btn btn-secondary col-5" id="question-3-answer-b" value={`${question.answerB}`} onClick={handleCorrect}></input>
-                <input type="button" id="question-3-answer-c" className="btn btn-secondary col-5" value={`${question.answerC}`} onClick={handleWrong}></input>
-                <input type="button" id="question-3-answer-d" className="btn btn-secondary col-5" value={`${question.answerD}`} onClick={handleWrong}></input>
-
-        </div>
-                    {result}
-            </div>
+                    <input type="button" className="btn btn-secondary col-5" id="question-3-answer-a" value={`${question.answerA}`} onClick={handleWrong}></input>
+                    <input type="button" className="btn btn-secondary col-5" id="question-3-answer-b" value={`${question.answerB}`} onClick={handleCorrect}></input>
+                    <input type="button" id="question-3-answer-c" className="btn btn-secondary col-5" value={`${question.answerC}`} onClick={handleWrong}></input>
+                    <input type="button" id="question-3-answer-d" className="btn btn-secondary col-5" value={`${question.answerD}`} onClick={handleWrong}></input>
                 </div>
-  
+                {result}
+            </div>
+        </div>
         </>
-        
-       
-        );
+    );
 };
 
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -264,7 +276,7 @@ const Question4 = ({Score}) => {
         Score.score ++;
         setResult(
             <>           
-             <h3 className="correctAnwer">Correct answer!</h3>
+             <h3 className="correctAnswer">Correct answer!</h3>
              <Link to="/Quiz/Question5"><input type="button" className="btn btn-light" id="next-question-btn" value="Next Question"></input></Link>
             </>
         )
@@ -286,23 +298,22 @@ const Question4 = ({Score}) => {
     
     return (
         <> 
+        <h3 className="score">Question: 4/10</h3>
         <h3 className="score">Score: {Score.score}</h3>
         <div className="container">
             <div className="quizbox">
                 <h1 className="question">{question.question}</h1>
                 <div className="row" id="alternatives"> 
-                <input type="button" className="btn btn-secondary col-5" id="question-4-answer-a" value={`${question.answerA}`} onClick={handleCorrect}></input>
-                <input type="button" className="btn btn-secondary col-5" id="question-4-answer-b" value={`${question.answerB}`} onClick={handleWrong}></input>
-                <input type="button" className="btn btn-secondary col-5" id="question-4-answer-c" value={`${question.answerC}`} onClick={handleWrong}></input>
-                <input type="button" className="btn btn-secondary col-5" id="question-4-answer-d" value={`${question.answerD}`} onClick={handleWrong}></input>
-
-        </div>
-                    {result}
-            </div>
+                    <input type="button" className="btn btn-secondary col-5" id="question-4-answer-a" value={`${question.answerA}`} onClick={handleCorrect}></input>
+                    <input type="button" className="btn btn-secondary col-5" id="question-4-answer-b" value={`${question.answerB}`} onClick={handleWrong}></input>
+                    <input type="button" className="btn btn-secondary col-5" id="question-4-answer-c" value={`${question.answerC}`} onClick={handleWrong}></input>
+                    <input type="button" className="btn btn-secondary col-5" id="question-4-answer-d" value={`${question.answerD}`} onClick={handleWrong}></input>
                 </div>
-  
+                {result}
+            </div>
+        </div>
         </>
-        );
+    );
 };
 
 
@@ -349,23 +360,22 @@ const Question5 = ({Score}) => {
     
     return (
         <> 
+        <h3 className="score">Question: 5/10</h3>
         <h3 className="score">Score: {Score.score}</h3>
         <div className="container">
             <div className="quizbox">
                 <h1 className="question">{question.question}</h1>
                 <div className="row" id="alternatives"> 
-                <input type="button" className="btn btn-secondary col-5" id="question-5-answer-a" value={`${question.answerA}`} onClick={handleWrong}></input>
-                <input type="button" className="btn btn-secondary col-5" id="question-5-answer-b" value={`${question.answerB}`} onClick={handleWrong}></input>
-                <input type="button" className="btn btn-secondary col-5" id="question-5-answer-c" value={`${question.answerC}`} onClick={handleWrong}></input>
-                <input type="button" className="btn btn-secondary col-5" id="question-5-answer-d" value={`${question.answerD}`} onClick={handleCorrect}></input>
-
-        </div>
-                    {result}
-            </div>
+                    <input type="button" className="btn btn-secondary col-5" id="question-5-answer-a" value={`${question.answerA}`} onClick={handleWrong}></input>
+                    <input type="button" className="btn btn-secondary col-5" id="question-5-answer-b" value={`${question.answerB}`} onClick={handleWrong}></input>
+                    <input type="button" className="btn btn-secondary col-5" id="question-5-answer-c" value={`${question.answerC}`} onClick={handleWrong}></input>
+                    <input type="button" className="btn btn-secondary col-5" id="question-5-answer-d" value={`${question.answerD}`} onClick={handleCorrect}></input>
                 </div>
+                {result}
+            </div>
+        </div>
         </>
-    
-        );
+    );
 };
 
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -411,22 +421,22 @@ const Question6 = ({Score}) => {
     
     return (
         <> 
+        <h3 className="score">Question: 6/10</h3>
         <h3 className="score">Score: {Score.score}</h3>
         <div className="container">
             <div className="quizbox">
                 <h1 className="question">{question.question}</h1>
                 <div className="row" id="alternatives"> 
-                <input type="button" className="btn btn-secondary col-5" id="question-6-answer-a" value={`${question.answerA}`} onClick={handleWrong}></input>
-                <input type="button" className="btn btn-secondary col-5" id="question-6-answer-b" value={`${question.answerB}`} onClick={handleWrong}></input>
-                <input type="button" className="btn btn-secondary col-5" id="question-6-answer-c" value={`${question.answerC}`} onClick={handleCorrect}></input>
-                <input type="button" className="btn btn-secondary col-5" id="question-6-answer-d" value={`${question.answerD}`} onClick={handleWrong}></input>
-
-        </div>
-                    {result}
-            </div>
+                    <input type="button" className="btn btn-secondary col-5" id="question-6-answer-a" value={`${question.answerA}`} onClick={handleWrong}></input>
+                    <input type="button" className="btn btn-secondary col-5" id="question-6-answer-b" value={`${question.answerB}`} onClick={handleWrong}></input>
+                    <input type="button" className="btn btn-secondary col-5" id="question-6-answer-c" value={`${question.answerC}`} onClick={handleCorrect}></input>
+                    <input type="button" className="btn btn-secondary col-5" id="question-6-answer-d" value={`${question.answerD}`} onClick={handleWrong}></input>
                 </div>
+                {result}
+            </div>
+        </div>
         </>
-        );
+    );
 };
 
 
@@ -471,22 +481,22 @@ const Question7 = ({Score}) => {
     
     return (
         <> 
+        <h3 className="score">Question: 7/10</h3>
         <h3 className="score">Score: {Score.score}</h3>
         <div className="container">
             <div className="quizbox">
                 <h1 className="question">{question.question}</h1>
                 <div className="row" id="alternatives"> 
-                <input type="button" className="btn btn-secondary col-5" id="question-7-answer-a" value={`${question.answerA}`} onClick={handleWrong}></input>
-                <input type="button" className="btn btn-secondary col-5" id="question-7-answer-b" value={`${question.answerB}`} onClick={handleWrong}></input>
-                <input type="button" className="btn btn-secondary col-5" id="question-7-answer-c" value={`${question.answerC}`} onClick={handleWrong}></input>
-                <input type="button" className="btn btn-secondary col-5" id="question-7-answer-d" value={`${question.answerD}`} onClick={handleCorrect}></input>
-
-        </div>
-                    {result}
-            </div>
+                    <input type="button" className="btn btn-secondary col-5" id="question-7-answer-a" value={`${question.answerA}`} onClick={handleWrong}></input>
+                    <input type="button" className="btn btn-secondary col-5" id="question-7-answer-b" value={`${question.answerB}`} onClick={handleWrong}></input>
+                    <input type="button" className="btn btn-secondary col-5" id="question-7-answer-c" value={`${question.answerC}`} onClick={handleWrong}></input>
+                    <input type="button" className="btn btn-secondary col-5" id="question-7-answer-d" value={`${question.answerD}`} onClick={handleCorrect}></input>
                 </div>
+                {result}
+            </div>
+        </div>
         </>
-        );
+    );
 };
 
 
@@ -531,23 +541,22 @@ const Question8 = ({Score}) => {
     
     return (
         <> 
+        <h3 className="score">Question: 8/10</h3>
         <h3 className="score">Score: {Score.score}</h3>
         <div className="container">
             <div className="quizbox">
                 <h1 className="question">{question.question}</h1>
                 <div className="row" id="alternatives"> 
-                <input type="button" className="btn btn-secondary col-5" id="question-8-answer-a" value={`${question.answerA}`} onClick={handleWrong}></input>
-                <input type="button" className="btn btn-secondary col-5" id="question-8-answer-b" value={`${question.answerB}`} onClick={handleWrong}></input>
-                <input type="button" className="btn btn-secondary col-5" id="question-8-answer-c" value={`${question.answerC}`} onClick={handleCorrect}></input>
-                <input type="button" className="btn btn-secondary col-5" id="question-8-answer-d" value={`${question.answerD}`} onClick={handleWrong}></input>
-
-        </div>
-                    {result}
-            </div>
+                    <input type="button" className="btn btn-secondary col-5" id="question-8-answer-a" value={`${question.answerA}`} onClick={handleWrong}></input>
+                    <input type="button" className="btn btn-secondary col-5" id="question-8-answer-b" value={`${question.answerB}`} onClick={handleWrong}></input>
+                    <input type="button" className="btn btn-secondary col-5" id="question-8-answer-c" value={`${question.answerC}`} onClick={handleCorrect}></input>
+                    <input type="button" className="btn btn-secondary col-5" id="question-8-answer-d" value={`${question.answerD}`} onClick={handleWrong}></input>
                 </div>
+                {result}
+            </div>
+        </div>
         </>
-      
-        );
+    );
 };
 
 
@@ -592,20 +601,20 @@ const Question9 = ({Score}) => {
     
     return (
         <> 
+        <h3 className="score">Question: 9/10</h3>
         <h3 className="score">Score: {Score.score}</h3>
         <div className="container">
             <div className="quizbox">
                 <h1 className="question">{question.question}</h1>
                 <div className="row" id="alternatives"> 
-                <input type="button" className="btn btn-secondary col-5" id="question-9-answer-a" value={`${question.answerA}`} onClick={handleWrong}></input>
-                <input type="button" className="btn btn-secondary col-5" id="question-9-answer-b" value={`${question.answerB}`} onClick={handleCorrect}></input>
-                <input type="button" className="btn btn-secondary col-5" id="question-9-answer-c" value={`${question.answerC}`} onClick={handleWrong}></input>
-                <input type="button" className="btn btn-secondary col-5" id="question-9-answer-d" value={`${question.answerD}`} onClick={handleWrong}></input>
-
-        </div>
-                    {result}
-            </div>
+                    <input type="button" className="btn btn-secondary col-5" id="question-9-answer-a" value={`${question.answerA}`} onClick={handleWrong}></input>
+                    <input type="button" className="btn btn-secondary col-5" id="question-9-answer-b" value={`${question.answerB}`} onClick={handleCorrect}></input>
+                    <input type="button" className="btn btn-secondary col-5" id="question-9-answer-c" value={`${question.answerC}`} onClick={handleWrong}></input>
+                    <input type="button" className="btn btn-secondary col-5" id="question-9-answer-d" value={`${question.answerD}`} onClick={handleWrong}></input>
                 </div>
+                {result}
+            </div>
+        </div>
         </>
      );
 };
@@ -652,22 +661,21 @@ const Question10 = ({Score}) => {
     
     return (
         <> 
+        <h3 className="score">Question: 10/10</h3>
         <h3 className="score">Score: {Score.score}</h3>
         <div className="container">
             <div className="quizbox">
                 <h1 className="question">{question.question}</h1>
                 <div className="row" id="alternatives"> 
-                <input type="button" className="btn btn-secondary col-5" id="question-10-answer-a" value={`${question.answerA}`} onClick={handleCorrect}></input>
-                <input type="button" className="btn btn-secondary col-5" id="question-10-answer-b" value={`${question.answerB}`} onClick={handleWrong}></input>
-                <input type="button" className="btn btn-secondary col-5" id="question-10-answer-c" value={`${question.answerC}`} onClick={handleWrong}></input>
-                <input type="button" className="btn btn-secondary col-5" id="question-10-answer-d" value={`${question.answerD}`} onClick={handleWrong}></input>
-
-        </div>
-                    {result}
-            </div>
+                    <input type="button" className="btn btn-secondary col-5" id="question-10-answer-a" value={`${question.answerA}`} onClick={handleCorrect}></input>
+                    <input type="button" className="btn btn-secondary col-5" id="question-10-answer-b" value={`${question.answerB}`} onClick={handleWrong}></input>
+                    <input type="button" className="btn btn-secondary col-5" id="question-10-answer-c" value={`${question.answerC}`} onClick={handleWrong}></input>
+                    <input type="button" className="btn btn-secondary col-5" id="question-10-answer-d" value={`${question.answerD}`} onClick={handleWrong}></input>
                 </div>
+                {result}
+            </div>
+        </div>
         </>
-     
     );
 };
 
@@ -693,30 +701,37 @@ const ResultPage = ({Score}) => {
     .catch(error => {console.log(error)});
     setResult(
         <>
-        <h3>Score has been saved!</h3>
-        <Link to ="/Quiz"><input type="button" className="btn btn-info rounded mx-auto d-block" id="start-quiz-btn" value="To Scoreboard"></input></Link>
+            <h3 id="score-saved" className="text-center">Score has been saved!</h3>
+            <Link to ="/Quiz"><input type="button" className="btn btn-info rounded mx-auto d-block" id="start-quiz-btn" value="To Scoreboard"></input></Link>
         </>
     )
     }
 
-    
     return (
         <>
-        <nav className="navbar navbar-expand-lg">
-        <Link to ="/"><h1 className="navbar-brand">Electric Games</h1></Link>
-        <Link className="nav-link" to="/GamesCollection">Game Collection</Link>    
-        <Link className="nav-link" to="/CharactersCollection">Character Collection</Link> 
-        <Link className="nav-link" to="/Quiz">Quiz</Link> 
+        <nav className="navbarbackground">
+            <div className="container-fluid">
+                <div className="row">
+                    <div className="col-lg-auto">
+                        <Link to ="/"><h1 className="navbrand">Electric Games</h1></Link>
+                    </div>
+                    <div className="col-sm-auto"><Link id="nav-item-main" className="nav-link" to="/GamesCollection">Game Collection</Link></div>
+                    <div className="col-sm-auto">  <Link id="nav-item-main" className="nav-link" to="/CharactersCollection">Character Collection</Link></div>
+                    <div className="col-sm-auto"> <Link id="nav-item-main" className="nav-link col-lg" to="/Quiz">Quiz</Link></div>    
+                </div>
+            </div>
         </nav>
-        <div className="scoreboard">
-        <h1>You got {Score.score}/10 points</h1>
-        <article><h3>Do you want to save this score?</h3>
-        <input type="text" id="input-name-score-save" placeholder="Type your name" onChange={(e)=>setName(e.target.value)}></input>
-        <input type="button" id="save-score-btn" value="Save" onClick={SaveScore}></input>
-        
-        </article>
+        <div className="container">
+            <div className="scoreboard mx-auto d-block">
+                <h1>You got {Score.score}/10 points</h1>
+                <article>
+                    <h3>Do you want to save this score?</h3>
+                    <input type="text" id="input-name-score-save" placeholder="Type your name" onChange={(e)=>setName(e.target.value)}></input>
+                    <input type="button" id="save-score-btn" value="Save" onClick={SaveScore}></input>
+                </article>
+            </div>
+            {result}
         </div>
-        {result}
         </>
     );
 };

@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
-import LHUrl from "../LHUrl"
+import LHUrl from "../LHUrl";
+
 //Get character by id component
 const GetChrById = () => {
     const [searchId, setSearchId] = useState("");
@@ -16,14 +17,13 @@ const GetChrById = () => {
     //Validates if id exists and prints character
     const handleSubmit = (event) => { 
         event.preventDefault();
-        
         if(searchId.id == undefined) {
             setResult(
                 <div></div>
             );
-           alert("The id doesnt exist") 
-        } else {
-             setResult(  
+            alert("The id doesnt exist") 
+        }else{
+            setResult(  
                 <div className="container">
                     <article className="col-md-5 col-sm-6">
                         <h4 className="title">Name: {searchId.name}</h4>
@@ -32,9 +32,10 @@ const GetChrById = () => {
                         <p className="platform">Game: {searchId.game}</p>
                     </article>
                 </div>
-                );
+            );
         }
     };
+    
     return (
         <>
            <div className="container">

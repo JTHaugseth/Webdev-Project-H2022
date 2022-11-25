@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
-import LHUrl from "../LHUrl"
+import LHUrl from "../LHUrl";
 
 //Get game by id component
 const GetGmById = () => {
@@ -38,8 +38,8 @@ const GetGmById = () => {
     };
     return (
         <>
-           <div className="container">
-            <h1 className="pagetitle">Search game by ID</h1>
+            <div className="container">
+                <h1 className="pagetitle">Search game by ID</h1>
                 <form onSubmit={handleSubmit}>
                     <div className="divBackground">
                         <input type="text" id="search-game-by-id-input" placeholder="Enter Id:" onChange={(e) => setSearchId(e.target.value)}></input>

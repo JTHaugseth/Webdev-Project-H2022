@@ -74,9 +74,9 @@ return(
                     <p>Character ID can be auto-generated if you leave it empty</p>
                     <input type="text" id="add-character-id" placeholder="Enter character id" onChange={(e)=>setId(e.target.value)}></input>
                     <input type="text" id="add-character-name" placeholder="Enter character name" onChange={(e)=>setCharacterName(e.target.value)}></input>
-                    <input type="text" id="add-character-game" placeholder="Enter character game" onChange={(e)=>setGame(e.target.value)}></input>
-                    <input type="submit" className="btn btn-success" id="add-character-btn" value="Submit"></input>           
+                    <input type="text" id="add-character-game" placeholder="Enter character game" onChange={(e)=>setGame(e.target.value)}></input>         
                     <input type="file" id="add-character-image"  onChange={handleFiles}></input>
+                    <input type="submit" className="btn btn-success" id="add-character-btn" value="Submit"></input> 
                 </article>
             </div>              
         </form>

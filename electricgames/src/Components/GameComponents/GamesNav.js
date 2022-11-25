@@ -7,15 +7,29 @@ export default class GamesNav extends Component {
         return (
             <>
                 <nav className="navbarbackground">
-                <div className="row">
-                        <Link to="/"><h1 className="navbrand-main col">Electric Games</h1></Link>
-
-                        <Link id="nav-item" className="col-lg-1 col-md-10 col-sm-10" to="/GamesCollection/ShowAllGames">Show all games</Link>
-                        <Link id="nav-item" className="col-lg-1 col-md-10 col-sm-10" to="/GamesCollection/SearchGameById">Search game by ID</Link>
-                        <Link id="nav-item" className="col-lg-1 col-md-10 col-sm-10" to="/GamesCollection/SearchGameByTitle">Search game by title</Link>
-                        <Link id="nav-item" className="col-lg-1 col-md-10 col-sm-10" to="/GamesCollection/AddNewGame">Add new game</Link>
-                        <Link id="nav-item" className="col-lg-1 col-md-10 col-sm-10" to="/GamesCollection/UpdateGame">Update game</Link>
-                        <Link id="nav-item" className="col-lg-1 col-md-10 col-sm-10" to="/GamesCollection/DeleteGame">Delete game</Link>
+                    <div className="container-fluid">
+                        <div className="row">
+                            <div className="col-lg-auto">
+                                <Link to="/"><h1 className="navbrand">Electric Games</h1></Link>
+                            </div>
+                            <div className="col-sm-auto">
+                                <Link id="nav-item-main" className="nav-link" to="/GamesCollection/ShowAllGames">Show all games</Link>
+                            </div>
+                            <div className="col-sm-auto">
+                                <Link id="nav-item-main" className="nav-link" to="/GamesCollection/SearchGameById">Search game by ID</Link>
+                            </div>
+                            <div className="col-sm-auto">
+                                <Link id="nav-item-main" className="nav-link" to="/GamesCollection/SearchGameByTitle">Search game by title</Link>
+                            </div>
+                            <div className="col-sm-auto">
+                                <Link id="nav-item-main" className="nav-link" to="/GamesCollection/AddNewGame">Add new game</Link>
+                            </div>
+                            <div className="col-sm-auto">
+                                <Link id="nav-item-main" className="nav-link" to="/GamesCollection/UpdateGame">Update game</Link>
+                            </div>
+                            <div className="col-sm-auto"><Link id="nav-item-main" className="nav-link" to="/GamesCollection/DeleteGame">Delete game</Link>
+                            </div>
+                        </div>
                     </div>
                 </nav>
                 <div>

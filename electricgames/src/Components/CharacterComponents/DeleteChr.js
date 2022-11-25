@@ -23,7 +23,6 @@ useEffect(() => {
 const handleSubmit = (event) => {
     event.preventDefault();
     setResult(
-        
         <div className="display-deleted">
             <h4>{`${resultName}`} has been deleted</h4>
         </div>

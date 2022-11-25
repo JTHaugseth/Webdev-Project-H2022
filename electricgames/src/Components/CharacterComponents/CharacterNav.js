@@ -5,21 +5,36 @@ export default class CharacterNav extends Component {
     render() {
         return (
             <>
-                <nav className="navbarbackground">
-                <div className="row">
-                        <Link to="/"><h1 className="navbrand col col-md-12">Electric Games</h1></Link>
-                        
-                        <Link id="nav-item" className="col-lg-1 col-md-10 col-sm-10" to="/CharactersCollection/ShowAllCharacters">Show all characters</Link>
-                        <Link id="nav-item" className="col-lg-1 col-md-10 col-sm-10" to="/CharactersCollection/GetCharacterById">Search characters by ID</Link>
-                        <Link id="nav-item" className="col-lg-1 col-md-10 col-sm-10" to="/CharactersCollection/GetCharacterByName">Search characters by name</Link>
-                        <Link id="nav-item" className="col-lg-1 col-md-10 col-sm-10" to="/CharactersCollection/AddNewCharacter">Add new character</Link>
-                        <Link id="nav-item" className="col-lg-1 col-md-10 col-sm-10" to="/CharactersCollection/UpdateCharacter">Update character</Link>
-                        <Link id="nav-item" className="col-lg-1 col-md-10 col-sm-10" to="/CharactersCollection/DeleteCharacter">Delete character</Link>
+            <nav className="navbarbackground">
+                <div className="container-fluid">
+                    <div className="row">
+                        <div className="col-lg-auto">
+                            <Link to="/"><h1 className="navbrand">Electric Games</h1></Link>
                         </div>
-                </nav>
-                <div>
-                    <h4 className="pageidentifier">Character Collection</h4>
+                        <div className="col-sm-auto">
+                            <Link id="nav-item-main" className="nav-link" to="/CharactersCollection/ShowAllCharacters">Show all characters</Link>
+                        </div>
+                        <div className="col-sm-auto">
+                            <Link id="nav-item-main" className="nav-link" to="/CharactersCollection/GetCharacterById">Search characters by ID</Link>
+                        </div>
+                        <div className="col-sm-auto">
+                            <Link id="nav-item-main" className="nav-link" to="/CharactersCollection/GetCharacterByName">Search characters by name</Link>
+                        </div>
+                        <div className="col-sm-auto">
+                            <Link id="nav-item-main" className="nav-link" to="/CharactersCollection/AddNewCharacter">Add new character</Link>
+                        </div>
+                        <div className="col-sm-auto">
+                            <Link id="nav-item-main" className="nav-link" to="/CharactersCollection/UpdateCharacter">Update character</Link>
+                        </div>
+                        <div className="col-sm-auto">
+                            <Link id="nav-item-main" className="nav-link" to="/CharactersCollection/DeleteCharacter">Delete character</Link>
+                        </div>
+                    </div>
                 </div>
+            </nav>
+            <div>
+                <h4 className="pageidentifier">Character Collection</h4>
+            </div>
             </>
         )
     }

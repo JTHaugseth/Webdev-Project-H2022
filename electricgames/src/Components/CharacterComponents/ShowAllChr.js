@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
-import LHUrl from "../LHUrl"
+import LHUrl from "../LHUrl";
 
 //Get all characters component
 const ShowAllChr = () => {
@@ -13,24 +13,26 @@ const ShowAllChr = () => {
         .catch(error=>console.log(error))
     }, []);
 
-
     return (
     <>
         <div className="container">
-        <h1 className="pagetitle">Showing all characters</h1>
-        <div className="row">
-        {character.map(character=>{
+            <h1 className="pagetitle">Showing all characters</h1>
+            <div className="row">
+            {character.map(character=>{
                 return(
-                    
-                    <article key={character.id} className="col-md-5 col-sm-6">
+                    <div id="object-boxes" className="col-lg-5 col-sm-12">
+                    <article key={character.id}>
                         <h4 className="title">Name: {character.name}</h4>
-                        <img src={`${LHUrl}/images/${encodeURIComponent(character.image)}`} className="rounded mx-auto d-block" alt={character.image}></img>
+                        <img src={`${LHUrl}/images/${encodeURIComponent(character.image)}`} className="img-fluid rounded mx-auto d-block" alt={character.image}></img>
                         <p className="id">Id: {character.id}</p>
                         <p className="game">Game: {character.game}</p>
                     </article>
+                    </div>
                 );
             })}
-   </div></div> </>
+            </div>
+        </div> 
+    </>
     );
 };
 

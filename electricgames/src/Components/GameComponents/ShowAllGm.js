@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
-import LHUrl from "../LHUrl"
+import LHUrl from "../LHUrl";
 
 //Shows all games 
 const ShowAllGm = () => {
@@ -16,20 +16,24 @@ const ShowAllGm = () => {
     return (
     <>
         <div className="container">
-        <h1 className="pagetitle">Showing all games</h1>
-        <div className="row">
-        {games.map(game=>{
-                return(
-                    <article key={game.id} className="col-md-5 col-sm-6">
-                        <h4 className="title">Title: {game.title}</h4>
-                        <img src={`${LHUrl}/images/${encodeURIComponent(game.image)}`} className="rounded mx-auto d-block" alt={game.image}></img>
-                        <p className="id">Id: {game.id}</p>
-                        <p className="platform">Platform: {game.platform}</p>
-                        <p className="release-year">Release year: {game.releaseYear}</p>
-                    </article>
-                );
-            })}
-   </div></div> </>
+            <h1 className="pagetitle">Showing all games</h1>
+            <div className="row">
+                {games.map(game=>{
+                    return(
+                        <div id="object-boxes" className="col-lg-5 col-sm-12">
+                            <article key={game.id} className="">
+                                <h4 className="title">Title: {game.title}</h4>
+                                <img src={`${LHUrl}/images/${encodeURIComponent(game.image)}`} className="img-fluid rounded mx-auto d-block" alt={game.image}></img>
+                                <p className="id">Id: {game.id}</p>
+                                <p className="platform">Platform: {game.platform}</p>
+                                <p className="release-year">Release year: {game.releaseYear}</p>
+                            </article>
+                        </div>
+                    );
+                })}
+            </div>
+        </div> 
+    </>
     );
 };
 

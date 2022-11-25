@@ -74,8 +74,6 @@ const AddNewGame = () => {
     );
 }
 
- 
-
 export default function GamesCollection () {
 
     return (
