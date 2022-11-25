@@ -225,3 +225,18 @@ const removeCharacterBtn = document.getElementById("removeCharacterBtn").onclick
     console.error(error);
 }
 }
+
+// QUIZ
+
+const getQuestionByIdBtn = document.getElementById("getQuestionByIdBtn").onclick = async() => {
+    const input = document.getElementById("getQuestionById").value;
+    try {
+        const response = await axios.get(`${localhostURL}/quiz/Quiz/${input}`);
+        const question = response.data;
+       
+        console.log(question);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
