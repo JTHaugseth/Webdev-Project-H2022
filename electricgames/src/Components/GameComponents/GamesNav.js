@@ -6,11 +6,11 @@ export default class GamesNav extends Component {
     render() {
         return (
             <>
-                <nav className="navbarbackground">
+                <nav className="navbar-background">
                     <div className="container-fluid">
                         <div className="row">
                             <div className="col-lg-auto">
-                                <Link to="/"><h1 className="navbrand">Electric Games</h1></Link>
+                                <Link to="/"><h1 className="nav-brand">Electric Games</h1></Link>
                             </div>
                             <div className="col-sm-auto">
                                 <Link id="nav-item-main" className="nav-link" to="/GamesCollection/ShowAllGames">Show all games</Link>
@@ -33,7 +33,7 @@ export default class GamesNav extends Component {
                     </div>
                 </nav>
                 <div>
-                    <h4 className="pageidentifier">Game Collecton</h4>
+                    <h4 className="page-identifier">Game Collecton</h4>
                 </div>
             </>
         )

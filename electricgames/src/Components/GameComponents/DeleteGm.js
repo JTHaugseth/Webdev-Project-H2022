@@ -32,9 +32,9 @@ const handleSubmit = (event) => {
 return(
     <>
     <div className="container">
-        <h1 className="pagetitle">Delete game</h1>
+        <h1 className="page-title">Delete game</h1>
         <form onSubmit={handleSubmit}>
-            <div className="divBackground">
+            <div className="div-background">
                 <input type="text" className="form-resize" id="delete-game" placeholder="Id" onChange={(e)=>setDeleteId(e.target.value)}></input>
                 <input type="submit" className="btn btn-danger" id="delete-game-btn" value="Delete"></input>
             </div>

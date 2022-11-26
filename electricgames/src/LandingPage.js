@@ -8,13 +8,13 @@ import MainPageContent from "./Components/MainpageComponents/MainPageComponent";
 const Menu = () => {
     return (
         <>
-        <nav className="navbarbackground">
+        <nav className="navbar-background">
             <div className="container-fluid">
                 <div className="row">
-                    <div className="col-lg-auto"><Link to ="/"><h1 className="navbrand">Electric Games</h1></Link></div>
+                    <div className="col-lg-auto"><Link to ="/"><h1 className="nav-brand">Electric Games</h1></Link></div>
                     <div className="col-sm-auto"><Link id="nav-item-main" className="nav-link" to="/GamesCollection">Game Collection</Link></div>
                     <div className="col-sm-auto"><Link id="nav-item-main" className="nav-link" to="/CharactersCollection">Character Collection</Link></div>
-                    <div className="col-sm-auto"><Link id="nav-item-main" className="nav-link col-lg" to="/Quiz">Quiz</Link></div>
+                    <div className="col-sm-auto"><Link id="nav-item-main" className="nav-link"  to="/Quiz">Quiz</Link></div>
                 </div>
             </div>
         </nav>

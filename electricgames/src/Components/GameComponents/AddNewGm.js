@@ -59,7 +59,7 @@ const postNewGame = async(newGame, selectedImage) => {
             console.log(error);
         }}
         setResult(
-            <div className="pagetitle">
+            <div className="page-title">
                 <p>{`${newGame.title}`} has been added!</p>
             </div>
         )
@@ -69,9 +69,9 @@ return(
     <>
     <div className="container">
         <form onSubmit={handleSubmit}>
-            <h1 className="pagetitle">Add new game</h1>
-            <div id="addNew" className="row">
-                <article id="inputField" className="col-md-11 col-sm-6">
+            <h1 className="page-title">Add new game</h1>
+            <div id="add-new" className="row">
+                <article id="input-field" className="col-md-11 col-sm-6">
                     <p>Game ID can be auto-generated if you leave it empty</p>
                     <input type="text" className="form-resize" id="add-game-id" placeholder="Enter a game id" onChange={(e)=>setId(e.target.value)}></input>
                     <input type="text" className="form-resize" id="add-game-title" placeholder="Enter a game title" onChange={(e)=>setGameTitle(e.target.value)}></input>

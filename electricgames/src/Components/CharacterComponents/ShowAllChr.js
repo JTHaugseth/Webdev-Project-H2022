@@ -16,7 +16,7 @@ const ShowAllChr = () => {
     return (
     <>
         <div className="container">
-            <h1 className="pagetitle">Showing all characters</h1>
+            <h1 className="page-title">Showing all characters</h1>
             <div className="row">
             {character.map(character=>{
                 return(

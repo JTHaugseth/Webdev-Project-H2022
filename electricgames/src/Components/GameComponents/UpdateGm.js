@@ -63,7 +63,7 @@ const postUpdatedGame = async () => {
     })
     .catch(error=>console.log(error));
     setResult(
-        <div className="pagetitle">
+        <div className="page-title">
             <p>{`${updatedGame.title}`} has been updated!</p>
         </div>
     )
@@ -72,8 +72,8 @@ const postUpdatedGame = async () => {
 return(
     <>
     <div className="container">
-        <h1 className="pagetitle">Update game</h1>
-        <div className="divBackground">
+        <h1 className="page-title">Update game</h1>
+        <div className="div-background">
             <article id="form">
                 <div>
                     <p>What game would you like to update?  * Requires game ID</p>

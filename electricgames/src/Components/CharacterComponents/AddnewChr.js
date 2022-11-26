@@ -58,7 +58,7 @@ const postNewCharacter = async(newCharacter, selectedImage) => {
             console.log(error);
         }}
         setResult(
-            <div className="pagetitle">
+            <div className="page-title">
                 <p>{`${newCharacter.name}`} has been added!</p>
             </div>
         )
@@ -68,9 +68,9 @@ return(
     <>
     <div className="container">
         <form onSubmit={handleSubmit}>
-            <h1 className="pagetitle">Add new Character</h1>
-            <div id="addNew" className="row">
-                <article id="inputField" className="col-md-11 col-sm-6">
+            <h1 className="page-title">Add new Character</h1>
+            <div id="add-new" className="row">
+                <article className="col-md-11 col-sm-6">
                     <p>Character ID can be auto-generated if you leave it empty</p>
                     <input type="text" className="form-resize" id="add-character-id" placeholder="Enter character id" onChange={(e)=>setId(e.target.value)}></input>
                     <input type="text" className="form-resize" id="add-character-name" placeholder="Enter character name" onChange={(e)=>setCharacterName(e.target.value)}></input>

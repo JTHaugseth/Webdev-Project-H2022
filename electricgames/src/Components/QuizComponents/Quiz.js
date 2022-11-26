@@ -26,7 +26,7 @@ import LHUrl from "../LHUrl";
 
      return (
         <>   
-        <nav className="navbarbackground">
+        <nav className="navbar-background">
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-lg-auto">
@@ -46,16 +46,16 @@ import LHUrl from "../LHUrl";
         </nav>
 
         
-        <h4 className="pageidentifier">Quiz</h4>
+        <h4 className="page-identifier">Quiz</h4>
         <div className="row">
             <div className="container">
             
-                <div className="centerButton">
+                <div className="center-button">
                 <Link to ="/Quiz/Question1"><input type="button" className="" id="start-quiz-btn" value="Start quiz"></input></Link>
             </div>
             
             <div id="scoreboard" className="col-6 mx-auto d-block">
-                <h1 className="scoreboardheader">Scoreboard</h1>
+                <h1 className="scoreboard-header">Scoreboard</h1>
                     <input type="text" className="delete-form" id="delete-game" placeholder="Player name" onChange={(e)=>setDeleteName(e.target.value)}></input>
                     <input type="button" className="btn btn-danger" id="delete-score-btn" value="Delete" onClick={deletePlayer}></input>
            
@@ -102,7 +102,7 @@ const Question1 = ({Score}) => {
         Score.score ++;
         setResult(
             <>           
-             <h3 className="correctAnswer">Correct answer!</h3>
+             <h3 className="correct-answer">Correct answer!</h3>
              <Link to="/Quiz/Question2"><input type="button" className="btn btn-light" id="next-question-btn" value="Next Question"></input></Link>
             </>
         )
@@ -116,7 +116,7 @@ const Question1 = ({Score}) => {
         
         setResult(
             <>           
-             <h3 className="wrongAnswer">Wrong answer!</h3>
+             <h3 className="wrong-answer">Wrong answer!</h3>
              <Link to="/Quiz/Question2"><input type="button" className="btn btn-light" id="next-question-btn" value="Next Question"></input></Link>
             </>
         )
@@ -127,7 +127,7 @@ const Question1 = ({Score}) => {
         <h3 className="score">Question: 1/10</h3>
         <h3 className="score">Score: {Score.score}</h3>
         <div className="container">
-            <div className="quizbox">
+            <div className="quiz-box">
                 <h1 className="question">{question.question}</h1>
                 <div className="row" id="alternatives"> 
                     <input type="button" className="btn btn-secondary col-5" id="question-1-answer-a" value={`${question.answerA}`} onClick={handleWrong}></input>
@@ -163,7 +163,7 @@ const Question2 = ({Score}) => {
         Score.score ++;
         setResult(
             <>           
-             <h3 className="correctAnswer">Correct answer!</h3>
+             <h3 className="correct-answer">Correct answer!</h3>
              <Link to="/Quiz/Question3"><input type="button" className="btn btn-light" id="next-question-btn" value="Next Question"></input></Link>
             </>
         )
@@ -177,7 +177,7 @@ const Question2 = ({Score}) => {
         
         setResult(
             <>           
-             <h3 className="wrongAnswer">Wrong answer!</h3>
+             <h3 className="wrong-answer">Wrong answer!</h3>
              <Link to="/Quiz/Question3"><input type="button" className="btn btn-light" id="next-question-btn" value="Next Question"></input></Link>
             </>
         )
@@ -187,7 +187,7 @@ const Question2 = ({Score}) => {
         <h3 className="score">Question: 2/10</h3>
         <h3 className="score">Score: {Score.score}</h3>
         <div className="container">
-            <div className="quizbox">
+            <div className="quiz-box">
                 <h1 className="question">{question.question}</h1>
                 <div className="row" id="alternatives"> 
                     <input type="button" className="btn btn-secondary col-5" id="question-2-answer-a" value={`${question.answerA}`} onClick={handleWrong}></input>
@@ -223,7 +223,7 @@ const Question3 = ({Score}) => {
         Score.score ++;
         setResult(
             <>           
-             <h3 className="correctAnswer">Correct answer!</h3>
+             <h3 className="correct-answer">Correct answer!</h3>
              <Link to="/Quiz/Question4"><input type="button" className="btn btn-light" id="next-question-btn" value="Next Question"></input></Link>
             </>
         )
@@ -236,7 +236,7 @@ const Question3 = ({Score}) => {
         document.getElementById("question-3-answer-d").disabled = true;
         setResult(
             <>           
-             <h3 className="wrongAnswer">Wrong answer!</h3>
+             <h3 className="wrong-answer">Wrong answer!</h3>
              <Link to="/Quiz/Question4"><input type="button" className="btn btn-light" id="next-question-btn" value="Next Question"></input></Link>
             </>
         )
@@ -247,7 +247,7 @@ const Question3 = ({Score}) => {
         <h3 className="score">Question: 3/10</h3>
         <h3 className="score">Score: {Score.score}</h3>
         <div className="container">
-            <div className="quizbox">
+            <div className="quiz-box">
                 <h1 className="question">{question.question}</h1>
                 <div className="row" id="alternatives"> 
                     <input type="button" className="btn btn-secondary col-5" id="question-3-answer-a" value={`${question.answerA}`} onClick={handleWrong}></input>
@@ -283,7 +283,7 @@ const Question4 = ({Score}) => {
         Score.score ++;
         setResult(
             <>           
-             <h3 className="correctAnswer">Correct answer!</h3>
+             <h3 className="correct-answer">Correct answer!</h3>
              <Link to="/Quiz/Question5"><input type="button" className="btn btn-light" id="next-question-btn" value="Next Question"></input></Link>
             </>
         )
@@ -297,7 +297,7 @@ const Question4 = ({Score}) => {
         
         setResult(
             <>           
-             <h3 className="wrongAnswer">Wrong answer!</h3>
+             <h3 className="wrong-answer">Wrong answer!</h3>
              <Link to="/Quiz/Question5"><input type="button" className="btn btn-light" id="next-question-btn" value="Next Question"></input></Link>
             </>
         )
@@ -308,7 +308,7 @@ const Question4 = ({Score}) => {
         <h3 className="score">Question: 4/10</h3>
         <h3 className="score">Score: {Score.score}</h3>
         <div className="container">
-            <div className="quizbox">
+            <div className="quiz-box">
                 <h1 className="question">{question.question}</h1>
                 <div className="row" id="alternatives"> 
                     <input type="button" className="btn btn-secondary col-5" id="question-4-answer-a" value={`${question.answerA}`} onClick={handleCorrect}></input>
@@ -345,7 +345,7 @@ const Question5 = ({Score}) => {
         Score.score ++;
         setResult(
             <>           
-             <h3 className="correctAnswer">Correct answer!</h3>
+             <h3 className="correct-answer">Correct answer!</h3>
              <Link to="/Quiz/Question6"><input type="button" className="btn btn-light" id="next-question-btn" value="Next Question"></input></Link>
             </>
         )
@@ -359,7 +359,7 @@ const Question5 = ({Score}) => {
         
         setResult(
             <>           
-             <h3 className="wrongAnswer">Wrong answer!</h3>
+             <h3 className="wrong-answer">Wrong answer!</h3>
              <Link to="/Quiz/Question6"><input type="button" className="btn btn-light" id="next-question-btn" value="Next Question"></input></Link>
             </>
         )
@@ -370,7 +370,7 @@ const Question5 = ({Score}) => {
         <h3 className="score">Question: 5/10</h3>
         <h3 className="score">Score: {Score.score}</h3>
         <div className="container">
-            <div className="quizbox">
+            <div className="quiz-box">
                 <h1 className="question">{question.question}</h1>
                 <div className="row" id="alternatives"> 
                     <input type="button" className="btn btn-secondary col-5" id="question-5-answer-a" value={`${question.answerA}`} onClick={handleWrong}></input>
@@ -406,7 +406,7 @@ const Question6 = ({Score}) => {
         Score.score ++;
         setResult(
             <>           
-             <h3 className="correctAnswer">Correct answer!</h3>
+             <h3 className="correct-answer">Correct answer!</h3>
              <Link to="/Quiz/Question7"><input type="button" className="btn btn-light" id="next-question-btn" value="Next Question"></input></Link>
             </>
         )
@@ -420,7 +420,7 @@ const Question6 = ({Score}) => {
         
         setResult(
             <>           
-             <h3 className="wrongAnswer">Wrong answer!</h3>
+             <h3 className="wrong-answer">Wrong answer!</h3>
              <Link to="/Quiz/Question7"><input type="button" className="btn btn-light" id="next-question-btn" value="Next Question"></input></Link>
             </>
         )
@@ -431,7 +431,7 @@ const Question6 = ({Score}) => {
         <h3 className="score">Question: 6/10</h3>
         <h3 className="score">Score: {Score.score}</h3>
         <div className="container">
-            <div className="quizbox">
+            <div className="quiz-box">
                 <h1 className="question">{question.question}</h1>
                 <div className="row" id="alternatives"> 
                     <input type="button" className="btn btn-secondary col-5" id="question-6-answer-a" value={`${question.answerA}`} onClick={handleWrong}></input>
@@ -467,7 +467,7 @@ const Question7 = ({Score}) => {
         Score.score ++;
         setResult(
             <>           
-             <h3 className="correctAnswer">Correct answer!</h3>
+             <h3 className="correct-answer">Correct answer!</h3>
              <Link to="/Quiz/Question8"><input type="button" className="btn btn-light" id="next-question-btn" value="Next Question"></input></Link>
             </>
         )
@@ -480,7 +480,7 @@ const Question7 = ({Score}) => {
         document.getElementById("question-7-answer-d").disabled = true;
         setResult(
             <>           
-             <h3 className="wrongAnswer">Wrong answer!</h3>
+             <h3 className="wrong-answer">Wrong answer!</h3>
              <Link to="/Quiz/Question8"><input type="button" className="btn btn-light" id="next-question-btn" value="Next Question"></input></Link>
             </>
         )
@@ -491,7 +491,7 @@ const Question7 = ({Score}) => {
         <h3 className="score">Question: 7/10</h3>
         <h3 className="score">Score: {Score.score}</h3>
         <div className="container">
-            <div className="quizbox">
+            <div className="quiz-box">
                 <h1 className="question">{question.question}</h1>
                 <div className="row" id="alternatives"> 
                     <input type="button" className="btn btn-secondary col-5" id="question-7-answer-a" value={`${question.answerA}`} onClick={handleWrong}></input>
@@ -527,7 +527,7 @@ const Question8 = ({Score}) => {
         Score.score ++;
         setResult(
             <>           
-             <h3 className="correctAnswer">Correct answer!</h3>
+             <h3 className="correct-answer">Correct answer!</h3>
              <Link to="/Quiz/Question9"><input type="button" className="btn btn-light" id="next-question-btn" value="Next Question"></input></Link>
             </>
         )
@@ -540,7 +540,7 @@ const Question8 = ({Score}) => {
         document.getElementById("question-8-answer-d").disabled = true;
         setResult(
             <>           
-             <h3 className="wrongAnswer">Wrong answer!</h3>
+             <h3 className="wrong-answer">Wrong answer!</h3>
              <Link to="/Quiz/Question9"><input type="button" className="btn btn-light" id="next-question-btn" value="Next Question"></input></Link>
             </>
         )
@@ -551,7 +551,7 @@ const Question8 = ({Score}) => {
         <h3 className="score">Question: 8/10</h3>
         <h3 className="score">Score: {Score.score}</h3>
         <div className="container">
-            <div className="quizbox">
+            <div className="quiz-box">
                 <h1 className="question">{question.question}</h1>
                 <div className="row" id="alternatives"> 
                     <input type="button" className="btn btn-secondary col-5" id="question-8-answer-a" value={`${question.answerA}`} onClick={handleWrong}></input>
@@ -587,7 +587,7 @@ const Question9 = ({Score}) => {
         Score.score ++;
         setResult(
             <>           
-             <h3 className="correctAnswer">Correct answer!</h3>
+             <h3 className="correct-answer">Correct answer!</h3>
              <Link to="/Quiz/Question10"><input type="button" className="btn btn-light" id="next-question-btn" value="Next Question"></input></Link>
             </>
         )
@@ -600,7 +600,7 @@ const Question9 = ({Score}) => {
         document.getElementById("question-9-answer-d").disabled = true;
         setResult(
             <>           
-             <h3 className="wrongAnswer">Wrong answer!</h3>
+             <h3 className="wrong-answer">Wrong answer!</h3>
              <Link to="/Quiz/Question10"><input type="button" className="btn btn-light" id="next-question-btn" value="Next Question"></input></Link>
             </>
         )
@@ -611,7 +611,7 @@ const Question9 = ({Score}) => {
         <h3 className="score">Question: 9/10</h3>
         <h3 className="score">Score: {Score.score}</h3>
         <div className="container">
-            <div className="quizbox">
+            <div className="quiz-box">
                 <h1 className="question">{question.question}</h1>
                 <div className="row" id="alternatives"> 
                     <input type="button" className="btn btn-secondary col-5" id="question-9-answer-a" value={`${question.answerA}`} onClick={handleWrong}></input>
@@ -647,7 +647,7 @@ const Question10 = ({Score}) => {
         Score.score ++;
         setResult(
             <>           
-             <h3 className="correctAnswer">Correct answer!</h3>
+             <h3 className="correct-answer">Correct answer!</h3>
              <Link to="/Quiz/Result"><input type="button" className="btn btn-light" id="next-question-btn" value="Next Question"></input></Link>
             </>
         )
@@ -660,7 +660,7 @@ const Question10 = ({Score}) => {
         document.getElementById("question-10-answer-d").disabled = true;
         setResult(
             <>           
-             <h3 className="wrongAnswer">Wrong answer!</h3>
+             <h3 className="wrong-answer">Wrong answer!</h3>
              <Link to="/Quiz/Result"><input type="button" className="btn btn-light" id="next-question-btn" value="Next Question"></input></Link>
             </>
         )
@@ -671,7 +671,7 @@ const Question10 = ({Score}) => {
         <h3 className="score">Question: 10/10</h3>
         <h3 className="score">Score: {Score.score}</h3>
         <div className="container">
-            <div className="quizbox">
+            <div className="quiz-box">
                 <h1 className="question">{question.question}</h1>
                 <div className="row" id="alternatives"> 
                     <input type="button" className="btn btn-secondary col-5" id="question-10-answer-a" value={`${question.answerA}`} onClick={handleCorrect}></input>
@@ -709,7 +709,7 @@ const ResultPage = ({Score}) => {
     setResult(
         <>
             <h3 id="score-saved" className="text-center">Score has been saved!</h3>
-            <div className="centerButton">
+            <div className="center-button">
             <Link to ="/Quiz"><input type="button" id="start-quiz-btn" value="To Scoreboard"></input></Link>
             </div>
         </>
@@ -718,21 +718,21 @@ const ResultPage = ({Score}) => {
 
     return (
         <>
-        <nav className="navbarbackground">
+        <nav className="navbar-background">
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-lg-auto">
-                        <Link to ="/"><h1 className="navbrand">Electric Games</h1></Link>
+                        <Link to ="/"><h1 className="nav-brand">Electric Games</h1></Link>
                     </div>
                     <div className="col-sm-auto"><Link id="nav-item-main" className="nav-link" to="/GamesCollection">Game Collection</Link></div>
                     <div className="col-sm-auto">  <Link id="nav-item-main" className="nav-link" to="/CharactersCollection">Character Collection</Link></div>
-                    <div className="col-sm-auto"> <Link id="nav-item-main" className="nav-link col-lg" to="/Quiz">Quiz</Link></div>    
+                    <div className="col-sm-auto"> <Link id="nav-item-main" className="nav-link" to="/Quiz">Quiz</Link></div>    
                 </div>
             </div>
         </nav>
         
         <div className="container">
-            <div id="savescore" className="mx-auto d-block">
+            <div id="save-score" className="mx-auto d-block">
                 <h1>You got {Score.score}/10 points</h1>
                 <article>
                     <h3>Do you want to save this score?</h3>

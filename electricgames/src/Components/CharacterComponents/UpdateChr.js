@@ -63,7 +63,7 @@ const postUpdatedCharacter  = async () => {
     .catch(error=>console.log(error));
 
     setResult(
-        <div className="pagetitle">
+        <div className="page-title">
             <p>{`${updatedCharacter.name}`} has been updated!</p>
         </div>
     )
@@ -72,8 +72,8 @@ const postUpdatedCharacter  = async () => {
 return(
     <>
     <div className="container">
-        <h1 className="pagetitle">Update character</h1>
-        <div className="divBackground">
+        <h1 className="page-title">Update character</h1>
+        <div className="div-background">
             <article>
                 <div className="col-lg-12 col-xs-6">
                     <p>Which character would you like to update?  * Requires game ID</p>

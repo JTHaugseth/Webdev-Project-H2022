@@ -5,11 +5,11 @@ export default class CharacterNav extends Component {
     render() {
         return (
             <>
-            <nav className="navbarbackground">
+            <nav className="navbar-background">
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-lg-auto">
-                            <Link to="/"><h1 className="navbrand">Electric Games</h1></Link>
+                            <Link to="/"><h1 className="nav-brand">Electric Games</h1></Link>
                         </div>
                         <div className="col-sm-auto">
                             <Link id="nav-item-main" className="nav-link" to="/CharactersCollection/ShowAllCharacters">Show all characters</Link>
@@ -33,7 +33,7 @@ export default class CharacterNav extends Component {
                 </div>
             </nav>
             <div>
-                <h4 className="pageidentifier">Character Collection</h4>
+                <h4 className="page-identifier">Character Collection</h4>
             </div>
             </>
         )

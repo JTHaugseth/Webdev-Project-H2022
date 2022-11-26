@@ -41,9 +41,9 @@ const GetChrById = () => {
     return (
         <>
            <div className="container">
-                <h1 className="pagetitle">Search character by ID</h1>
+                <h1 className="page-title">Search character by ID</h1>
                 <form onSubmit={handleSubmit}>
-                    <div className="divBackground">
+                    <div className="div-background">
                         <input type="text" className="form-resize" id="search-character-by-id-input" placeholder="Enter Id:" onChange={(e) => setSearchId(e.target.value)}></input>
                         <input className="btn btn-success" type="submit" id="search-character-by-id-btn" value="Submit"></input>
                     </div> 
