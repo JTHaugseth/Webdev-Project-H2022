@@ -1,4 +1,4 @@
-/* Shared attributes */
+
 
 body {
     background-color: #1f2125;
@@ -11,6 +11,7 @@ a {
     color: white
 }
 
+/* Character Collection and Game Collection */
 #sharedMenudivs {
     margin-top: 5%;
     margin: 3%;
@@ -42,14 +43,6 @@ a {
     font-size: 150%;
     border-bottom: 2px solid #386a53;
 }
-
-
-/* Game/character cards
-.row
-    margin-bottom: 5%;
-} */
-
-
 
 img {
     max-height: 250px;
@@ -83,8 +76,6 @@ width: 50%;
 border-radius: 3px;
 padding: 1%;
 }
-
-
 
 .id {
     border-bottom: 2px solid #386a53;

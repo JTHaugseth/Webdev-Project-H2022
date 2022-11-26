@@ -46,6 +46,7 @@ const GetGmByTitle = () => {
                 <h1 className="pagetitle">Search game by Title</h1>
                 <form onSubmit={handleSubmit}>
                     <div className="divBackground">
+                        <p>Title is case sensitive!</p>
                         <input type="text" id="search-game-by-title-input" className="form-resize" placeholder="Enter Title:" onChange={(e) => setSearchTitle(e.target.value)}></input>
                         <input className="btn btn-success" type="submit" id="search-game-by-title-btn" value="Submit"></input>
                     </div>

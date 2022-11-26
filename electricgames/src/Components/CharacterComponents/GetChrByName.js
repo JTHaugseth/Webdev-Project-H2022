@@ -45,6 +45,7 @@ const GetChrByName = () => {
             <h1 className="pagetitle">Search character by name</h1>
                 <form onSubmit={handleSubmit}>
                     <div className="divBackground">
+                    <p>Name is case sensitive!</p>
                     <input type="text" className="form-resize" id="search-character-by-name-input" placeholder="Enter Name:" onChange={(e) => setSearchName(e.target.value)}></input>
                     <input className="btn btn-success" type="submit" id="search-character-by-name-btn" value="Submit"></input>
                     </div>
