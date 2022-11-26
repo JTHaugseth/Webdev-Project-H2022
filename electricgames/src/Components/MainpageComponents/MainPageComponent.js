@@ -11,13 +11,13 @@ export default class MainPageComponent extends Component {
                     Currently employed by Kristiania, Bergen.</p>
                     <div id="mainbuttons" className="row justify-content-center gy-2">
                         <div className="col-md-auto">
-                            <Link to="/GamesCollection"><button id="mainbtn" className="btn btn-info">Game Collection</button></Link>    
+                            <Link to="/GamesCollection"><button id="mainbtn" className="btn">Game Collection</button></Link>    
                         </div>
                         <div className="col-md-auto">            
-                            <Link to="/CharactersCollection"><button id="mainbtn" className="btn btn-secondary mb-6">Character Collection</button></Link>    
+                            <Link to="/CharactersCollection"><button id="mainbtn" className="btn">Character Collection</button></Link>    
                         </div>
                         <div className="col-md-auto">             
-                            <Link to="/Quiz"><button id="mainbtn" className="btn btn-light">Quiz Gamepage</button></Link>  
+                            <Link to="/Quiz"><button id="mainbtn" className="btn">Quiz Gamepage</button></Link>  
                         </div>
                     </div>  
                 </div>

@@ -69,12 +69,12 @@ return(
     <div className="container">
         <form onSubmit={handleSubmit}>
             <h1 className="pagetitle">Add new Character</h1>
-                <div className="row">
+            <div id="addNew" className="row">
                 <article id="inputField" className="col-md-11 col-sm-6">
                     <p>Character ID can be auto-generated if you leave it empty</p>
-                    <input type="text" id="add-character-id" placeholder="Enter character id" onChange={(e)=>setId(e.target.value)}></input>
-                    <input type="text" id="add-character-name" placeholder="Enter character name" onChange={(e)=>setCharacterName(e.target.value)}></input>
-                    <input type="text" id="add-character-game" placeholder="Enter character game" onChange={(e)=>setGame(e.target.value)}></input>         
+                    <input type="text" className="form-resize" id="add-character-id" placeholder="Enter character id" onChange={(e)=>setId(e.target.value)}></input>
+                    <input type="text" className="form-resize" id="add-character-name" placeholder="Enter character name" onChange={(e)=>setCharacterName(e.target.value)}></input>
+                    <input type="text" className="form-resize" id="add-character-game" placeholder="Enter character game" onChange={(e)=>setGame(e.target.value)}></input>         
                     <input type="file" id="add-character-image"  onChange={handleFiles}></input>
                     <input type="submit" className="btn btn-success" id="add-character-btn" value="Submit"></input> 
                 </article>

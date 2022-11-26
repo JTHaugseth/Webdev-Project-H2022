@@ -73,17 +73,17 @@ return(
     <>
     <div className="container">
         <h1 className="pagetitle">Update character</h1>
-        <div className="row">
-            <article id="inputField">
-                <div className="col-lg-12 col-md-12">
+        <div className="divBackground">
+            <article>
+                <div className="col-lg-12 col-xs-6">
                     <p>Which character would you like to update?  * Requires game ID</p>
-                    <input type="text" id="update-character-id" placeholder="Character ID" onChange={(e)=>setUpdatedId(e.target.value)}></input>
+                    <input type="text" className="form-resize" id="update-character-id" placeholder="Character ID" onChange={(e)=>setUpdatedId(e.target.value)}></input>
                     <button className="btn btn-info" id="get-character-btn" onClick={getCharacter}>Get character</button>
                     <p>Fill in the fields you want to update</p>
                 </div>
-                <div className="col-lg-4 col-md-4">
-                    <p>Name:<input type="text" id="update-character-name" placeholder={updatedCharacter.name}  onChange={(e)=>setUpdatedName(e.target.value)}></input></p>      
-                    <p>Game:<input type="text" id="update-character-game" placeholder={updatedCharacter.game} onChange={(e)=>setUpdatedGame(e.target.value)}></input></p> 
+                <div className="col-lg-4 col-md-1">
+                    <p>Name:<input type="text" className="form-resize" id="update-character-name" placeholder={updatedCharacter.name}  onChange={(e)=>setUpdatedName(e.target.value)}></input></p>      
+                    <p>Game:<input type="text" className="form-resize" id="update-character-game" placeholder={updatedCharacter.game} onChange={(e)=>setUpdatedGame(e.target.value)}></input></p> 
                     <input type="file" id="update-game-image" onChange={handleFiles}></input>
                     <input type="button" className="btn btn-success" id="update-character-btn" value="Update" onClick={postUpdatedCharacter}></input>
                 </div>

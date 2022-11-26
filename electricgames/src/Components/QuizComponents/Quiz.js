@@ -32,9 +32,15 @@ import LHUrl from "../LHUrl";
                     <div className="col-lg-auto">
                         <Link to ="/"><h1 className="navbrand">Electric Games</h1></Link>
                     </div>
-                    <div className="col-sm-auto"><Link id="nav-item-main" className="nav-link" to="/GamesCollection">Game Collection</Link>   </div>
-                    <div className="col-sm-auto"><Link id="nav-item-main" className="nav-link" to="/CharactersCollection">Character Collection</Link> </div>
-                    <div className="col-sm-auto"><Link id="nav-item-main" className="nav-link col-lg" to="/Quiz">Quiz</Link> </div>
+                    <div className="col-sm-auto">
+                        <Link id="nav-item-main" className="nav-link" to="/GamesCollection">Game Collection</Link>   
+                        </div>
+                    <div className="col-sm-auto">
+                        <Link id="nav-item-main" className="nav-link" to="/CharactersCollection">Character Collection</Link> 
+                        </div>
+                    <div className="col-sm-auto">
+                        <Link id="nav-item-main" className="nav-link col-lg" to="/Quiz">Quiz</Link> 
+                        </div>
                 </div>
             </div>
         </nav>
@@ -42,16 +48,17 @@ import LHUrl from "../LHUrl";
         
         <h4 className="pageidentifier">Quiz</h4>
         <div className="row">
-        <div className="container">
+            <div className="container">
             
-            <div className="col mx-auto d-block">
-            <Link to ="/Quiz/Question1"><input type="button" className="btn btn-info rounded" id="start-quiz-btn" value="Start quiz"></input></Link>
+                <div className="centerButton">
+                <Link to ="/Quiz/Question1"><input type="button" className="" id="start-quiz-btn" value="Start quiz"></input></Link>
             </div>
             
-            <div id="scoreboard" className=" col-6 mx-auto d-block">
+            <div id="scoreboard" className="col-6 mx-auto d-block">
                 <h1 className="scoreboardheader">Scoreboard</h1>
-                    <input type="text" id="delete-game" placeholder="Player name" onChange={(e)=>setDeleteName(e.target.value)}></input>
+                    <input type="text" className="delete-form" id="delete-game" placeholder="Player name" onChange={(e)=>setDeleteName(e.target.value)}></input>
                     <input type="button" className="btn btn-danger" id="delete-score-btn" value="Delete" onClick={deletePlayer}></input>
+           
            </div>
         </div>
         </div>
@@ -59,8 +66,8 @@ import LHUrl from "../LHUrl";
             <div className="row">
                 {scoreboard.map(score=>{
                     return(
-                        <div id="scoreboard" className="col-lg-4 col-md-6 col-sm-12">
-                            <article key={score.id}>
+                        <div key={score.id} id="scoreboard" className="col-lg-5 col-md-5 col-sm-12 mx-auto">
+                            <article className="scores">
                                 <h4 className="Name">Name: {score.name}</h4>
                                 <p className="Score">Score: {score.score}</p>
                             </article>
@@ -702,7 +709,9 @@ const ResultPage = ({Score}) => {
     setResult(
         <>
             <h3 id="score-saved" className="text-center">Score has been saved!</h3>
-            <Link to ="/Quiz"><input type="button" className="btn btn-info rounded mx-auto d-block" id="start-quiz-btn" value="To Scoreboard"></input></Link>
+            <div className="centerButton">
+            <Link to ="/Quiz"><input type="button" id="start-quiz-btn" value="To Scoreboard"></input></Link>
+            </div>
         </>
     )
     }
@@ -721,13 +730,14 @@ const ResultPage = ({Score}) => {
                 </div>
             </div>
         </nav>
+        
         <div className="container">
-            <div className="scoreboard mx-auto d-block">
+            <div id="savescore" className="mx-auto d-block">
                 <h1>You got {Score.score}/10 points</h1>
                 <article>
                     <h3>Do you want to save this score?</h3>
-                    <input type="text" id="input-name-score-save" placeholder="Type your name" onChange={(e)=>setName(e.target.value)}></input>
-                    <input type="button" id="save-score-btn" value="Save" onClick={SaveScore}></input>
+                    <input type="text" id="input-name-score-save" className="form-resize" placeholder="Type your name" onChange={(e)=>setName(e.target.value)}></input>
+                    <input type="button" id="save-score-btn"  value="Save" onClick={SaveScore}></input>
                 </article>
             </div>
             {result}

@@ -25,13 +25,15 @@ const GetGmById = () => {
         } else {
              setResult(  
                 <div className="container">
-                    <article className="col-md-5 col-sm-6">
-                        <h4 className="title">Title: {setSearchId.title}</h4>
-                        <img src={`${LHUrl}/images/${encodeURIComponent(searchId.image)}`} className="img-thumbnail" alt={searchId.image}></img>
+                    <div id="object-box">
+                    <article>
+                        <h4 className="title">Title: {searchId.title}</h4>
+                        <img src={`${LHUrl}/images/${encodeURIComponent(searchId.image)}`} className="img-fluid rounded mx-auto d-block" alt={searchId.image}></img>
                         <p className="id">Id: {searchId.id}</p>
                         <p className="platform">Platform: {searchId.platform}</p>
                         <p className="release-year">Release year: {searchId.releaseYear}</p>
                     </article>
+                    </div>
                 </div>
                 );
         }
@@ -42,7 +44,7 @@ const GetGmById = () => {
                 <h1 className="pagetitle">Search game by ID</h1>
                 <form onSubmit={handleSubmit}>
                     <div className="divBackground">
-                        <input type="text" id="search-game-by-id-input" placeholder="Enter Id:" onChange={(e) => setSearchId(e.target.value)}></input>
+                        <input type="text" id="search-game-by-id-input" className="form-resize" placeholder="Enter Id:" onChange={(e) => setSearchId(e.target.value)}></input>
                         <input className="btn btn-success" type="submit" id="search-game-by-id-btn" value="Submit"></input>
                     </div> 
                 </form>

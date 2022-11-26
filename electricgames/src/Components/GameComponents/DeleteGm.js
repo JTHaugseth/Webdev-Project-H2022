@@ -35,7 +35,7 @@ return(
         <h1 className="pagetitle">Delete game</h1>
         <form onSubmit={handleSubmit}>
             <div className="divBackground">
-                <input type="text" id="delete-game" placeholder="Id" onChange={(e)=>setDeleteId(e.target.value)}></input>
+                <input type="text" className="form-resize" id="delete-game" placeholder="Id" onChange={(e)=>setDeleteId(e.target.value)}></input>
                 <input type="submit" className="btn btn-danger" id="delete-game-btn" value="Delete"></input>
             </div>
         </form>

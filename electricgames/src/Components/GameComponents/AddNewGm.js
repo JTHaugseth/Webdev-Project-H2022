@@ -70,13 +70,13 @@ return(
     <div className="container">
         <form onSubmit={handleSubmit}>
             <h1 className="pagetitle">Add new game</h1>
-            <div className="row">
+            <div id="addNew" className="row">
                 <article id="inputField" className="col-md-11 col-sm-6">
                     <p>Game ID can be auto-generated if you leave it empty</p>
-                    <input type="text" id="add-game-id" placeholder="Enter a game id" onChange={(e)=>setId(e.target.value)}></input>
-                    <input type="text" id="add-game-title" placeholder="Enter a game title" onChange={(e)=>setGameTitle(e.target.value)}></input>
-                    <input type="text" id="add-game-platform" placeholder="Enter a platform" onChange={(e)=>setPlatform(e.target.value)}></input>
-                    <input type="text" id="add-game-release-year" placeholder="Enter a release year" onChange={(e)=>setReleaseYear(e.target.value)}></input>
+                    <input type="text" className="form-resize" id="add-game-id" placeholder="Enter a game id" onChange={(e)=>setId(e.target.value)}></input>
+                    <input type="text" className="form-resize" id="add-game-title" placeholder="Enter a game title" onChange={(e)=>setGameTitle(e.target.value)}></input>
+                    <input type="text" className="form-resize" id="add-game-platform" placeholder="Enter a platform" onChange={(e)=>setPlatform(e.target.value)}></input>
+                    <input type="text" className="form-resize" id="add-game-release-year" placeholder="Enter a release year" onChange={(e)=>setReleaseYear(e.target.value)}></input>
                     <input type="submit" className="btn btn-success" id="add-game-btn" value="Submit"></input>           
                     <input type="file" id="add-game-image"  onChange={handleFiles}></input>
                 </article>

@@ -49,6 +49,8 @@ a {
     margin-bottom: 5%;
 } */
 
+
+
 img {
     max-height: 250px;
 }
@@ -73,6 +75,16 @@ margin-top: 3%;
 background-color: #282a2e;
 border-radius: 3px;
 }
+
+#object-box {
+margin-top: 3%;
+background-color: #282a2e;
+width: 50%;
+border-radius: 3px;
+padding: 1%;
+}
+
+
 
 .id {
     border-bottom: 2px solid #386a53;
@@ -170,6 +182,14 @@ a:hover {
    
 }
 
+#addNew {
+    background-color: #282a2e;
+    padding: 2%;
+    border-radius: 3px;
+    margin-left: 0.2%;
+    margin-top: 2%;
+}
+
 
 #scoreboard {
     background-color: #282a2e;
@@ -177,6 +197,19 @@ a:hover {
     border-radius: 3px;
     margin-top: 10%;
     border: #386a53 1px solid;
+    gap: 3;
+   
+}
+
+#savescore {
+    background-color: #282a2e;
+    padding: 2%;
+    border-radius: 3px;
+    margin-top: 10%;
+    border: #386a53 2px solid;
+    text-align: center;
+    width:50%;
+   
    
 }
 
@@ -186,6 +219,38 @@ a:hover {
     border-bottom: #386a53 2px solid;
     margin-bottom: 4%;
     font-size: 4vh;
+}
+
+
+@media only screen and (max-width: 400px) {
+    .scoreboardheader {
+        font-size:100%;
+    }
+    .delete-form {
+        width: 80%;
+    }
+    
+
+    .quizbox {
+        font-size: 1rem;
+    }
+   
+}
+
+@media only screen and (max-width: 600px) {
+    #start-quiz-btn {
+        font-size: 0.1rem;  
+    }
+
+    .form-resize {
+        width: 100%;
+    }
+
+    p {
+        width: 100%;
+    }
+
+
 }
 
 /* Landing page */
@@ -200,6 +265,7 @@ a:hover {
     margin-bottom: 5%;
    
 }
+
 
 .pageheader {
         margin-top: 3%;
@@ -232,6 +298,8 @@ a:hover {
     width: 100%;
     font-size: 100%;
     margin-top: 3%;
+    background-color: rgb(56, 56, 174);
+    color: white;
 }
 
 
@@ -246,6 +314,7 @@ a:hover {
     text-decoration: none;
     font-size: 150%;
     border-bottom: 2px solid #386a53;
+    text-align: center;
 }
 
 .question {
@@ -258,7 +327,15 @@ a:hover {
 
 #start-quiz-btn {
     margin-top: 4%;
-    font-size: 10vh;
+    font-size: 3.4rem;
+    height: 40%;
+    background-color: rgb(39, 39, 148);
+    color: white;
+    border-radius: 6px;
+}
+
+.centerButton {
+    text-align: center;
 }
 
 .correctAnswer {
@@ -273,6 +350,8 @@ a:hover {
 
 #alternatives {
     padding-bottom: 1%;
+    text-align: center;
+    justify-content: center;
     
 }
 

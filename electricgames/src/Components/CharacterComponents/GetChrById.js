@@ -25,12 +25,14 @@ const GetChrById = () => {
         }else{
             setResult(  
                 <div className="container">
-                    <article className="col-md-5 col-sm-6">
+                    <div id="object-box">
+                    <article>
                         <h4 className="title">Name: {searchId.name}</h4>
-                        <img src={`https://localhost:7088/images/${encodeURIComponent(searchId.image)}`} className="img-thumbnail" alt={searchId.image}></img>
+                        <img src={`https://localhost:7088/images/${encodeURIComponent(searchId.image)}`} className="img-fluid rounded mx-auto d-block" alt={searchId.image}></img>
                         <p className="id">Id: {searchId.id}</p>
                         <p className="platform">Game: {searchId.game}</p>
                     </article>
+                    </div>
                 </div>
             );
         }
@@ -42,7 +44,7 @@ const GetChrById = () => {
                 <h1 className="pagetitle">Search character by ID</h1>
                 <form onSubmit={handleSubmit}>
                     <div className="divBackground">
-                        <input type="text" id="search-character-by-id-input" placeholder="Enter Id:" onChange={(e) => setSearchId(e.target.value)}></input>
+                        <input type="text" className="form-resize" id="search-character-by-id-input" placeholder="Enter Id:" onChange={(e) => setSearchId(e.target.value)}></input>
                         <input className="btn btn-success" type="submit" id="search-character-by-id-btn" value="Submit"></input>
                     </div> 
                 </form>

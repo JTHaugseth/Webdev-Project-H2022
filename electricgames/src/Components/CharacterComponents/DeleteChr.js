@@ -12,7 +12,7 @@ const [resultName, setResultName] = useState("");
 //Gets the character by id and deletes by id
 useEffect(() => {
     axios.get(`${LHUrl}/gamecharacters/GameCharacters/${deleteId}`)
-    .then(response=>setResultName(response.data.title))
+    .then(response=>setResultName(response.data.name))
     .catch(error=>console.log(error));
 
     axios.delete(`${LHUrl}/gamecharacters/GameCharacters/${deleteId}`)
@@ -34,8 +34,8 @@ return(
     <div className="container">
         <h1 className="pagetitle">Delete Character</h1>
         <form onSubmit={handleSubmit}>
-            <div className="deleteBackground">
-                <input type="text" id="delete-character" placeholder="Id" onChange={(e)=>setDeleteId(e.target.value)}></input>
+            <div className="divBackground">
+                <input type="text" className="form-resize" id="delete-character" placeholder="Id" onChange={(e)=>setDeleteId(e.target.value)}></input>
                 <input type="submit" className="btn btn-danger" id="delete-character-btn" value="Delete"></input>
             </div>
         </form>

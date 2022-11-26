@@ -20,8 +20,8 @@ const ShowAllChr = () => {
             <div className="row">
             {character.map(character=>{
                 return(
-                    <div id="object-boxes" className="col-lg-5 col-sm-12">
-                    <article key={character.id}>
+                    <div key={character.id} id="object-boxes" className="col-lg-5 col-sm-12">
+                    <article>
                         <h4 className="title">Name: {character.name}</h4>
                         <img src={`${LHUrl}/images/${encodeURIComponent(character.image)}`} className="img-fluid rounded mx-auto d-block" alt={character.image}></img>
                         <p className="id">Id: {character.id}</p>

@@ -73,19 +73,19 @@ return(
     <>
     <div className="container">
         <h1 className="pagetitle">Update game</h1>
-        <div className="row">
+        <div className="divBackground">
             <article id="form">
-                <div className="col-lg-12 col-md-12">
+                <div>
                     <p>What game would you like to update?  * Requires game ID</p>
-                    <input type="text" id="update-game-id" placeholder="Game ID" onChange={(e)=>setUpdatedId(e.target.value)}></input>
+                    <input type="text" className="form-resize" id="update-game-id" placeholder="Game ID" onChange={(e)=>setUpdatedId(e.target.value)}></input>
                     <button className="btn btn-info" id="get-game-btn" onClick={getGame}>Get Game</button>
                     <p>Fill in the fields you want to update</p>
                 </div>
-                <div className="col-lg-4 col-md-4">
-                    <p>Title:<input type="text" id="update-game-title" placeholder={updatedGame.title}  onChange={(e)=>setUpdatedTitle(e.target.value)}></input></p>      
-                    <p>Platform:<input type="text" id="update-game-platform" placeholder={updatedGame.platform} onChange={(e)=>setUpdatedPlatform(e.target.value)}></input></p> 
-                    <p>Release Year:<input type="text" id="update-game-release-year" placeholder={updatedGame.releaseYear} onChange={(e)=>setUpdatedReleaseYear(e.target.value)}></input></p>
-                    <input type="file" id="update-game-image" onChange={handleFiles}></input>
+                <div className="col-lg-4 col-md-1">
+                    <p>Title:<input type="text" className="form-resize" id="update-game-title" placeholder={updatedGame.title}  onChange={(e)=>setUpdatedTitle(e.target.value)}></input></p>      
+                    <p>Platform:<input type="text" className="form-resize" id="update-game-platform" placeholder={updatedGame.platform} onChange={(e)=>setUpdatedPlatform(e.target.value)}></input></p> 
+                    <p>Release Year:<input type="text"  className="form-resize" id="update-game-release-year" placeholder={updatedGame.releaseYear} onChange={(e)=>setUpdatedReleaseYear(e.target.value)}></input></p>
+                    <input type="file"  className="form-resize" id="update-game-image" onChange={handleFiles}></input>
                     <input type="button" className="btn btn-success" id="update-game-btn" value="Update" onClick={postUpdatedGame}></input>
                 </div>
             </article>
