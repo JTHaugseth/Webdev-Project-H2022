@@ -49,8 +49,7 @@ import LHUrl from "../LHUrl";
         <h4 className="page-identifier">Quiz</h4>
         <div className="row">
             <div className="container">
-            
-                <div className="center-button">
+            <div className="center-button">
                 <Link to ="/Quiz/Question1"><input type="button" className="" id="start-quiz-btn" value="Start quiz"></input></Link>
             </div>
             

@@ -4,7 +4,9 @@ body {
     background-color: #1f2125;
     color: #b5b6ba;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: white
+    color: white;
+    overflow-x: hidden;
+    
 }
 
 a {
@@ -30,6 +32,7 @@ a {
 #nav-item-main {
     margin: 0.5%;
 }
+
 #nav-item {
     margin-top: 5%;
 }
@@ -162,6 +165,7 @@ padding: 1%;
 img {
     max-height: 250px;
 }
+
 .platform {
    border-bottom: 2px solid #386a53;
 }
@@ -256,7 +260,6 @@ form {
    
 }
 
-
 .scoreboard-header {
     border-bottom: #386a53 2px solid;
     margin-bottom: 4%;
@@ -292,7 +295,7 @@ form {
     border-radius: 6px;
 }
 
-.center-Button {
+.center-button {
     text-align: center;
 }
 
@@ -336,16 +339,14 @@ form {
 }
 
 @media only screen and (max-width: 600px) {
-    #start-quiz-btn {
-        font-size: 0.1rem;  
-    }
+   
 
     .form-resize {
         width: 100%;
     }
 
-    p {
-        width: 100%;
+    .id {
+        font-size: x-small;
     }
 
 
